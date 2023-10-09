@@ -15,7 +15,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>11</java.version>
     <database.url>jdbc:postgresql://45.84.210.174:65432/2023_BFS_3_G2</database.url>
-    <psqldb.version>11.16</psqldb.version>
+    <psqldb.version>42.5.2</psqldb.version>
     <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
   </properties>
   <dependencyManagement>
