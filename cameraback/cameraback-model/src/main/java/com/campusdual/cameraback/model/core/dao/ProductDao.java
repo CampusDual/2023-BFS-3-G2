@@ -1,0 +1,21 @@
+package com.campusdual.cameraback.model.core.dao;
+
+import com.ontimize.jee.server.dao.common.ConfigurationFile;
+import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Repository;
+
+@Lazy
+@Repository(value = "ProductDao")
+@ConfigurationFile(
+        configurationFile = "dao/ProductDao.xml",
+        configurationFilePlaceholder = "dao/placeholders.properties")
+public class ProductDao extends OntimizeJdbcDaoSupport {
+
+   public static final String ID = "id_product";
+    public static final String NAME = "product_name";
+    public static final String PASSWORD = "price";
+    public static final String STATUS = "status";
+    public static final String TYPE = "product_type";
+    public static final String AVALIABLE = "avaliable";
+}

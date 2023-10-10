@@ -21,7 +21,7 @@ ontimize:
             - DELETE
    jdbc:
       name-convention: upper
-      sqlhandler: hsqldb
+      sqlhandler: postgresql
       sql-condition-processor:
          uppper-string: true
          upper-like: true
@@ -30,15 +30,15 @@ ontimize:
       ignore-paths: /app/**
       role-information-service:
          role-repository: UserRoleDao
-         role-name-column: ROLENAME
+         role-name-column: rolename
          server-permission-query-id: serverPermissions
-         server-permission-name-column: PERMISSION_NAME
+         server-permission-name-column: permission_name
          client-permission-query-id: clientPermissions
-         client-permission-column: XMLCLIENTPERMISSION
+         client-permission-column: xmlclientpermission
       user-information-service:
          user-repository: UserDao
-         user-login-column: USER_
-         user-password-column: PASSWORD
+         user-login-column: user_
+         user-password-column: password
          query-id: login
          other-data:
             - NAME
@@ -51,8 +51,8 @@ ontimize:
       user-role-information-service:
          user-role-repository: UserRoleDao
          query-id: userRole
-         role-login-column: USER_
-         role-name-column: ROLENAME
+         role-login-column: user_
+         role-name-column: rolename
 server:
    port: 33333
    tomcat:
@@ -61,11 +61,16 @@ server:
       enabled: true
       mime-types: application/json, application/xml
 spring:
+   jpa:
+      database: 2023_BFS_3_G2
+      show-sql: true
+      hibernate:
+         ddl-auto: create-drop
    datasource:
-      driver-class-name: org.hsqldb.jdbcDriver
-      jdbc-url: jdbc:hsqldb:hsql://localhost:9013/templateDB
-      username: SA
-      password:
+      jdbc-url: jdbc:postgresql://45.84.210.174:65432/2023_BFS_3_G2
+      username: "2023_BFS_3_G2"
+      password: "b2f34VKzTvt2"
+      driverClassName: org.postgresql.Driver
       initial-size: 10
       test-on-borrow: true
    main:

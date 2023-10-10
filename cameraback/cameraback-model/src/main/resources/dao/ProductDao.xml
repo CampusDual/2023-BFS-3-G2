@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JdbcEntitySetup
+        xmlns="http://www.ontimize.com/schema/jdbc"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
+        catalog="" schema="${mainschema}" table="tproducts"
+        datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
+    <DeleteKeys>
+        <Column>id_product</Column>
+    </DeleteKeys>
+    <UpdateKeys>
+        <Column>id_product</Column>
+    </UpdateKeys>
+    <Queries>
+        <Query id="default">
+            <ValidColumns>
+                <Column>id_product</Column>
+                <Column>product_name</Column>
+                <Column>price</Column>
+                <Column>status</Column>
+                <Column>product_type</Column>
+                <Column>avaliable</Column>
+            </ValidColumns>
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.tproducts
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
+        <Query id="products">
+            <ValidColumns>
+                <Column>id_product</Column>
+                <Column>product_name</Column>
+                <Column>price</Column>
+                <Column>status</Column>
+                <Column>product_type</Column>
+                <Column>avaliable</Column>
+            </ValidColumns>
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.tproducts
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
+    </Queries>
+</JdbcEntitySetup>
