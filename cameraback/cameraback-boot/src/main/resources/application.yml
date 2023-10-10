@@ -54,6 +54,8 @@ ontimize:
          role-login-column: user_
          role-name-column: rolename
 server:
+   servlet:
+      context-path: /cameraRent/backservice
    port: 33333
    tomcat:
       uri-encoding: UTF-8
