@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/2023-BFS-3-G2.iml" filepath="$PROJECT_DIR$/.idea/2023-BFS-3-G2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraback/cameraback.iml" filepath="$PROJECT_DIR$/cameraback/cameraback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraback/cameraback-api/cameraback-api.iml" filepath="$PROJECT_DIR$/cameraback/cameraback-api/cameraback-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraback/cameraback-boot/cameraback-boot.iml" filepath="$PROJECT_DIR$/cameraback/cameraback-boot/cameraback-boot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraback/cameraback-model/cameraback-model.iml" filepath="$PROJECT_DIR$/cameraback/cameraback-model/cameraback-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cameraback/cameraback-ws/cameraback-ws.iml" filepath="$PROJECT_DIR$/cameraback/cameraback-ws/cameraback-ws.iml" />
     </modules>
   </component>
 </project>
