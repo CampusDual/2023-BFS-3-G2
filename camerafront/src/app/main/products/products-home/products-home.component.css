@@ -1,15 +1,32 @@
 .container-item {
   width: 100%;
-  height: 100%;
   .name {
     margin: 8px 0;
     font-size: 0.9em;
   }
   .email,
   .domain,
-  .phone,
   .body,
   .website {
+  /* .image{
+    height: 150px;
+    width: 150px;
+    display:contents;
+  } */
+  .image {
+    width: auto; 
+    height: 50%; 
+  }
+  
+  .image img {
+    width: 100%; /* Haz que la imagen ocupe el 100% del ancho del contenedor */
+    height: auto;
+  }
+  /* img{
+    height: 150px;
+    display:contents;
+  } */
+  /* .website {
     font-size: 0.7em;
     display: flex;
     align-items: center;
@@ -22,8 +39,8 @@
       white-space: nowrap;
       overflow: hidden;
     }
-  }
-  .mat-icon {
+  } */
+   .mat-icon {
     font-size: 18px;
     height: 18px;
   }
@@ -34,4 +51,4 @@
 
 .red-check {
   color: red;
-}
+} 
