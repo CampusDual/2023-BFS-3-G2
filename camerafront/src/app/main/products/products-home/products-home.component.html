@@ -28,15 +28,16 @@
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding class="container-item">
       <!-- <img [src]="assets/images/no-image" style="margin-top:8px"> -->
-      <img
+      <!-- <img
         src="assets/images/no-image.png"
         alt="Descripción de la imagen"
         avatar="no"
         empty-image="assets/images/no-image.png"
-      />
+      /> -->
       <!-- <img attr="EMPLOYEEPHOTO" title="EMPLOYEEPHOTO" orderable="no" searchable="no" type="image" avatar="no" empty-image="assets/images/no-image.png"
       image-type="base64" width="150px"> -->
       <!-- <o-image attr="main_photo" [data]= {{ list.main_photo }}></o-image> -->
+      <img src="data:image/png;base64,{{list.main_photo}}">
       <h4>{{ list.product_name }}</h4>
       <div class="price">
         <b>Precio: </b> <span> {{ list.price }} € </span>
