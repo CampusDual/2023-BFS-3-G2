@@ -14,7 +14,7 @@
       <img src="assets/images/no-image.png" alt="Descripción de la imagen">
       <h4>{{ list.product_name }}</h4>
       <div class="price">
-        <mat-icon>price</mat-icon> <span> {{ list.price }} </span>
+        <mat-icon>euro</mat-icon> <span> {{ list.price }}€ </span>
       </div>
       <div class="status">
         <mat-icon>email</mat-icon> <span>{{ list.status }} </span>
@@ -23,11 +23,11 @@
         <mat-icon>domain</mat-icon> <span> {{ list.product_type }} </span>
       </div>
       <div class="avaliable">
-        <mat-icon>website</mat-icon> <span>{{list.avaliable?"Disponible":"No disponible"}}</span>
+        <span>Diponibilidad: </span> <span><mat-icon>{{list.avaliable?"done":"close"}}</mat-icon></span>
       </div>
-      <div class="body">
+      <!-- <div class="body">
         {{list.body}}
-      </div>
+      </div> -->
     </o-column>
   </o-grid-item>
 </o-grid>
