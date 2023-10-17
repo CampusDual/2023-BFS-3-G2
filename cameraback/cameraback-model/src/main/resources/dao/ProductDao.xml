@@ -20,6 +20,7 @@
                 <Column>status</Column>
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
+                <Column>main_photo</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
@@ -39,6 +40,7 @@
                 <Column>status</Column>
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
+                <Column>main_photo</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
