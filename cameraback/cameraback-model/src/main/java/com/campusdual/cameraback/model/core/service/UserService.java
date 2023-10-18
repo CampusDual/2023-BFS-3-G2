@@ -9,6 +9,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.campusdual.cameraback.api.core.service.IUserService;
@@ -33,6 +35,12 @@ public class UserService implements IUserService {
 	//Sample to permission
 	//@Secured({ PermissionsProviderSecured.SECURED })
 	public EntityResult userQuery(Map<?, ?> keyMap, List<?> attrList) {
+		return this.daoHelper.query(userDao, keyMap, attrList);
+	}
+
+	public EntityResult myUserQuery(Map<String, Object> keyMap, List<String> attrList) {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		keyMap.put(UserDao.ID, authentication.getName());
 		return this.daoHelper.query(userDao, keyMap, attrList);
 	}
 

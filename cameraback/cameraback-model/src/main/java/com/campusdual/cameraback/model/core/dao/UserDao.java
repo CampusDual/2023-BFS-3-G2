@@ -23,7 +23,6 @@ public class UserDao extends OntimizeJdbcDaoSupport {
     public static final String NIF = "nif";
     public static final String USERBLOCKED = "userblocked";
     public static final String LASTPASSWORDUPDATE = "lastpasswordupdate";
-
     public static final String FIRSTLOGIN = "firstlogin";
 
 
