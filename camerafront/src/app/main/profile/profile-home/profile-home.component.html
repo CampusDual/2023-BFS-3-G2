@@ -1,6 +1,9 @@
-<div fxFill fxLayout="column" fxLayoutAlign="start">
-    <o-table attr="perfilTable" service="users" entity="myUser"
-            columns="user_;email;name;surname;nif"
-            visible-columns="user_;email;name;surname;nif">
-    </o-table>
-</div>
+<o-table attr="perfilTable" service="users" entity="myUser"
+    columns="user_;email;name;surname;nif"
+    visible-columns="user_;email;name;surname;nif">
+</o-table>
+<!-- <o-form #form service="users" entity="myUser"
+columns="user_;email;name;surname;nif" header-actions="R;U" show-header-navigation="yes">
+<div>
+    <span>{{form.dataArray.name}} </span></div>
+  </o-form> -->
