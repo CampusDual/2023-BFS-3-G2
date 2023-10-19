@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService, OTableComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-myproducts-home',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyproductsHomeComponent implements OnInit {
 
-  constructor() { }
+@ViewChild('table',{static:true}) table:OTableComponent;
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
   }
+  ngAfterViewInit(){
+    this.table.queryData({tuser_user_:this.auth.getSessionInfo().user});
+  }
+  // ngOnChanges(){
+  //   this.table.queryData({tuser_user_:this.auth.getSessionInfo().user});
+  // }
+  
 
 }

@@ -1,62 +1,24 @@
-<o-grid
-  #grid
-  attr="productGrid"
-  title="Productos en alquiler"
-  cols="4"
-  query-rows="8"
-  show-page-size="true"
-  page-size-options="4;8;16"
-  orderable="true"
-  quick-filter="true"
-  grid-item-height="1:1"
-  sortable-columns="product_name;price"
-  sort-column=""
-  controls="true"
-  refresh-button="true"
-  insert-button="false"
-  pagination-controls="false"
-  gutter-size="5px"
-  fixed-header="yes"
-  [ngStyle]="{ height: '600px' }"
-  service="products"
-  entity="myProduct"
-  keys="id_product"
-  columns="id_product;product_name;price;status;product_type;avaliable;main_photo" 
-  visible-columns="main_photo;product_name;price;status;product_type;avaliable">
-  <o-grid-item *ngFor="let list of grid.dataArray">
-    <o-column layout-padding class="container-item">
-      <div class="image">
-        <img src="data:image/png;base64,{{list.main_photo}}">
-      </div>
-      <h4>{{ list.product_name }}</h4>
-      <div class="price">
-        <b>Precio: </b> <span> {{ list.price }} € </span>
-      </div>
-      <div class="status">
-        <b>Estado: </b><span>{{ list.status }} </span>
-      </div>
-      <div class="product_type">
-        <b>Producto: </b>
-        <span>{{ list.product_type }} </span>
-      </div>
-      <div class="plocation">
-        <b>Provincia: </b><span>{{ list.location }} </span>
-      </div>
-      <div class="avaliable">
-        <span><b>Disponible: </b> </span>
-        <span>
-          <mat-icon
-            [ngClass]="{
-              'green-check': list.avaliable,
-              'red-check': !list.avaliable
-            }">
-            {{ list.avaliable ? "check_circle" : "cancel" }}
-          </mat-icon>
-        </span>
-      </div>
-      <div class="body">
-        {{ list.body }}
-      </div>
-    </o-column>
-  </o-grid-item>
-</o-grid>
+<o-table #table fxFlex attr="table" title="Table"  service="products"
+entity="product"
+keys="tuser_user_"
+columns="id_product;product_name;price;status;product_type;avaliable;main_photo;tuser_user_" 
+visible-columns="main_photo;product_name;price;status;product_type;avaliable"
+quick-filter="true"
+filter-case-sensitive="false" 
+columns-visibility-button="true" 
+select-all-checkbox="true" show-buttons-text="true" controls="true" show-title="true"
+pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="false" auto-adjust="false" virtual-scroll="no" >
+
+<!-- Filter columns -->
+<o-table-columns-filter columns="status;id_product;product_name"></o-table-columns-filter>
+<!-- Custom definition button -->
+<!-- <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button> -->
+<!-- Custom definition columns -->
+<o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
+</o-table-column>
+<!-- <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column>
+<o-table-column attr="action" width="64px">
+  <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
+</o-table-column> -->
+</o-table>
