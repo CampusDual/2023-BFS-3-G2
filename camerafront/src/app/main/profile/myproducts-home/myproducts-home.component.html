@@ -8,7 +8,7 @@
   page-size-options="4;8;16"
   orderable="true"
   quick-filter="true"
-  grid-item-height="1:2"
+  grid-item-height="1:1"
   sortable-columns="product_name;price"
   sort-column=""
   controls="true"
@@ -19,7 +19,7 @@
   fixed-header="yes"
   [ngStyle]="{ height: '600px' }"
   service="products"
-  entity="product"
+  entity="myProduct"
   keys="id_product"
   columns="id_product;product_name;price;status;product_type;avaliable;main_photo" 
   visible-columns="main_photo;product_name;price;status;product_type;avaliable">

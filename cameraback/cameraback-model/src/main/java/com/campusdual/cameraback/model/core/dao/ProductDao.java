@@ -19,5 +19,6 @@ public class ProductDao extends OntimizeJdbcDaoSupport {
     public static final String TYPE = "product_type";
     public static final String AVALIABLE = "avaliable";
     public static final String PHOTO = "main_photo";
+    public static final String USER = "tuser_user_";
 
 }

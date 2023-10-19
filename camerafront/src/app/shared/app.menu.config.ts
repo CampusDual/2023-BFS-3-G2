@@ -19,13 +19,13 @@ export const MENU_CONFIG: MenuRootItem[] = [
       id: 'mydata',
       name: 'MYDATA',
       icon: 'person',
-      route: '/main/profile',
+      route: '/main/profile/profile',
       },
       {
         id: 'myproducts',
         name: 'MYPRODUCTS',
         icon: 'shop',
-        route: '/main/myproducts',
+        route: '/main/profile/myProducts',
       }
     ] 
   },

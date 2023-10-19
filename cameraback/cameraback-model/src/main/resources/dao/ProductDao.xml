@@ -21,6 +21,7 @@
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
                 <Column>main_photo</Column>
+                <Column>tuser_user_</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
@@ -41,6 +42,7 @@
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
                 <Column>main_photo</Column>
+                <Column>tuser_user_</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
