@@ -22,6 +22,12 @@
   "PRODUCTS": "Products",
   "MYPROFILE": "My profile",
   "MYDATA": "Personal data",
-  "MYPRODUCTS": "My oferted products"
+  "MYPRODUCTS": "My oferted products",
+  "NAME": "Name",
+  "SURNAME": "Surname",
+  "NICKNAME": "Nickname",
+  "EMAIL": "Email",
+  "CAMERA": "Camera",
+  "LOCATION": "Location"
 
 }

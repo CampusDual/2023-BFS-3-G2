@@ -1,17 +1,9 @@
-<!-- <o-table attr="perfilTable" service="users" entity="myUser"
-    columns="user_;email;name;surname;nif"
-    visible-columns="user_;email;name;surname;nif">
-</o-table> -->
-<o-form #form service="users" entity="myUser"
-columns="user_;email;name;surname;nif" header-actions="R;U" show-header-navigation="yes">
-    <o-row>
-        <o-text-input class="input-padding" attr="user_" sql-type="STRING" fxFlex="40"></o-text-input>
-        <o-text-input class="input-padding" attr="email" sql-type="STRING" fxFlex="40"></o-text-input>
-    </o-row>
-    <o-row>
-        <o-text-input class="input-padding" attr="name" sql-type="STRING" fxFlex="40"></o-text-input>
-        <o-text-input class="input-padding" attr="surname" sql-type="STRING" fxFlex="40"></o-text-input>
-    </o-row>
-<!-- <div>
-    <span>{{form.dataArray.name}} </span></div> -->
+<o-form #form  attr="profile_detail" service="users" entity="user" fxLayout="column"
+  show-header="no" header-actions="R" keys="user_" keys-sql-types="VARCHAR"
+  show-header-navigation="no" editable-detail="no" >
+  <o-text-input attr="user_" label="NICKNAME"></o-text-input> 
+  <o-text-input attr="name" label="NAME" ></o-text-input>
+  <o-text-input attr="surname" label="SURNAME"></o-text-input>
+  <o-text-input attr="email" label="EMAIL" ></o-text-input>
+  <o-text-input attr="ulocation" label="LOCATION" ></o-text-input>
 </o-form>

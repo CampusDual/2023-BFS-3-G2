@@ -20,6 +20,7 @@
                 <Column>surname</Column>
                 <Column>email</Column>
                 <Column>nif</Column>
+                <Column>ulocation</Column>
                 <Column>userblocked</Column>
                 <Column>lastpasswordupdate</Column>
                 <Column>firstlogin</Column>
@@ -42,6 +43,7 @@
                 <Column>surname</Column>
                 <Column>email</Column>
                 <Column>nif</Column>
+                <Column>ulocation</Column>
                 <Column>userblocked</Column>
                 <Column>lastpasswordupdate</Column>
                 <Column>firstlogin</Column>

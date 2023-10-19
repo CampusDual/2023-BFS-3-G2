@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthService, OFormComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-profile-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileHomeComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('form',{static:true}) form:OFormComponent;
+  constructor(private auth:AuthService) { }
 
   ngOnInit() {
+  }
+  ngAfterViewInit(){
+    this.form.queryData({user_:this.auth.getSessionInfo().user});
   }
 
 }
