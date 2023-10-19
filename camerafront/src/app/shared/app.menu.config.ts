@@ -13,11 +13,21 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: "video_camera_front",
     route: "/main/products",
   },
-  {
-    id: 'profile',
-    name: 'PROFILE',
-    icon: 'people',
-    route: '/main/profile', 
+  { id: 'myprofile', name: 'MYPROFILE', icon: 'remove_red_eye', opened: true,
+    items: [
+      {   
+      id: 'mydata',
+      name: 'MYDATA',
+      icon: 'person',
+      route: '/main/profile',
+      },
+      {
+        id: 'myproducts',
+        name: 'MYPRODUCTS',
+        icon: 'shop',
+        route: '/main/myproducts',
+      }
+    ] 
   },
   {
     id: "logout",
