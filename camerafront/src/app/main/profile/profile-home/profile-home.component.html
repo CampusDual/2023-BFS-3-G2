@@ -1,9 +1,17 @@
-<o-table attr="perfilTable" service="users" entity="myUser"
+<!-- <o-table attr="perfilTable" service="users" entity="myUser"
     columns="user_;email;name;surname;nif"
     visible-columns="user_;email;name;surname;nif">
-</o-table>
-<!-- <o-form #form service="users" entity="myUser"
+</o-table> -->
+<o-form #form service="users" entity="myUser"
 columns="user_;email;name;surname;nif" header-actions="R;U" show-header-navigation="yes">
-<div>
-    <span>{{form.dataArray.name}} </span></div>
-  </o-form> -->
+    <o-row>
+        <o-text-input class="input-padding" attr="user_" sql-type="STRING" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="email" sql-type="STRING" fxFlex="40"></o-text-input>
+    </o-row>
+    <o-row>
+        <o-text-input class="input-padding" attr="name" sql-type="STRING" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="surname" sql-type="STRING" fxFlex="40"></o-text-input>
+    </o-row>
+<!-- <div>
+    <span>{{form.dataArray.name}} </span></div> -->
+</o-form>
