@@ -1,29 +1,57 @@
-<o-table #table fxFlex attr="table" title="Table"  service="products"
-entity="product"
-keys="tuser_user_"
-columns="id_product;product_name;price;status;product_type;avaliable;main_photo;tuser_user_" 
-visible-columns="main_photo;product_name;price;status;product_type;avaliable"
-quick-filter="true"
-filter-case-sensitive="false" 
-columns-visibility-button="true" 
-select-all-checkbox="true" show-buttons-text="true" controls="true" show-title="true"
-pagination-controls="no" edition-mode="none" detail-mode="none" horizontal-scroll="false" auto-adjust="false" virtual-scroll="no" >
-
-<!-- Filter columns -->
-<o-table-columns-filter columns="status;id_product;product_name"></o-table-columns-filter>
-<!-- Custom definition button -->
-<!-- <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button> -->
-<!-- Custom definition columns -->
-<o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
-  <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes"> </o-table-cell-renderer-image>
-</o-table-column>
-<o-table-column attr="avaliable" title="avaliable" type="boolean" render-true-value="check_circle" render-false-value="highlight_off" render-type="icon" boolean-type="string"></o-table-column>
-<!-- <o-table-column attr="avaliable" title="avaliable" type="avaliable"
+<o-table
+  #table
+  fxFlex
+  attr="table"
+  title="Table"
+  service="products"
+  entity="product"
+  keys="tuser_user_"
+  columns="id_product;product_name;price;status;product_type;avaliable;main_photo;tuser_user_"
+  visible-columns="main_photo;product_name;price;status;product_type;avaliable"
+  quick-filter="true"
+  filter-case-sensitive="false"
+  columns-visibility-button="true"
+  select-all-checkbox="true"
+  show-buttons-text="true"
+  controls="true"
+  show-title="true"
+  pagination-controls="no"
+  edition-mode="none"
+  detail-mode="none"
+  horizontal-scroll="false"
+  auto-adjust="false"
+  virtual-scroll="no"
+>
+  <!-- Filter columns -->
+  <o-table-columns-filter
+    columns="status;id_product;product_name"
+  ></o-table-columns-filter>
+  <!-- Custom definition button -->
+  <!-- <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button> -->
+  <!-- Custom definition columns -->
+  <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+    <o-table-cell-renderer-image
+      image-type="base64"
+      empty-image="assets/images/no-image.png"
+      avatar="yes"
+    >
+    </o-table-cell-renderer-image>
+  </o-table-column>
+  <o-table-column
+    attr="avaliable"
+    title="avaliable"
+    type="boolean"
+    render-true-value="check_circle"
+    render-false-value="highlight_off"
+    render-type="icon"
+    boolean-type="string"
+  ></o-table-column>
+  <!-- <o-table-column attr="avaliable" title="avaliable" type="avaliable"
 true-value-type="string" true-value="YES"
 false-value-type="icon" false-value="not_interested">
 </o-table-column> -->
-<!-- <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column> -->
-<!-- <o-table-column attr="action" width="64px">
+  <!-- <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column> -->
+  <!-- <o-table-column attr="action" width="64px">
   <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
 </o-table-column> -->
 </o-table>
