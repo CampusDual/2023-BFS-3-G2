@@ -34,5 +34,6 @@
   "price": "Precio",
   "status": "Estado",
   "product_type": "Tipo de producto",
-  "avaliable": "Disponible"
+  "avaliable": "Disponible",
+  "plocation": "Localización"
 }

@@ -5,10 +5,11 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { ProfileHomeComponent } from './profile-home/profile-home.component';
 import { MyproductsHomeComponent } from './myproducts-home/myproducts-home.component';
+import { MyproductsDetailComponent } from './myproducts-detail/myproducts-detail.component';
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,MyproductsHomeComponent],
+  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,

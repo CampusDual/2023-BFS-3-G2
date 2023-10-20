@@ -21,6 +21,7 @@
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
                 <Column>main_photo</Column>
+                <Column>plocation</Column>
                 <Column>tuser_user_</Column>
             </ValidColumns>
             <Sentence>
@@ -42,6 +43,7 @@
                 <Column>product_type</Column>
                 <Column>avaliable</Column>
                 <Column>main_photo</Column>
+                <Column>plocation</Column>
                 <Column>tuser_user_</Column>
             </ValidColumns>
             <Sentence>

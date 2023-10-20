@@ -34,6 +34,7 @@
   "price": "Price",
   "status": "Status",
   "product_type": "Product type",
-  "avaliable": "Avaliable"
+  "avaliable": "Avaliable",
+  "plocation": "Location"
 
 }
