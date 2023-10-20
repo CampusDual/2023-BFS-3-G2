@@ -28,5 +28,11 @@
   "NICKNAME": "Nombre de usuario",
   "EMAIL": "Email",
   "CAMERA": "Camara",
-  "LOCATION": "Ubicación"
+  "LOCATION": "Ubicación",
+  "main_photo": "Foto principal",
+  "product_name": "Nombre del producto",
+  "price": "Precio",
+  "status": "Estado",
+  "product_type": "Tipo de producto",
+  "avaliable": "Disponible"
 }

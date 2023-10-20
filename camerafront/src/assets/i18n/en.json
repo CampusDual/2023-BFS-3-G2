@@ -28,6 +28,12 @@
   "NICKNAME": "Nickname",
   "EMAIL": "Email",
   "CAMERA": "Camera",
-  "LOCATION": "Location"
+  "LOCATION": "Location",
+  "main_photo": "Main photo",
+  "product_name": "Product name",
+  "price": "Price",
+  "status": "Status",
+  "product_type": "Product type",
+  "avaliable": "Avaliable"
 
 }
