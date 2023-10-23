@@ -1,8 +1,8 @@
 <o-form-layout-manager title="{{'MYPRODUCTS' | oTranslate }}" separator=" " mode="tab" label-columns="product_name" >
   <div fxFill>
-    <o-table fxFlex #table attr="table" title="Table" service="products" entity="myProduct" keys="id_product"
+    <o-table fxFlex #table title="Table" service="products" entity="myProduct" keys="id_product"
       columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
-      visible-columns="main_photo;product_name;price;status;product_type;avaliable" quick-filter="true" 
+      visible-columns="main_photo;product_name;price;product_type;avaliable" quick-filter="true" 
       filter-case-sensitive="false" columns-visibility-button="true" select-all-checkbox="true" show-buttons-text="true"
       controls="true" show-title="true" 
       horizontal-scroll="false" auto-adjust="false" virtual-scroll="no" >
@@ -17,7 +17,12 @@
       </o-table-column>
       <o-table-column attr="avaliable" title="avaliable" type="boolean" render-true-value="check_circle"
         render-false-value="highlight_off" render-type="icon" boolean-type="boolean"></o-table-column>
-      <!-- <o-table-column attr="avaliable" title="avaliable" type="avaliable"
+      <!-- <o-table-column attr="status" service="products" entity="productStatus" parent-keys="status" keys="id" visible-columns="status"></o-table-column>  -->
+      <o-table fxFlex attr="mipolla" service="products" entity="productStatus"  keys="status" columns="id;status"
+        visible-columns="status">
+        <o-table-column attr="status"></o-table-column>
+      </o-table>
+      <!-- <o-table-column attr="avaliable" title="avaliable" type="avaliable" 
 true-value-type="string" true-value="YES"
 false-value-type="icon" false-value="not_interested">
 </o-table-column> -->

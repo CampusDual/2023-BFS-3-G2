@@ -2,7 +2,7 @@ package com.campusdual.cameraback.model.core.service;
 
 import com.campusdual.cameraback.api.core.service.IProductService;
 import com.campusdual.cameraback.model.core.dao.ProductDao;
-import com.campusdual.cameraback.model.core.dao.UserDao;
+import com.campusdual.cameraback.model.core.dao.ProductStatusDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +19,8 @@ import java.util.Map;
 public class ProductService implements IProductService {
     @Autowired
     private ProductDao productDao;
+    @Autowired
+    private ProductStatusDao productStatusDao;
 
     @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
@@ -35,12 +37,12 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public EntityResult productUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap) {
+    public EntityResult productUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
         return this.daoHelper.update(productDao, attrMap, keyMap);
     }
 
     @Override
-    public EntityResult productDelete(Map<?, ?> keyMap) {
+    public EntityResult productDelete(Map<String, Object> keyMap) {
         return this.daoHelper.delete(this.productDao, keyMap);
     }
 
@@ -48,6 +50,27 @@ public class ProductService implements IProductService {
     public EntityResult myProductQuery(Map<String, Object> keyMap, List<String> attrList) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         keyMap.put(ProductDao.USER, authentication.getName());
+
         return this.daoHelper.query(productDao, keyMap, attrList);
+    }
+
+    @Override
+    public EntityResult productStatusQuery(Map<String, Object> keyMap, List<String> attrList) {
+        return this.daoHelper.query(productStatusDao, keyMap, attrList);
+    }
+
+    @Override
+    public EntityResult productStatusInsert(Map<String, Object> attrMap) {
+        return null;
+    }
+
+    @Override
+    public EntityResult productStatusUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+        return null;
+    }
+
+    @Override
+    public EntityResult productStatusDelete(Map<String, Object> keyMap) {
+        return null;
     }
 }
