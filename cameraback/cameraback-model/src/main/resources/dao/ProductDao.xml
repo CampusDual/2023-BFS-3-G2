@@ -11,19 +11,9 @@
     <UpdateKeys>
         <Column>id_product</Column>
     </UpdateKeys>
+    <GeneratedKey>id_product</GeneratedKey>
     <Queries>
         <Query id="default">
-            <ValidColumns>
-                <Column>id_product</Column>
-                <Column>product_name</Column>
-                <Column>price</Column>
-                <Column>status</Column>
-                <Column>product_type</Column>
-                <Column>avaliable</Column>
-                <Column>main_photo</Column>
-                <Column>plocation</Column>
-                <Column>tuser_user_</Column>
-            </ValidColumns>
             <Sentence>
                 <![CDATA[
                     SELECT
@@ -35,17 +25,6 @@
             </Sentence>
         </Query>
         <Query id="products">
-            <ValidColumns>
-                <Column>id_product</Column>
-                <Column>product_name</Column>
-                <Column>price</Column>
-                <Column>status</Column>
-                <Column>product_type</Column>
-                <Column>avaliable</Column>
-                <Column>main_photo</Column>
-                <Column>plocation</Column>
-                <Column>tuser_user_</Column>
-            </ValidColumns>
             <Sentence>
                 <![CDATA[
                     SELECT

@@ -6,10 +6,11 @@ import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { ProfileHomeComponent } from './profile-home/profile-home.component';
 import { MyproductsHomeComponent } from './myproducts-home/myproducts-home.component';
 import { MyproductsDetailComponent } from './myproducts-detail/myproducts-detail.component';
+import { MyproductsNewComponent } from './myproducts-new/myproducts-new.component';
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent],
+  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,

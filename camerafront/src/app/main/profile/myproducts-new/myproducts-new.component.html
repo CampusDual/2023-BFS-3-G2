@@ -1,0 +1,22 @@
+<o-form service="products" entity="product" keys="product_name"
+  show-header-navigation="no" header-actions="R;I;U;D">
+  <o-row>
+    <o-column>
+      <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
+    </o-column>
+    <o-column fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="product_name"required="yes"></o-text-input>
+        <!-- <o-date-input attr="STARTDATE" fxFlex="20"></o-date-input> -->
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="status" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input attr="avaliable" ></o-text-input>
+      </o-row>
+      <o-row>
+        <o-text-input class="input-padding" attr="product_type" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input attr="plocation" fxFlex></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>

@@ -28,7 +28,9 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public EntityResult productInsert(Map<?, ?> attrMap) {
+    public EntityResult productInsert(Map<String, Object> attrMap) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        attrMap.put(ProductDao.USER, authentication.getName());
         return this.daoHelper.insert(productDao, attrMap);
     }
 

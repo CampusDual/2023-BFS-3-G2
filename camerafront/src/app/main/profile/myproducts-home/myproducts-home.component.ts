@@ -16,9 +16,9 @@ export class MyproductsHomeComponent implements OnInit {
   ngAfterViewInit(){
     this.table.queryData({tuser_user_:this.auth.getSessionInfo().user});
   }
-  // ngOnChanges(){
-  //   this.table.queryData({tuser_user_:this.auth.getSessionInfo().user});
-  // }
+  ngOnChanges(){
+    this.table.queryData({tuser_user_:this.auth.getSessionInfo().user});
+  }
   
 
 }
