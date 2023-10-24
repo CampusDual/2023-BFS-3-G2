@@ -8,7 +8,6 @@ import { ProductsDetailComponent } from './products-detail/products-detail.compo
 
 
 @NgModule({
-  declarations: [ProductsHomeComponent],
   declarations: [ProductsHomeComponent, ProductsDetailComponent],
   imports: [
     CommonModule,
