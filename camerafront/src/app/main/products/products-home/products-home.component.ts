@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductsDetailComponent } from '../products-detail/products-detail.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-products-home',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(protected dialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  public openDetail(data: any): void {
+    this.dialog.open(ProductsDetailComponent, {
+      height: 'auto',
+      width: 'auto',
+      data: data
+    });
+  }
 }
