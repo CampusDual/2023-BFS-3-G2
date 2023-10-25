@@ -1,3 +1,21 @@
 <o-app-layout show-language-selector="yes">
   <router-outlet></router-outlet>
+  <o-app-layout-header position="start">
+    <button *ngIf="light" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>light_mode</mat-icon>
+    </button>
+    <button *ngIf="!light" mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>dark_mode</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="light_mode()">
+        <mat-icon>light_mode</mat-icon>
+        <span>Light</span>
+      </button>
+      <button mat-menu-item (click)="dark_mode()">
+        <mat-icon>dark_mode</mat-icon>
+        <span>Dark</span>
+      </button>
+    </mat-menu>
+  </o-app-layout-header>
 </o-app-layout>
