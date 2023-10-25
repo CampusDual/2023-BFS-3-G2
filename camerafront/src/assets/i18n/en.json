@@ -36,6 +36,7 @@
   "product_type": "Product type",
   "avaliable": "Avaliable",
   "plocation": "Location",
-  "statusname": "Status"
+  "statusname": "Status",
+  "tuser_user_":"User"
 
 }

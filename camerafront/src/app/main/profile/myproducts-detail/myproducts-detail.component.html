@@ -1,55 +1,27 @@
 <o-form service="products" entity="product" keys="id_product" columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
   
   show-header-navigation="no" >
-  <!-- oHidden -->
-  <o-text-input  enabled="no" attr="id_product" sql-type="INTEGER"  ></o-text-input>
+  <!--  -->
+  <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"  ></o-text-input>
   <o-row>
     <o-column>
-
       <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
     </o-column>
     <o-column fxFlex>
       <o-row>
-        <o-text-input class="input-padding" attr="product_name"required="yes"></o-text-input>
-        <!-- <o-date-input attr="STARTDATE" fxFlex="20"></o-date-input> -->
+        <o-text-input class="input-padding" attr="product_name" required="yes"></o-text-input>
       </o-row>
       <o-row>
-        <!-- <o-text-input class="input-padding" attr="status" fxFlex="40" required="yes"></o-text-input> -->
         <o-combo attr="status" service="products" entity="productStatus" keys="id" value-column="id" columns="id;status" visible-columns="status" read-only="no" required="yes"></o-combo>
         <o-checkbox attr="avaliable" read-only="no"></o-checkbox>
-        <!-- <o-text-input attr="avaliable" ></o-text-input>[data]="true" -->
-        <!-- <o-text-input attr="avaliable" title="avaliable" type="boolean" render-true-value="check_circle"
-        render-false-value="highlight_off" render-type="icon" boolean-type="boolean"></o-text-input> -->
       </o-row>
       <o-row>
         <o-text-input class="input-padding" attr="product_type" fxFlex="40" required="yes"></o-text-input>
-
         <o-text-input attr="plocation" fxFlex></o-text-input>
-
-        <!-- <o-nif-input attr="ID" class="input-padding" fxFlex="40" required="yes"></o-nif-input> -->
-        <!-- <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input> -->
-        <!-- <o-combo attr="CUSTOMERTYPEID" class="input-padding" fxFlex="20" service="customers" 
-             entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" 
-             visible-columns="DESCRIPTION" value-column="CUSTOMERTYPEID"></o-combo> -->
       </o-row>
       <o-row>
         <o-currency-input attr="price" fxFlex="20" currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
       </o-row>
-      <!-- <o-row>
-          <o-email-input attr="EMAIL" fxFlex></o-email-input>
-        </o-row>
-        <o-row>
-          <o-text-input attr="ADDRESS" fxFlex></o-text-input>
-        </o-row>
-        <o-row>
-          <o-real-input attr="LONGITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" 
-            class="input-padding" fxFlex="50"></o-real-input>
-          <o-real-input attr="LATITUDE" decimal-separator="," max-decimal-digits="10" min-decimal-digits="0" 
-            fxFlex="50"></o-real-input>
-        </o-row>
-        <o-row>
-            <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
-          </o-row> -->
     </o-column>
   </o-row>
 </o-form>
