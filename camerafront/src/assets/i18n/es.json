@@ -37,5 +37,9 @@
   "avaliable": "Disponible",
   "plocation": "Localización",
   "statusname": "Estado",
-  "tuser_user_":"Usuario"
+  "tuser_user_":"Usuario",
+  "PHOTO": "Fotografia",
+  "Excelente": "Excelente",
+  "Correcto": "Correcto",
+  "Muy bueno": "Muy bueno"
 }

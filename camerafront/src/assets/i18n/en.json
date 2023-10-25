@@ -37,6 +37,10 @@
   "avaliable": "Avaliable",
   "plocation": "Location",
   "statusname": "Status",
-  "tuser_user_":"User"
+  "tuser_user_":"User",
+  "PHOTO": "Photo",
+  "Excelente": "Excelent",
+  "Correcto": "Correct",
+  "Muy bueno": "Very good"
 
 }
