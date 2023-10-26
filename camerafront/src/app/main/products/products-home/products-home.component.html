@@ -1,62 +1,48 @@
-<o-grid
-  #grid
-  attr="productGrid"
-  title="Productos en alquiler"
-  cols="5"
-  query-rows="8"
-  show-page-size="true"
-  page-size-options="4;8;16"
-  orderable="true"
-  quick-filter="true"
-  grid-item-height="1:2"
-  sortable-columns="product_name;price"
-  sort-column=""
-  controls="true"
-  refresh-button="true"
-  insert-button="false"
-  pagination-controls="false"
-  gutter-size="5px"
-  fixed-header="yes"
-  [ngStyle]="{ height: 'auto' }"
-  service="products"
-  entity="product"
-  keys="id_product"
-  columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_;statusname;pdetails" 
-  visible-columns="main_photo;product_name;price;status;product_type;avaliable"
-  detail-mode="none">
+<o-grid #grid attr="productGrid" title="Productos en alquiler" cols="5" query-rows="8" show-page-size="true"
+  page-size-options="4;8;16" orderable="true" quick-filter="true" grid-item-height="1:2"
+  sortable-columns="product_name;price" sort-column="" controls="true" refresh-button="true" insert-button="false"
+  pagination-controls="false" gutter-size="5px" fixed-header="yes" [ngStyle]="{ height: 'auto' }" service="products"
+  entity="product" keys="id_product"
+  columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_;statusname;pdetails"
+  visible-columns="main_photo;product_name;price;status;product_type;avaliable" detail-mode="none">
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding (click)="openDetail(list)" class="container-item">
-      <div class="image">
-        <img src="data:image/png;base64,{{list.main_photo}}">
-      </div>
-      <h2>{{ list.product_name }}</h2>
-      <div class="price">
-        <b>{{ 'price' | oTranslate}}: </b> <span> {{ list.price }} € </span>
-      </div>
-      <div class="status">
-        <b>{{ 'status' | oTranslate}}: </b><span>{{ list.statusname | oTranslate }} </span>
-      </div>
-      <div class="product_type">
-        <b>{{ 'product_type' | oTranslate}}: </b>
-        <span>{{list.product_type | oTranslate}}</span>
-      </div>
-      <div class="plocation">
-        <b>{{ 'plocation' | oTranslate}}: </b><span>{{ list.plocation }} </span>
-      </div>
-      <div class="avaliable">
-        <span><b>{{ 'avaliable' | oTranslate}}: </b> </span>
-        <span>
-          <mat-icon
-            [ngClass]="{
-              'green-check': list.avaliable,
-              'red-check': !list.avaliable
-            }">
-            {{ list.avaliable ? "check_circle" : "cancel" }}
-          </mat-icon>
-        </span>
-      </div>
-      <div class="body">
-        {{ list.body }}
+      <div class="item-div">
+        <div class="image">
+          <img src="data:image/png;base64,{{list.main_photo}}">
+        </div>
+        <div class="details">
+          <div class="name">
+            <h2>{{ list.product_name }}</h2>
+          </div>
+          <div class="price">
+            <b>{{ 'price' | oTranslate}}: </b> <span> {{ list.price }} € </span>
+          </div>
+          <div class="status">
+            <b>{{ 'status' | oTranslate}}: </b><span>{{ list.statusname | oTranslate }} </span>
+          </div>
+          <div class="product_type">
+            <b>{{ 'product_type' | oTranslate}}: </b>
+            <span>{{list.product_type | oTranslate}}</span>
+          </div>
+          <div class="plocation">
+            <b>{{ 'plocation' | oTranslate}}: </b><span>{{ list.plocation }} </span>
+          </div>
+          <div class="avaliable">
+            <span><b>{{ 'avaliable' | oTranslate}}: </b> </span>
+            <span>
+              <mat-icon [ngClass]="{
+                'green-check': list.avaliable,
+                'red-check': !list.avaliable
+              }">
+                {{ list.avaliable ? "check_circle" : "cancel" }}
+              </mat-icon>
+            </span>
+          </div>
+          <div class="body">
+            {{ list.body }}
+          </div>
+        </div>
       </div>
     </o-column>
   </o-grid-item>

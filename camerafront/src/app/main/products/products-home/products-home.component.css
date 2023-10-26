@@ -4,6 +4,9 @@
   background-color: rgb(119, 118, 116);
   border: 1px double rgb(102, 21, 71);
   border-radius: 10px;
+  .item-div {
+    margin: 3px;
+  }
   .name {
     margin: 8px 0;
     font-size: 0.9em;
@@ -14,14 +17,18 @@
     display:contents;
   } */
   .image {
-    width: auto; 
-    height: 50%; 
+    width:100%;
+    weight: 1; 
     overflow: hidden; 
+  }
+  .details{
+    weight: 1;
   }
   
   .image img {
-    width: 100%; /* Haz que la imagen ocupe el 100% del ancho del contenedor */
-    height: auto;
+    /* width: 100%; Haz que la imagen ocupe el 100% del ancho del contenedor */
+    max-height: 50%;
+    border-radius: 10px;
   }
   /* img{
     height: 150px;

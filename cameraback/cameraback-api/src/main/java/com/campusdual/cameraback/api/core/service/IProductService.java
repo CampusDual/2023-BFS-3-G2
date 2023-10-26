@@ -12,6 +12,7 @@ public interface IProductService {
     public EntityResult productUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap);
     public EntityResult productDelete(Map<String, Object> keyMap);
     public EntityResult myProductQuery(Map<String, Object> keyMap, List<String> attrList);
+    public EntityResult myProductDelete(Map<String, Object> keyMap);
     public EntityResult productStatusQuery(Map<String, Object> keyMap, List<String> attrList);
     public EntityResult productStatusInsert(Map<String, Object> attrMap);
     public EntityResult productStatusUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap);
