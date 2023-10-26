@@ -12,6 +12,7 @@
   overflow: hidden; */
   /* justify-content: flex-end; */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  color: white;
 
   .image {
     height: 55%;
@@ -77,7 +78,7 @@
     font-size: 150%;
     margin: 1px 5px 1px 1px;
     overflow: hidden;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
   }
   .price .number{
     font-size: 200%;
@@ -88,7 +89,7 @@
 }
 
 .green-check {
-  background: linear-gradient(to right, #38c725, #b2d8aa);
+  background: linear-gradient(to top left, #5f745b,#38c725 );
   /* Cambia los códigos de color según tus preferencias */
 
   /* color:
@@ -97,5 +98,5 @@
 
 .red-check {
   /* color: red; */
-  background: linear-gradient(to right, #ff4646, #d6aea9);
+  background: linear-gradient(to top left,#a15e5e, #e71515 );
 }
