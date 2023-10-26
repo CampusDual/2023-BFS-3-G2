@@ -1,6 +1,7 @@
 <o-form service="products" entity="product" keys="id_product"
   columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
-  show-header-navigation="no" (onDataLoaded)="loadData($event)">
+  show-header-navigation="yes" header-actions="U;D">
+   <!-- (onDataLoaded)="loadData($event)" -->
   <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
   <o-row>
     <o-column>

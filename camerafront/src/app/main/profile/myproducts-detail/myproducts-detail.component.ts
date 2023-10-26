@@ -18,12 +18,12 @@ export class MyproductsDetailComponent implements OnInit {
   },];
 
   constructor() {}
-  public data: any = {};
+  // public data: any = {};
 //@Inject(MAT) public data: any = {statusname:""}
   ngOnInit() {
   }
   public loadData(ev){
-    this.data = ev;
+    // this.data = ev;
     // tra.get('PHOTO',{});
     
   }
