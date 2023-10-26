@@ -39,8 +39,11 @@
   "plocation": "Localización",
   "statusname": "Estado",
   "tuser_user_":"Usuario",
-  "PHOTO": "Fotografia",
   "Excelente": "Excelente",
   "Correcto": "Correcto",
-  "Muy bueno": "Muy bueno"
+  "Muy bueno": "Muy bueno",
+  "SOUND": "Sonido",
+  "VIDEO": "Video",  
+  "PHOTO": "Fotografía",
+  "pdetails": "Otros detalles"
 }

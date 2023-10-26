@@ -21,5 +21,6 @@ public class ProductDao extends OntimizeJdbcDaoSupport {
     public static final String PHOTO = "main_photo";
     public static final String LOCATION = "plocation";
     public static final String USER = "tuser_user_";
+    public static final String DETAILS = "pdetails";
 
 }
