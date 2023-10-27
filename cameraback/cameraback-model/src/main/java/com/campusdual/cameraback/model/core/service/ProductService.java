@@ -53,6 +53,10 @@ public class ProductService implements IProductService {
 
         return this.daoHelper.query(productDao, keyMap, attrList);
     }
+    @Override
+    public EntityResult myProductDelete(Map<String, Object> keyMap) {
+        return this.daoHelper.delete(this.productDao, keyMap);
+    }
 
     @Override
     public EntityResult productStatusQuery(Map<String, Object> keyMap, List<String> attrList) {
