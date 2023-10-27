@@ -1,6 +1,6 @@
 <o-form-layout-manager title="{{'MYPRODUCTS' | oTranslate }}" separator=" " mode="tab" label-columns="product_name" >
   <div fxFill>
-    <o-table fxFlex #table service="products" entity="myProduct" keys="id_product"
+    <o-table class="container" auto-adjust="yes" auto-align-titles="yes" #table service="products" entity="myProduct" keys="id_product"
       columns="id_product;product_name;price;statusname;product_type;avaliable;main_photo;plocation;tuser_user_;status"
       visible-columns="main_photo;product_name;statusname;product_type;price;avaliable"
       quick-filter="true" 

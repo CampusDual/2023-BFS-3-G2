@@ -19,6 +19,7 @@
 
 .img-container {
   /* height: auto; */
+  border-top-left-radius: 50px;
   height: 100%;
   width: 80%;
   overflow: hidden;
