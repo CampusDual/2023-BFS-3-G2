@@ -1,32 +1,40 @@
-<o-form service="products" entity="product" keys="id_product"
+<div class="container">
+  <o-form fxLayout="column" service="products" entity="product" keys="id_product"
   columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
   show-header-navigation="yes" header-actions="U;D">
-   <!-- (onDataLoaded)="loadData($event)" -->
+  <!-- (onDataLoaded)="loadData($event)" -->
   <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
-  <o-row>
-    <o-column>
+  <!-- <o-row> -->
+    <o-column class="image-container">
       <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
         image-type="base64"></o-image>
     </o-column>
-    <o-column fxFlex>
+    <o-column class="detail-container">
       <o-row>
-        <o-text-input class="input-padding" attr="product_name" required="yes"></o-text-input>
+        <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input>
       </o-row>
       <o-row>
-        <o-combo attr="status" service="products" entity="productStatus" keys="id" value-column="id" columns="id;status"
+        <o-combo fxFill attr="status" service="products" entity="productStatus" keys="id" value-column="id" columns="id;status"
           visible-columns="status" read-only="no" required="yes" translate="yes" null-selection="no"></o-combo>
+      </o-row>
+
+      <o-row>
+        <o-combo fxFill attr="product_type" [static-data]="productTypeArray" value-column="typeText" columns="typeText"
+          visible-columns="typeText" read-only="no" required="yes" null-selection="no" translate="yes"></o-combo>
+      </o-row>
+      <o-row>
+        <o-text-input fxFill attr="plocation"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-currency-input fxFill attr="price"  currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
+      </o-row>
+      <o-row>
+        <o-text-input fxFill attr="pdetails" ></o-text-input>
+      </o-row>
+      <o-row class="avaliable-container">
         <o-checkbox attr="avaliable" read-only="no"></o-checkbox>
       </o-row>
-      <o-row>
-        <o-combo attr="product_type" [static-data]="productTypeArray" value-column="typeText" columns="typeText" visible-columns="typeText" read-only="no" required="yes" null-selection="no" translate="yes"></o-combo>
-        <o-text-input attr="plocation" fxFlex></o-text-input>
-      </o-row>
-      <o-row>
-        <o-currency-input attr="price" fxFlex="20" currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
-      </o-row>
-      <o-row>
-        <o-text-input attr="pdetails" fxFlex></o-text-input>
-      </o-row>
     </o-column>
-  </o-row>
+  <!-- </o-row> -->
 </o-form>
+</div>

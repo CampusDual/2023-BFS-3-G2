@@ -106,3 +106,4 @@
   /* color: red; */
   background: linear-gradient(to top left,#a15e5e, #e71515 );
 }
+.mat-dialog-container {padding: 0px;}

@@ -1,0 +1,20 @@
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.image-container {}
+
+.detail-container {
+    height: 100%;
+    padding: 0px 60px 60px 60px;
+}
+
+.detail-container o-row {
+    padding: 5px 0px 5px 5px;
+}
+
+.avaliable-container {
+    padding: 5px 0px 5px 5px;
+    height: 50px;
+}
