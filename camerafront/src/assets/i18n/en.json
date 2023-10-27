@@ -45,6 +45,8 @@
   "SOUND": "Sound",
   "VIDEO": "Video",
   "PHOTO": "Photo",
-  "pdetails": "Other details"
+  "pdetails": "Other details",
+  "from": "from",
+  "day": "day"
 
 }

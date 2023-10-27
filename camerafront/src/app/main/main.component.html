@@ -1,5 +1,6 @@
-<o-app-layout show-language-selector="yes">
+<o-app-layout show-language-selector="yes" sidenav-opened="no" >
   <router-outlet></router-outlet>
+  <o-user-info-configuration show-settings="no"></o-user-info-configuration>
   <o-app-layout-header position="end">
     <button *ngIf="light" mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>light_mode</mat-icon>
