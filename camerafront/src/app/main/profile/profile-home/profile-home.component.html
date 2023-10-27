@@ -1,10 +1,14 @@
-<o-form #form  attr="profile_detail" 
-service="users" entity="user" fxLayout="column" keys="user_" keys-sql-types="VARCHAR"
-show-header="no" header-actions="R" show-header-navigation="no"  
-editable-detail="no" >
-  <o-text-input attr="user_" label="NICKNAME"></o-text-input> 
-  <o-text-input attr="name" label="NAME" ></o-text-input>
-  <o-text-input attr="surname" label="SURNAME"></o-text-input>
-  <o-text-input attr="email" label="EMAIL" ></o-text-input>
-  <o-text-input attr="ulocation" label="LOCATION" ></o-text-input>
-</o-form>
+
+<div class="container">
+  <span>{{'YOUR DATA' | oTranslate}}:</span>
+  <div class="data-container">
+    <o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column" keys="user_"
+      keys-sql-types="VARCHAR" show-header="no" header-actions="R" show-header-navigation="no" editable-detail="no">
+      <o-text-input attr="user_" label="NICKNAME" Fx></o-text-input>
+      <o-text-input attr="name" label="NAME"></o-text-input>
+      <o-text-input attr="surname" label="SURNAME"></o-text-input>
+      <o-text-input attr="email" label="EMAIL"></o-text-input>
+      <o-text-input attr="ulocation" label="LOCATION"></o-text-input>
+    </o-form>
+  </div>
+</div>
