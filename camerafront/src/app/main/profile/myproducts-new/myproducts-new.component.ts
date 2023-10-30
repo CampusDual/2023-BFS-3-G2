@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyproductsNewComponent implements OnInit {
 
+  public productTypeArray = [{
+    typeText: 'SOUND'
+  },{
+    typeText: 'VIDEO'
+  },{
+    typeText: 'PHOTO'
+  },];
+
+
   constructor() { }
 
   ngOnInit() {

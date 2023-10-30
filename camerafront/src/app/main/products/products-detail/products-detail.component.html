@@ -1,52 +1,47 @@
-<o-form #form 
-show-header="no" header-actions="R" show-header-navigation="no"  
-editable-detail="no" >
-<!-- (onDataLoaded)="loadData($event)" service="products" entity="product" keys="id_product"
-columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_;statusname"-->
-  <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"  ></o-text-input>
-  <o-row>
-    <o-column >
-      <!-- <o-image id="main_photo" attr="main_photo"  sql-type="OTHER" image-type="base64" ></o-image> -->
-      <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
-    </o-column>
-    <o-column >
-      <o-row>
-        <!-- <o-text-input attr="product_name" fxFlex></o-text-input> -->
-        <h1>{{data.product_name}}</h1>
-        <!-- <o-text-input attr="avaliable" read-only="yes">
-          <mat-icon oMatSuffix>sentiment_very_satisfied</mat-icon>
-        </o-text-input> -->
-      </o-row>
-      <o-row>
-        <b>{{ 'avaliable' | oTranslate}}</b>
-        <mat-icon [ngClass]="{'green-check': data.avaliable,'red-check': !data.avaliable}">{{ data.avaliable ? "check_circle" : "cancel" }}</mat-icon>
-        <!-- <span>: {{data.avaliable}}</span> -->
-      </o-row>
-      <o-row>
-        <b>{{ 'tuser_user_' | oTranslate}}</b>
-        <span>: {{data.tuser_user_}}</span>
-        <!-- <o-text-input class="input-padding" attr="tuser_user_"></o-text-input> -->
-      </o-row>
-      <o-row>
-        <!-- <o-text-input attr="statusname" title="status" sql-type="VARCHAR" translate="yes" type="translate" ></o-text-input> -->
-        <b>{{ 'status' | oTranslate}}</b>
-        <span>: {{data.statusname | oTranslate}}</span>
-      </o-row>
-      <o-row>
-        <!-- <o-text-input class="input-padding" attr="product_type"  ></o-text-input> -->
-        <b>{{ 'product_type' | oTranslate}}</b>
-        <span>: {{data.product_type}}</span>
-      </o-row>
-      <o-row>
-        <!-- <o-text-input attr="plocation"></o-text-input> -->
-        <b>{{ 'plocation' | oTranslate}}</b>
-        <span>: {{data.plocation}}</span>
-      </o-row>
-      <o-row>
-        <!-- <o-currency-input attr="price"  currency-symbol="EUR" max-decimal-digits="2"></o-currency-input> -->
-        <b>{{ 'price' | oTranslate}}</b>
-        <span>: {{data.price}}€</span>
-      </o-row>
-    </o-column>
-  </o-row>
-</o-form>
+<o-row layout-padding (click)="openDetail(list)" class="container" (onDataLoaded)="loadData($event)">
+  <!-- <div class="item-div"> -->
+  <div class="img-container">
+    <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
+  </div>
+  <div class="data-container">
+    <div class="name-container">
+      <b>{{ data.product_name }}</b>
+    </div>
+    <div class="detail-container">
+    <div class="avaliable">
+      <span>{{ 'avaliable' | oTranslate}}: </span>
+      <b>
+        <mat-icon [ngClass]="{
+            'green-check': data.avaliable,
+            'red-check': !data.avaliable
+          }">
+          {{ data.avaliable ? "check_circle" : "cancel" }}
+        </mat-icon>
+      </b>
+    </div>
+    
+      <div>
+        <span>{{ 'tuser_user_' | oTranslate}}</span>
+        <b>: {{data.tuser_user_}}</b>
+      </div>
+      <div class="status">
+        <span>{{ 'status' | oTranslate}}: </span><b>{{ data.statusname | oTranslate }} </b>
+      </div>
+      <div class="product_type">
+        <span>{{ 'product_type' | oTranslate}}: </span><b>{{data.product_type | oTranslate}}</b>
+      </div>
+      <div class="plocation">
+        <span>{{ 'plocation' | oTranslate}}: </span><b>{{ data.plocation }} </b>
+      </div>
+      <div>
+        <span>{{ 'pdetails' | oTranslate}}</span>
+        <b>: {{data.pdetails}}</b>
+      </div>
+    </div>
+    <div class="price-container">
+      <b>{{ 'from' | oTranslate}} </b><b class="number">{{ data.price }}</b><b>€</b><b class="day">/{{ 'day' |
+        oTranslate}} </b>
+    </div>
+  </div>
+  <!-- </div> -->
+</o-row>

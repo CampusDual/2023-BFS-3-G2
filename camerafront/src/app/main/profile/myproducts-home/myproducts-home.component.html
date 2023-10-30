@@ -1,16 +1,13 @@
 <o-form-layout-manager title="{{'MYPRODUCTS' | oTranslate }}" separator=" " mode="tab" label-columns="product_name" >
   <div fxFill>
-    <o-table fxFlex #table service="products" entity="myProduct" keys="id_product"
+    <o-table class="container" auto-adjust="yes" auto-align-titles="yes" #table service="products" entity="myProduct" keys="id_product"
       columns="id_product;product_name;price;statusname;product_type;avaliable;main_photo;plocation;tuser_user_;status"
-      visible-columns="main_photo;product_name;price;statusname;product_type;avaliable" quick-filter="true" 
+      visible-columns="main_photo;product_name;statusname;product_type;price;avaliable"
+      quick-filter="true" 
       filter-case-sensitive="false" columns-visibility-button="true" select-all-checkbox="true" show-buttons-text="true"
       controls="true" show-title="true" 
       horizontal-scroll="false" auto-adjust="false" virtual-scroll="no" >
-      <!-- Filter columns -->
       <o-table-columns-filter columns="status;id_product;product_name"></o-table-columns-filter>
-      <!-- Custom definition button -->
-      <!-- <o-table-button attr="action1" (onClick)="onAction1()" label="Action1" icon="alarm"></o-table-button> -->
-      <!-- Custom definition columns -->
       <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
         <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
         </o-table-cell-renderer-image>
@@ -18,24 +15,8 @@
       <o-table-column attr="avaliable" title="avaliable" type="boolean" render-true-value="check_circle"
         render-false-value="highlight_off" render-type="icon" boolean-type="boolean" ></o-table-column>
         <o-table-column attr="statusname" title="status" type="translate"></o-table-column>
-        <!-- <o-table-column attr="status">
-          <o-table-cell-renderer-service service="products" entity="productStatus" value-column="id" columns="id;status" visible-columns="status">
-        </o-table-cell-renderer-service>
-        <o-table-cell-renderer-service service="products" entity="productStatus" value-column="stuatus" translate="no" columns="status;id" visible-columns="status"></o-table-cell-renderer-service>
-        </o-table-column> -->
-      
-      <!-- <o-table fxFlex attr=""  entity="productStatus"  keys="status" columns="id;status"
-        visible-columns="status">
-        <o-table-column attr="status"></o-table-column>
-      </o-table> -->
-      <!-- <o-table-column attr="avaliable" title="avaliable" type="avaliable" 
-true-value-type="string" true-value="YES"
-false-value-type="icon" false-value="not_interested">
-</o-table-column> -->
-      <!-- <o-table-column attr="NOTES" title="NOTES" multiline="no" width="300px" tooltip="yes"></o-table-column> -->
-      <!-- <o-table-column attr="action" width="64px">
-  <o-table-cell-renderer-action (onClick)="actionClick()" icon="storage"></o-table-cell-renderer-action>
-</o-table-column> -->
+        <o-table-column attr="product_type" title="product_type" type="translate"></o-table-column>
+        <o-table-column attr="price" title="price" currency-symbol="€" type="currency"></o-table-column>
     </o-table>
   </div>
 </o-form-layout-manager>

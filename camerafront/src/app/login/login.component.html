@@ -21,7 +21,7 @@
               </mat-error>
             </mat-form-field>
             <mat-form-field fxFill class="m-top-24">
-              <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password"
+              <input color="black" matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password"
                 [formControl]="pwdCtrl">
               <mat-error *ngIf="pwdCtrl.hasError('required')">
                 {{ 'ERROR_PASS_REQUIRED' | oTranslate }}
@@ -30,10 +30,10 @@
           </div>
 
           <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="10px" class="m-top-24">
-            <mat-checkbox class="text">{{ 'REMEMBER_ME' | oTranslate }}</mat-checkbox>
+            <mat-checkbox color="black" class="text">{{ 'REMEMBER_ME' | oTranslate }}</mat-checkbox>
           </div>
 
-          <button mat-raised-button color="primary" type="submit">{{ 'LOGIN' | oTranslate }}</button>
+          <button mat-raised-button color="black" type="submit">{{ 'LOGIN' | oTranslate }}</button>
           <div layout-padding></div>
           <div layout-padding></div>
           <div fxLayout="column" fxLayoutAlign="center center" layout-padding>

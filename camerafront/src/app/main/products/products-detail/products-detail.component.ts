@@ -8,13 +8,13 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 })
 export class ProductsDetailComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
-  // public data: any = {statusname:""};
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any = {statusname:""}) { }
+  // public data: any ;
 
   ngOnInit() {
   }
-  // public loadData(ev){
-  //   this.data = ev;
-  // }
+  public loadData(ev){
+    this.data = ev;
+  }
 
 }

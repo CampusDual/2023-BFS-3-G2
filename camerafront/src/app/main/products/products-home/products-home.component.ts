@@ -15,9 +15,10 @@ export class ProductsHomeComponent implements OnInit {
   }
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
-      height: 'auto',
-      width: 'auto',
-      data: data
+      height: '70%',
+      width: '75%',
+      data: data,
+      panelClass: 'custom-dialog-container'
     });
   }
 }
