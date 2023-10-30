@@ -11,11 +11,11 @@
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="light_mode()">
         <mat-icon>light_mode</mat-icon>
-        <span>Light</span>
+        <span>{{ 'LIGHT' | oTranslate}}</span>
       </button>
       <button mat-menu-item (click)="dark_mode()">
         <mat-icon>dark_mode</mat-icon>
-        <span>Dark</span>
+        <span>{{ 'DARK' | oTranslate}}</span>
       </button>
     </mat-menu>
   </o-app-layout-header>

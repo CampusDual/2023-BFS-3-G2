@@ -17,7 +17,7 @@
   "ERROR_USER_PASS_INCORRECT": "Usuario o contraseña incorrecta",
   "REMEMBER_ME": "Recuérdame",
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
-  "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
+  "FOOTER_CREATED_BY": "Creado por CameraRent Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
   "PRODUCTS": "Productos",
   "PRODUCT": "Producto",
@@ -49,5 +49,7 @@
   "from": "desde",
   "day": "dia",
   "YOUR DATA": "Tus datos",
-  "PRODUCTS TITLE": "Productos en alquiler"
+  "PRODUCTS TITLE": "Productos en alquiler",
+  "LIGHT": "Claro",
+  "DARK": "Oscuro"
 }
