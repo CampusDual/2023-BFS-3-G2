@@ -60,13 +60,6 @@ public class ProductService implements IProductService {
 
     @Override
     public EntityResult productStatusQuery(Map<String, Object> keyMap, List<String> attrList) {
-/*        HashMap<String, Object> mapaInvertido= null;
-
-        // Itera sobre el mapa original y cambia las claves por valores y viceversa
-        for (Map.Entry<String, Object> entry : keyMap.entrySet()) {
-            String key = entry.getValue().toString();
-            mapaInvertido.put(key, entry.getKey());
-        }*/
         return this.daoHelper.query(productStatusDao, keyMap, attrList);
     }
 
