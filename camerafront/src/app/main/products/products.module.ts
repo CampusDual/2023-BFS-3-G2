@@ -5,10 +5,11 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { OntimizeWebModule } from 'ontimize-web-ngx';
 import { ProductsHomeComponent } from './products-home/products-home.component';
 import { ProductsDetailComponent } from './products-detail/products-detail.component';
+import { ProductsNewRentalComponent } from './products-new-rental/products-new-rental.component';
 
 
 @NgModule({
-  declarations: [ProductsHomeComponent, ProductsDetailComponent],
+  declarations: [ProductsHomeComponent, ProductsDetailComponent, ProductsNewRentalComponent],
   imports: [
     CommonModule,
     OntimizeWebModule,

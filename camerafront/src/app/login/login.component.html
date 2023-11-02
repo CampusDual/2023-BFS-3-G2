@@ -21,7 +21,7 @@
               </mat-error>
             </mat-form-field>
             <mat-form-field fxFill class="m-top-24">
-              <input color="black" matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password"
+              <input matInput class="mat-input" #password placeholder="{{ 'PASSWORD' | oTranslate }}" id="password" type="password"
                 [formControl]="pwdCtrl">
               <mat-error *ngIf="pwdCtrl.hasError('required')">
                 {{ 'ERROR_PASS_REQUIRED' | oTranslate }}
@@ -36,11 +36,11 @@
           <button mat-raised-button color="black" type="submit">{{ 'LOGIN' | oTranslate }}</button>
           <div layout-padding></div>
           <div layout-padding></div>
-          <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
+          <!-- <div fxLayout="column" fxLayoutAlign="center center" layout-padding>
             <span class="login_info">{{ 'EXAMPLE_LOGIN_INFO' | oTranslate }}:</span>
             <span class="dark_text">{{ 'USERNAME' | oTranslate }} : demo</span>
             <span class="dark_text">{{ 'PASSWORD' | oTranslate }} : demouser</span>
-          </div>
+          </div> -->
         </form>
       </div>
 

@@ -1,4 +1,4 @@
-<o-row layout-padding (click)="openDetail(list)" class="container" (onDataLoaded)="loadData($event)">
+<o-row layout-padding class="container" (onDataLoaded)="loadData($event)">
   <!-- <div class="item-div"> -->
   <div class="img-container">
     <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
@@ -8,18 +8,18 @@
       <b>{{ data.product_name }}</b>
     </div>
     <div class="detail-container">
-    <div class="avaliable">
-      <span>{{ 'avaliable' | oTranslate}}: </span>
-      <b>
-        <mat-icon [ngClass]="{
+      <div class="avaliable">
+        <span>{{ 'avaliable' | oTranslate}}: </span>
+        <b>
+          <mat-icon [ngClass]="{
             'green-check': data.avaliable,
             'red-check': !data.avaliable
           }">
-          {{ data.avaliable ? "check_circle" : "cancel" }}
-        </mat-icon>
-      </b>
-    </div>
-    
+            {{ data.avaliable ? "check_circle" : "cancel" }}
+          </mat-icon>
+        </b>
+      </div>
+
       <div>
         <span>{{ 'tuser_user_' | oTranslate}}</span>
         <b>: {{data.tuser_user_}}</b>
@@ -38,8 +38,20 @@
         <b>: {{data.pdetails}}</b>
       </div>
     </div>
+    <!-- <o-form #form service="productsRequest" entity="productRequest"show-header="no" layout-direction="column">
+      <div fxLayout="column" layout-padding>
+        <label class="input-comp-title">{{ 'INPUTS.READ_ONLY' | oTranslate }}</label>
+        <o-daterange-input attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes" (click)="validateReservation($event)" Filter="myFilter" >
+        </o-daterange-input>
+      </div>
+      <div>
+        <o-button attr="bconfirm" type="BASIC" label="Comfirmar" layout-padding (click)="update()"></o-button>
+      </div>
+    </o-form> -->
+    <o-button attr="bconfirm" type="BASIC" label="Reservar" layout-padding (click)="openRentDialog()"></o-button>
     <div class="price-container">
-      <b>{{ 'from' | oTranslate}} </b><b class="number">{{ data.price }}</b><b>€</b><b class="day">/{{ 'day' |
+      <!-- <b>{{ 'from' | oTranslate}} </b> [data]="getValue()"attr="daterange2"-->
+      <b class="number">{{ data.price }}</b><b>€</b><b class="day">/{{ 'day' |
         oTranslate}} </b>
     </div>
   </div>

@@ -17,7 +17,7 @@
   "ERROR_USER_PASS_INCORRECT": "Invalid username or password",
   "REMEMBER_ME": "Remember me",
   "FORGOT_PWD": "Forgot your password?",
-  "FOOTER_CREATED_BY": "Created by Imatia Innovation",
+  "FOOTER_CREATED_BY": "Created by CameraRent Innovation",
   "FOOTER_RIGHTS": "All rights reserved",
   "PRODUCT": "Product",
   "PRODUCTS": "Products",
@@ -49,6 +49,8 @@
   "from": "from",
   "day": "day",
   "YOUR DATA": "Your data",
-  "PRODUCTS TITLE": "Products for rent"
+  "PRODUCTS TITLE": "Products for rent",
+  "LIGHT": "Light",
+  "DARK": "Dark"
 
 }

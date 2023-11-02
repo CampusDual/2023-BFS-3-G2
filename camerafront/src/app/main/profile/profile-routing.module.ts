@@ -7,7 +7,7 @@ import { MyproductsNewComponent } from './myproducts-new/myproducts-new.componen
 
 
 const routes: Routes = [{
-  path : '',
+  path : 'mydata',
   component: ProfileHomeComponent
 },
 {

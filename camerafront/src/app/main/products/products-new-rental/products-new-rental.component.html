@@ -1,0 +1,14 @@
+<o-form #form show-header="no" layout-direction="column" (onDataLoaded)="loadData($event)">
+    <div fxLayout="column" class="container" layout-padding>
+        <b>{{'product' | oTranslate}}: </b><span>{{data.product_name}}</span>
+        <!-- <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input> -->
+        <o-daterange-input attr="date" label="{{ 'pick a date' | oTranslate }}" required="yes"
+            (click)="validateReservation($event)" Filter="myFilter">
+        </o-daterange-input>
+        <o-text-input fxFill attr="request_text"></o-text-input>
+    </div>
+    <div>
+
+        <o-button attr="bconfirm" type="BASIC" label="Confirmar" layout-padding (click)="update()"></o-button>
+    </div>
+</o-form>
