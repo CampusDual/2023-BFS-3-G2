@@ -61,8 +61,8 @@ public class ProductRequestService implements IProductRequestService {
     }
     @Override
     public EntityResult myProductRequestEntryQuery(Map<String, Object> keyMap, List<String> attrList) {
-        //Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        //keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
         return this.daoHelper.query(productRequestDao, keyMap, attrList,"myOutRents");
     }
 }

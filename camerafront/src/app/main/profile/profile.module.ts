@@ -8,12 +8,14 @@ import { MyproductsHomeComponent } from './myproducts-home/myproducts-home.compo
 import { MyproductsDetailComponent } from './myproducts-detail/myproducts-detail.component';
 import { MyproductsNewComponent } from './myproducts-new/myproducts-new.component';
 import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent],
   imports: [
     CommonModule,
+    SharedModule,
     OntimizeWebModule,
     ProfileRoutingModule
   ]
