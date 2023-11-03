@@ -1,0 +1,158 @@
+<!-- <div class="container">
+    <o-form-layout-manager mode="dialog" title="my rents" label-columns="NAME" separator="" attr="container-form">
+        <div fxFill fxLayout="column" fxLayoutAlign="start">
+            <o-table>
+                <o-table-column attr="id_prequest" title="id_prequest" width="15%"
+                    class="o-table-column-centered"></o-table-column>
+                <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+                    <ng-template let-row>
+                        <o-expandable-container [targets]="[branchEmployeesTable]" [data]="row">
+                            <o-table #branchEmployeesTable service="productsRequest" entity="myProductRequest"
+                                columns="id_prequest;start_date;end_date;tproducts_id_product;state;request_text;r_user;p_user"
+                                visible-columns="id_prequest;start_date;end_date;tproducts_id_product;state;request_text;r_user;p_user"
+                                query-on-init="no" query-rows="10" pageable="no" insert-button="no" delete-button="no"
+                                detail-mode="none">
+                                <o-table-column attr="id_prequest" title="id_prequest" width="15%"
+                                class="o-table-column-centered"></o-table-column>
+                            </o-table>
+                        </o-expandable-container>
+                    </ng-template>
+                </o-table-row-expandable>
+                <o-table-context-menu></o-table-context-menu>
+            </o-table>
+        </div>
+    </o-form-layout-manager>
+</div> -->
+<div class="out-container">
+  <o-table #tablein service="productsRequest" entity="myProductRequest"
+    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+    visible-columns="main_photo;id_prequest;product_name;start_date;end_date;state;price;request_text;p_user"
+    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none">
+    <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+  </o-table>
+</div>
+<div class="in-container">
+  <o-table #tableout service="productsRequest" entity="myProductRequestEntry" keys="id_prequest"
+    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+    visible-columns="main_photo;id_prequest;product_name;start_date;end_date;state;price;request_text;r_user"
+    query-rows="10">
+    <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+      <ng-template let-row >
+<!-- [data]="row"[targets]="[branchEmployeesTable]" -->
+        <o-expandable-container >
+          <o-form #branchEmployeesTable service="productsRequest" entity="myProductRequest" parent-keys="id_prequest"
+            keys="tproducts_id_product" columns="id_prequest;tproducts_id_product;state;request_text;"
+            visible-columns="id_prequest;tproducts_id_product;state;request_text;" (onDataLoaded)="loadData($event)">
+            <o-column class="image-container">
+              <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
+                image-type="base64"></o-image>
+            </o-column>
+              <o-column class="detail-container">
+                <o-row>
+                  <o-text-input oHidden attr="id_prequest" sql-type="INTEGER"></o-text-input>
+                </o-row>
+                <o-row>
+                  <o-text-input attr="request_text"></o-text-input>
+                </o-row>
+                <o-row>
+                  <o-text-input fxFill class="input-padding" attr="state"></o-text-input>
+                </o-row>
+              </o-column>
+          </o-form>
+        </o-expandable-container>
+      </ng-template>
+    </o-table-row-expandable>
+  </o-table>
+</div>
+<!-- <div class="container">
+    <o-form-layout-manager mode="dialog" title="BRANCHES" label-columns="NAME" separator="" attr="o-form-layout-branches-home">
+      <div fxFill fxLayout="column" fxLayoutAlign="start">
+        <o-table #tableout attr="branches" service="productsRequest" entity="myProductRequestEntry" title="BRANCHES" columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+        visible-columns="main_photo;id_prequest;product_name;start_date;end_date;state;price;request_text;r_user;tproducts_id_product" sort-columns="product_name" keys="id_prequest" query-rows="10" pageable="no" row-height="medium"> -->
+<!-- <o-table-button #button attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchReportStore()"></o-table-button> -->
+<!-- <o-table-column async-load="true" width="48px" attr="main_photo" orderable="no" searchable="no" type="image" image-type="base64"
+          empty-image="assets/images/no-image.png" avatar="yes">
+        </o-table-column>
+          <o-table-column attr="id_prequest" title="id_prequest" width="15%" class="o-table-column-centered"></o-table-column>
+          <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
+          <o-table-column attr="tproducts_id_product" title="tproducts_id_product"></o-table-column>
+          <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+            <ng-template let-row>
+              <o-expandable-container [targets]="[branchEmployeesTable]" [data]="row">
+                <div class="container">
+                    <o-form #branchEmployeesTable fxLayout="column" service="products" entity="product" keys="tproducts_id_product"
+                    columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
+                    show-header-navigation="yes" header-actions="U;D">
+                    (onDataLoaded)="loadData($event)"
+                    <o-text-input  enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
+                     <o-row> -->
+<!-- <o-column class="image-container">
+                        <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
+                          image-type="base64"></o-image>
+                      </o-column>
+                      <o-column class="detail-container">
+                        <o-row>
+                          <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input>
+                        </o-row>
+                        <o-row>
+                          <o-combo fxFill attr="status" service="products" entity="productStatus" keys="id" value-column="id" columns="id;status"
+                            visible-columns="status" read-only="no" required="yes" translate="yes" null-selection="no"></o-combo>
+                        </o-row>
+                  
+                        <o-row>
+                          <o-combo fxFill attr="product_type" [static-data]="productTypeArray" value-column="typeText" columns="typeText"
+                            visible-columns="typeText" read-only="no" required="yes" null-selection="no" translate="yes"></o-combo>
+                        </o-row>
+                        <o-row>
+                          <o-text-input fxFill attr="plocation"></o-text-input>
+                        </o-row>
+                        <o-row>
+                          <o-currency-input fxFill attr="price"  currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
+                        </o-row>
+                        <o-row>
+                          <o-text-input fxFill attr="pdetails" ></o-text-input>
+                        </o-row>
+                        <o-row class="avaliable-container">
+                          <o-checkbox attr="avaliable" read-only="no"></o-checkbox>
+                        </o-row> -->
+<!-- </o-column>  -->
+<!-- </o-row> -->
+<!-- </o-form>
+                  </div> -->
+<!-- <o-form fxLayout="column" #branchEmployeesTable service="productsRequest" entity="myProductRequestEntry" parent-keys="id_prequest" keys="tproducts_id_product"
+                columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+                visible-columns="main_photo;id_prequest;product_name;start_date;end_date;state;price;request_text;r_user;tproducts_id_product"
+                  query-on-init="no" query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none">
+                  <o-text-input attr="id_prequest" sql-type="INTEGER"></o-text-input>
+                  <o-text-input attr="product_name" sql-type="VARCHAR"></o-text-input> -->
+<!-- <o-table-button #detailButton attr="button" label="FILL_REPORT" icon="description" (onClick)="openBranchDetailReportStore(row)">
+                  </o-table-button> -->
+<!-- <o-table-column async-load="true" width="48px" attr="main_photo" orderable="no" searchable="no" type="image" image-type="base64"
+                    empty-image="assets/images/no-image.png" avatar="yes">
+                  </o-table-column>
+                  <o-table-column attr="end_date" title="STARTDATE" type="date" format="LL"></o-table-column>
+                  <o-table-column attr="tproducts_id_product" title="tproducts_id_product"> -->
+<!-- <o-table-cell-renderer-service service="employees" entity="employeeType" columns="EMPLOYEETYPEID;EMPLOYEETYPENAME"
+                      value-column="EMPLOYEETYPENAME">
+                    </o-table-cell-renderer-service> -->
+<!-- </o-table-column> -->
+<!-- </o-form> -->
+<!-- </o-expandable-container>
+            </ng-template>
+          </o-table-row-expandable>
+          <o-table-context-menu></o-table-context-menu>
+        </o-table>
+      </div>
+    </o-form-layout-manager>
+  </div> -->
