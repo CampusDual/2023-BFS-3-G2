@@ -1,8 +1,19 @@
 <o-grid #grid attr="productGrid" title="{{'PRODUCTS TITLE' | oTranslate}}" cols="5" query-rows="8" quick-filter="true"
   grid-item-height="1:2" insert-button="false" gutter-size="5px" fixed-header="yes" [ngStyle]="{ height: 'auto' }"
-  service="products" entity="product" keys="id_product"
+  service="products" entity="product" keys="id_product" orderable ="yes"
   columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_;statusname;pdetails"
-  visible-columns="main_photo;product_name;price;status;product_type;avaliable" detail-mode="none">
+  visible-columns="main_photo;product_name;price;status;product_type;avaliable" sortable-columns = "price:DESC;price;avaliable">
+
+
+
+  <o-combo #bindingInput  o-grid-toolbar width="100px" position="start" attr="product_type" [static-data]="productTypeArray" value-column="typeText" columns="typeText"
+  visible-columns="typeText" read-only="no" required="yes" null-selection="no" translate="yes" (onValueChange)="onSelected($event)" class="form-field"></o-combo>
+
+  <!-- <o-button o-grid-toolbar width="100px" position="start" attr="applyfilter"  label="APPLY_FILTER" (click)="gridFilter()"></o-button> -->
+
+
+
+
   <o-grid-item *ngFor="let list of grid.dataArray">
     <o-column layout-padding  class="container-item" (click)="openDetail(list)">
       <!-- <div class="item-div"> -->
