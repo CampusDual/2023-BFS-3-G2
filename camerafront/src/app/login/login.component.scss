@@ -22,7 +22,7 @@
     overflow: auto;
 
     .login-bg-container {
-      background-image:url(https://cdn.discordapp.com/attachments/1153576792486064158/1167019126393425980/pexels-rogelio-rosa-2831711.jpg?ex=654c9a41&is=653a2541&hm=e1705c8110a929e0c31fbce917dc22c5cbd30fd60f020077d92e241ccace7d39&);
+      background-image: url(https://cdn.discordapp.com/attachments/1153576792486064158/1167019126393425980/pexels-rogelio-rosa-2831711.jpg?ex=654c9a41&is=653a2541&hm=e1705c8110a929e0c31fbce917dc22c5cbd30fd60f020077d92e241ccace7d39&);
       width: calc(100% - 640px);
       background-repeat: no-repeat;
       background-size: cover;
@@ -40,8 +40,8 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, .1);
-      opacity: .8;
+      background: rgba(0, 0, 0, 0.1);
+      opacity: 0.8;
     }
 
     .wrapp-login {
@@ -88,8 +88,7 @@
           font-size: 9pt;
         }
 
-        .login_info{
-          
+        .login_info {
         }
         .title_text {
           font-size: 14px;
@@ -106,7 +105,6 @@
         }
       }
     }
-
   }
 
   .footer-container {
@@ -128,11 +126,9 @@
         padding-right: 4px;
       }
     }
-
   }
-
 }
-@media(max-width:576px) {
+@media (max-width: 576px) {
   .full-page {
     .login-outer-container {
       .wrapp-login {
@@ -156,5 +152,19 @@
         place-content: center !important;
       }
     }
+  }
+}
+.title_page {
+  text-align: center;
+  margin-top: 100px;
+  font-weight: bold;
+  font-size: 5rem;
+  font-family: American Typewriter, serif;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .title_page {
+    display: none;
   }
 }
