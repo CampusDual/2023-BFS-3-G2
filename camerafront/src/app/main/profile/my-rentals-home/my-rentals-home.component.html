@@ -1,11 +1,11 @@
 
 <div class="in-container">
-  <o-table #tableout service="productsRequest" entity="myProductRequestEntry"
+  <o-table #tableout service="productsRequest" entity="myProductRequestEntry" keys="id_prequest"
     columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
     visible-columns="main_photo;product_name;start_date;end_date;state"
-    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none">
+    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" (onDataLoaded)="filterTable($event)">
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
-      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes" >
       </o-table-cell-renderer-image>
     </o-table-column>
     <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
@@ -13,9 +13,26 @@
     <o-table-column attr="state" title="state">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>
-    <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right">
+    <o-table-row-expandable  icon-collapse="expand_more" icon-expand="chevron_right">
       <ng-template let-row>
-        <o-column title="RENT DATA" icon="info" layout-gap="12px">
+        <o-expandable-container [targets]="[table2]" [data]="row">
+
+        <!--  keys="id_prequest"(onDataLoaded)="loadData(row)"-->
+    <o-table #table2  service="productsRequest" entity="myProductRequestEntry"  parent-keys="tproducts_id_product"
+    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+    visible-columns="main_photo;product_name;start_date;end_date;state"
+    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" query-on-init="yes">
+    <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes" >
+      </o-table-cell-renderer-image>
+    </o-table-column>
+    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="state" title="state">
+            <app-status-column-renderer></app-status-column-renderer>
+    </o-table-column>
+  </o-table>
+        <!-- <o-column (onDataLoaded)="loadData($event)" title="RENT DATA" icon="info" layout-gap="12px">
           <div class="detail-container">
             <span fxFlex="30%"><strong>{{'ID' | oTranslate}}</strong>: {{row.id_prequest}}</span>
             <span fxFlex="30%"><strong>{{'OWNER' | oTranslate}}</strong>: {{row.p_user}}</span>
@@ -29,8 +46,10 @@
             <o-button attr="denyBtn" type="STROKED" label="Deny" layout-padding color="Warn"
               (click)="stateUpdate(false,row)"></o-button>
           </div>
-        </o-column>
+        </o-column> -->
+       </o-expandable-container> 
       </ng-template>
+      
     </o-table-row-expandable>
   </o-table>
 </div>
