@@ -22,7 +22,14 @@ export const MENU_CONFIG: MenuRootItem[] = [
         name: 'MYPRODUCTS',
         icon: 'shop',
         route: '/main/profile/myProducts',
+      },
+      {
+        id: 'myRentals',
+        name: 'MYRENTALS',
+        icon: 'row',
+        route: '/main/profile/myRentals',
       }
+
     ]
   },
   {
