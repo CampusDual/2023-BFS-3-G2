@@ -52,5 +52,8 @@
   "PRODUCTS TITLE": "Productos en alquiler",
   "LIGHT": "Claro",
   "DARK": "Oscuro",
-  "PAGE_TITLE": "CAMERA RENT"
+  "PAGE_TITLE": "CAMERA RENT",
+  "CONFIRM": "Confirmar",
+  "pick a date" : "Escoge fechas",
+  "request_text": "Escrive un comentario"
 }
