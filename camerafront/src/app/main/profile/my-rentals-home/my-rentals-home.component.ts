@@ -10,7 +10,6 @@ import { AuthService, Expression, FilterExpressionUtils, OTableComponent, Ontimi
 export class MyRentalsHomeComponent implements OnInit {
   @ViewChild('tablein', { static: true }) tableIn: OTableComponent;
   @ViewChild('tableout', { static: true }) tableOut: OTableComponent;
-  @ViewChild('table2', { static: true }) table2: OTableComponent;
   constructor(
     private auth: AuthService,
     private ontimizeService: OntimizeService,

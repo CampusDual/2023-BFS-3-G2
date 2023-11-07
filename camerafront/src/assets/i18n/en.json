@@ -55,5 +55,7 @@
   "PAGE_TITLE": "CAMERA RENT",
   "CONFIRM": "Confirm",
   "pick a date": "Pick dates",
-  "request_text": "Text"
+  "request_text": "Text",
+  "INPUT.BUTTON.DATERANGE": "Dates",
+  "DATERANGE.APPLYLABEL": "Select Dates"
 }
