@@ -17,7 +17,7 @@
   "ERROR_USER_PASS_INCORRECT": "Invalid username or password",
   "REMEMBER_ME": "Remember me",
   "FORGOT_PWD": "Forgot your password?",
-  "FOOTER_CREATED_BY": "Created by CameraRent Innovation",
+  "FOOTER_CREATED_BY": "Created by CameraRent S.A",
   "FOOTER_RIGHTS": "All rights reserved",
   "PRODUCT": "Product",
   "PRODUCTS": "Products",
@@ -38,7 +38,7 @@
   "avaliable": "Avaliable",
   "plocation": "Location",
   "statusname": "Status",
-  "tuser_user_":"User",
+  "tuser_user_": "User",
   "Excelente": "Excelent",
   "Correcto": "Correct",
   "Muy bueno": "Very good",
@@ -52,6 +52,8 @@
   "PRODUCTS TITLE": "Products for rent",
   "LIGHT": "Light",
   "DARK": "Dark",
-  "LOCALE_it" : "IT"
-
+  "PAGE_TITLE": "CAMERA RENT",
+  "CONFIRM": "Confirm",
+  "pick a date": "Pick dates",
+  "request_text": "Text"
 }

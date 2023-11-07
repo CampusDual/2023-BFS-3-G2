@@ -42,4 +42,27 @@ public class ProductRequestService implements IProductRequestService {
     public EntityResult productRequestDelete(Map<String, Object> keyMap) {
         return this.daoHelper.delete(this.productRequestDao, keyMap);
     }
+
+    @Override
+    public EntityResult myProductRequestQuery(Map<String, Object> keyMap, List<String> attrList) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        keyMap.put(ProductRequestDao.RUSER_, authentication.getName());
+        return this.daoHelper.query(productRequestDao, keyMap, attrList,"myOutRents");
+    }
+
+    @Override
+    public EntityResult myProductRequestUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+        return null;
+    }
+
+    @Override
+    public EntityResult myProductRequestDelete(Map<String, Object> keyMap) {
+        return null;
+    }
+    @Override
+    public EntityResult myProductRequestEntryQuery(Map<String, Object> keyMap, List<String> attrList) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
+        return this.daoHelper.query(productRequestDao, keyMap, attrList,"myOutRents");
+    }
 }
