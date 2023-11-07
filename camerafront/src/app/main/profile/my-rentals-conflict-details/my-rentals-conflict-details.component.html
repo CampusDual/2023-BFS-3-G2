@@ -1,0 +1,17 @@
+<div>
+    <o-table #table2 service="productsRequest" entity="myProductRequestEntry"
+        columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+        visible-columns="main_photo;product_name;start_date;end_date;r_user" query-rows="10" pageable="no"
+        insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" query-on-init="no">
+        <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+            <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+            </o-table-cell-renderer-image>
+        </o-table-column>
+        <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
+        <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    </o-table>
+</div>
+<div>
+    <o-button attr="bconfirm" type="BASIC" label="Aceptar" layout-padding (click)="updateState()"></o-button>
+    <o-button attr="bconfirm" type="BASIC" label="Cancelar" layout-padding (click)="closeDialog()"></o-button>
+</div>
