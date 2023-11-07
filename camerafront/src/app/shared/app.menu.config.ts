@@ -1,7 +1,7 @@
 import { MenuRootItem } from "ontimize-web-ngx";
 
 export const MENU_CONFIG: MenuRootItem[] = [
- 
+
   {
     id: "products",
     name: "PRODUCTS",
@@ -32,4 +32,9 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: "power_settings_new",
     confirm: "yes",
   },
+  // {
+  //   id: "locale", name: "LOCALE", opened : false,
+  //   items:
+  //     [{ id: 'lang_it', name: 'LOCALE_it', icon: 'language', locale: 'it' }]
+  // },
 ];

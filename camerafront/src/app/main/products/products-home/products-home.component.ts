@@ -1,7 +1,7 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, Injector, OnInit, ViewChild } from '@angular/core';
 import { ProductsDetailComponent } from '../products-detail/products-detail.component';
 import { MatDialog } from '@angular/material';
-import { Expression, FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
+import { FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-products-home',
@@ -10,7 +10,7 @@ import { Expression, FilterExpressionUtils, OComboComponent, OGridComponent } fr
 })
 export class ProductsHomeComponent implements OnInit {
   @ViewChild('grid', { static: true }) grid: OGridComponent;
-  @ViewChild('bindingInput', { static: false }) bindingInput: OComboComponent;
+  @ViewChild('bindingInput', { static: true }) bindingInput: OComboComponent;
 
   public productTypeArray = [{
     typeText: 'SOUND'
@@ -21,7 +21,9 @@ export class ProductsHomeComponent implements OnInit {
   },];
 
   selected =''
-  constructor(protected dialog: MatDialog) { }
+  constructor(protected dialog: MatDialog) {
+    
+   }
 
   ngOnInit() {
   }
