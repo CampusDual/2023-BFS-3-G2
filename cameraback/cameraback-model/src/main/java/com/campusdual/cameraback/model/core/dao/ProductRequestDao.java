@@ -19,5 +19,7 @@ public class ProductRequestDao extends OntimizeJdbcDaoSupport {
     public static final String STATE = "state";
     public static final String TEXT = "request_text";
     public static final String USER_ = "tuser_user_";
+    public static final String RUSER_ = "r_user";
+    public static final String PUSER_ = "p_user";
 
 }

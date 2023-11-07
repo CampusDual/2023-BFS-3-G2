@@ -15,7 +15,7 @@ export const CONFIG: Config = {
   title: 'Camera Rent',
 
   //  Language of the application.
-  locale: 'es',
+  locale: 'es', 
 
   // The service type used (Ontimize REST standart, Ontimize REST JEE
   // or custom implementation) in the whole application.
@@ -26,7 +26,7 @@ export const CONFIG: Config = {
 
   appMenuConfiguration: MENU_CONFIG,
 
-  applicationLocales: ['es', 'en'],
+  applicationLocales: ['es', 'en' , 'it'],
 
   exportConfiguration: {
     path: '/export'
