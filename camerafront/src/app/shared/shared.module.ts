@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import {  OntimizeWebModule } from 'ontimize-web-ngx';
+import { StatusColumnRendererComponent } from '../main/profile/my-rentals-home/status-column-renderer/status-column-renderer.component';
 
 @NgModule({
   imports: [
@@ -8,9 +9,11 @@ import {  OntimizeWebModule } from 'ontimize-web-ngx';
     
   ],
   declarations: [
+    StatusColumnRendererComponent
   ],
   exports: [
-    CommonModule
+    CommonModule,
+    StatusColumnRendererComponent
   ]
 })
 export class SharedModule { }
