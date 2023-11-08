@@ -10,7 +10,9 @@
         <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
         <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
         <o-table-column attr="profit" title="profit" ></o-table-column>
-        <o-table-column attr="profit_diff" title="profit_diff" ></o-table-column>
+        <o-table-column attr="profit_diff" title="profit_diff" >
+            <app-profit-dif-column-renderer></app-profit-dif-column-renderer>
+        </o-table-column>
         <!-- <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit.bind(this)">
         </o-table-column-calculated>
         <o-table-column-calculated attr="profitdiff" title="profitdiff" [operation-function]="calculateProfitDiff.bind(this)">

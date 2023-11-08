@@ -44,7 +44,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
 
   public calcProfitDif(element): number{
 
-    return (this.data.profit - element["profit"]);
+    return ( element["profit"] - this.data.profit);
   }
 
   calcProfit(element){

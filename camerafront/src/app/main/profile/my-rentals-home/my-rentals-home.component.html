@@ -7,8 +7,8 @@
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
-    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="L"></o-table-column>
+    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="L"></o-table-column>
     <!-- <o-table-column #profit attr="profit" title="profit" >    </o-table-column> -->
       <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit">
     </o-table-column-calculated>
@@ -45,14 +45,14 @@
 <div class="in-container">
   <o-table #tablein service="productsRequest" entity="myProductRequest"
     columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user;p_phone;r_phone"
-    visible-columns="main_photo;product_name;start_date;end_date;state;price;request_text;p_user;p_phone" query-rows="10"
+    visible-columns="main_photo;product_name;start_date;end_date;state;price;p_user;p_phone" query-rows="10"
     pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none">
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
     </o-table-column>
-    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
-    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="L"></o-table-column>
+    <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="L"></o-table-column>
     <o-table-column attr="price" title="price" currency-symbol="€" type="currency"></o-table-column>
     <o-table-column attr="p_phone" title="phone" type="phone"></o-table-column>
     <o-table-column attr="state" title="state" class="o-table-column-centered">

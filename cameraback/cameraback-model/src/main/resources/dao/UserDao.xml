@@ -24,7 +24,7 @@
                 <Column>userblocked</Column>
                 <Column>lastpasswordupdate</Column>
                 <Column>firstlogin</Column>
-                <Column>phone</Column>
+                <Column>phone_num</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[
@@ -48,7 +48,7 @@
                 <Column>userblocked</Column>
                 <Column>lastpasswordupdate</Column>
                 <Column>firstlogin</Column>
-                <Column>phone</Column>
+                <Column>phone_num</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[

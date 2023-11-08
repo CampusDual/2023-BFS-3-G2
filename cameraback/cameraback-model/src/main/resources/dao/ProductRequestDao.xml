@@ -28,8 +28,8 @@
             <AmbiguousColumns>
                 <AmbiguousColumn name="r_user" prefix="r" databaseName="tuser_user_" />
                 <AmbiguousColumn name="p_user" prefix="p" databaseName="tuser_user_" />
-                <AmbiguousColumn name="r_phone" prefix="u2" databaseName="phone" />
-                <AmbiguousColumn name="p_phone" prefix="u1" databaseName="phone" />
+                <AmbiguousColumn name="r_phone" prefix="u2" databaseName="phone_num" />
+                <AmbiguousColumn name="p_phone" prefix="u1" databaseName="phone_num" />
 
             </AmbiguousColumns>
             <Sentence>
