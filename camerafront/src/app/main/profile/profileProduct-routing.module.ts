@@ -7,13 +7,18 @@ import { MyproductsNewComponent } from './myproducts-new/myproducts-new.componen
 import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.component';
 
 
-const routes: Routes = [{
-  path : 'mydata',
-  component: ProfileHomeComponent
+const routes: Routes = [
+{
+  path:'myProducts',
+  component: MyproductsHomeComponent
 },
 {
-  path : 'myRentals',
-  component: MyRentalsHomeComponent
+  path: "myProducts/new",
+  component: MyproductsNewComponent
+},
+{
+  path:'myProducts/:id_product',
+  component: MyproductsDetailComponent
 }
 ];
 
@@ -21,4 +26,4 @@ const routes: Routes = [{
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ProfileRoutingModule { }
+export class ProfileProductRoutingModule { }
