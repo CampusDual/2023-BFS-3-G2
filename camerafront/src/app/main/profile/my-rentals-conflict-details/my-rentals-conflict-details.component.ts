@@ -2,6 +2,7 @@ import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Expression, FilterExpressionUtils, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
 
+
 @Component({
   selector: 'app-my-rentals-conflict-details',
   templateUrl: './my-rentals-conflict-details.component.html',
@@ -10,11 +11,14 @@ import { Expression, FilterExpressionUtils, OTableComponent, OntimizeService } f
 
 export class MyRentalsConflictDetailsComponent implements OnInit {
   @ViewChild('table2', { static: true }) table2: OTableComponent;
+  //public calculateProfit = calculateProfitFunction;
+  //public calculateProfitDiff = this.profitDif;
   constructor(
     protected productRequestService: OntimizeService,
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
     public dialogRef: MatDialogRef<MyRentalsConflictDetailsComponent>,
-  ) { }
+  ) { 
+  }
 
   ngOnInit() {
     this.configureService();
@@ -25,6 +29,10 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
           let resultArr = [];
           for (let element of result.data) {
             if (element.id_prequest !== this.data.id_prequest) {
+              console.log("A- " + element);
+              element['profit'] = this.calcProfit(element);
+              element['profit_diff'] = this.calcProfitDif(element);
+              console.log("B- " + element);
               resultArr.push(element);
             }
           }
@@ -33,6 +41,18 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
       }
     );
   }
+
+  public calcProfitDif(element): number{
+
+    return (this.data.profit - element["profit"]);
+  }
+
+  calcProfit(element){
+    const diferenciaEnMilisegundos = element["end_date"] - element["start_date"];
+    const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
+    return diferenciaEnDias * element["price"]
+  }
+
 
   private configureFilter() {
     let filters: Array<Expression> = [];

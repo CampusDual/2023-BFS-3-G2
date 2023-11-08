@@ -1,7 +1,8 @@
 import { ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AuthService, Expression, FilterExpressionUtils, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
+import { AuthService, Expression, FilterExpressionUtils, OColumnComponent, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
 import { MyRentalsConflictDetailsComponent } from '../my-rentals-conflict-details/my-rentals-conflict-details.component';
+import { calculateProfitFunction } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-my-rentals-home',
@@ -13,6 +14,8 @@ export class MyRentalsHomeComponent implements OnInit {
   @ViewChild('tablein', { static: true }) tableIn: OTableComponent;
   @ViewChild('tableout', { static: true }) tableOut: OTableComponent;
   @ViewChild('table2', { static: true }) table2: OTableComponent;
+  @ViewChild('profit', { static: true }) columnProfit: OColumnComponent;
+  public calculateProfit = this.calculateProfitFunction;
   constructor(
     private auth: AuthService,
     private ontimizeService: OntimizeService,
@@ -26,7 +29,6 @@ export class MyRentalsHomeComponent implements OnInit {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('productsRequest'));
   }
   ngAfterViewInit() {
-
     //  this.tableIn.queryData({r_user: this.auth.getSessionInfo().user});
 
     //  this.tableOut.queryData({p_user: this.auth.getSessionInfo().user});
@@ -36,7 +38,14 @@ export class MyRentalsHomeComponent implements OnInit {
     // basicExpr['EMPLOYEETYPEID'] = 1;
     // this.table.queryData(basicExpr);
   }
+  public calculateProfitFunction (rowData: Array<any>): number {
+    const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
+    // Convertir la diferencia a días
+    const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
+    return diferenciaEnDias * rowData["price"]
+  }
   public openDetail(rowData: any): void {
+    rowData["profit"] = this.calculateProfitFunction(rowData);
     this.dialog.open(MyRentalsConflictDetailsComponent, {
       height: '70%',
       width: '75%',
@@ -73,6 +82,9 @@ export class MyRentalsHomeComponent implements OnInit {
 
   //   return ce;
 
+  // }
+  // calculateProfit(){
+  //   console.log("Profit funciona");
   // }
   filterTable(ev) {
     let siONo = ev;

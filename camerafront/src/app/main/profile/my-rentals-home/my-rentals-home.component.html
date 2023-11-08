@@ -1,15 +1,18 @@
-
 <div class="out-container">
   <o-table #tableout service="productsRequest" entity="myProductRequestEntry" keys="id_prequest"
-    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
-    visible-columns="main_photo;product_name;start_date;end_date;state"
-    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" (onDataLoaded)="filterTable($event)">
+    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user;p_phone;r_phone"
+    visible-columns="main_photo;product_name;start_date;end_date;state;profit" query-rows="10" pageable="no" insert-button="no"
+    delete-button="no" detail-mode="none" refresh-button="none" (onDataLoaded)="filterTable($event)">
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
-      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes" >
+      <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
     </o-table-column>
     <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
     <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
+    <!-- <o-table-column #profit attr="profit" title="profit" >    </o-table-column> -->
+      <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit">
+    </o-table-column-calculated>
+
     <o-table-column attr="state" title="state">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>
@@ -17,21 +20,22 @@
       <ng-template let-row>
         <!-- title="RENT DATA" icon="info" layout-gap="12px" class="container-expandable"(onDataLoaded)=-->
         <!-- <o-column>  -->
-          <div>
-            <div class="detail-container" >
+        <div>
+          <div class="detail-container">
             <span fxFlex="30%"><strong>{{'ID' | oTranslate}}</strong>: {{row.id_prequest}}</span>
             <span fxFlex="30%"><strong>{{'OWNER' | oTranslate}}</strong>: {{row.p_user}}</span>
             <span fxFlex="20%"><strong>{{'CLIENT' | oTranslate}}</strong>: {{row.r_user}}</span>
+            <span fxFlex="20%"><strong>{{'PHONE' | oTranslate}}</strong>: {{row.r_phone}}</span>
             <span fxFlex="20%"><strong>{{'COMMENT' | oTranslate}}</strong>: {{row.request_text}}</span>
             <span fxFlex="20%"><strong>{{'PRICE' | oTranslate}}</strong>: {{row.price}}€</span>
           </div>
           <div fxLayout="row wrap" fxLayoutGap="14px">
-            <o-button attr="applyBtn" type="RAISED" label="Apply" layout-padding color="Accent" 
+            <o-button attr="applyBtn" type="RAISED" label="Apply" layout-padding color="Accent"
               (click)="openDetail(row)"></o-button>
             <o-button attr="denyBtn" type="STROKED" label="Deny" layout-padding color="Warn"
               (click)="stateUpdate(row)"></o-button>
-          </div> 
           </div>
+        </div>
 
         <!-- </o-column>  -->
       </ng-template>
@@ -40,9 +44,9 @@
 </div>
 <div class="in-container">
   <o-table #tablein service="productsRequest" entity="myProductRequest"
-    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
-    visible-columns="main_photo;product_name;start_date;end_date;state;price;request_text;p_user"
-    query-rows="10" pageable="no" insert-button="no" delete-button="no" detail-mode="none"  refresh-button="none">
+    columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user;p_phone;r_phone"
+    visible-columns="main_photo;product_name;start_date;end_date;state;price;request_text;p_user;p_phone" query-rows="10"
+    pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none">
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
@@ -50,6 +54,7 @@
     <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="LL"></o-table-column>
     <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="LL"></o-table-column>
     <o-table-column attr="price" title="price" currency-symbol="€" type="currency"></o-table-column>
+    <o-table-column attr="p_phone" title="phone" type="phone"></o-table-column>
     <o-table-column attr="state" title="state" class="o-table-column-centered">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>
