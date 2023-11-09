@@ -1,0 +1,28 @@
+.container{
+    height: 100%;
+    width: auto;
+}
+.detail-container {
+    height: 45%;
+
+}
+  .img-container {
+    border-top-left-radius: 50px;
+    height: 50%;
+    width: 100%;
+}  
+
+.img-container img {
+    object-fit: cover;
+    /* width: 100%; */
+    height: 100%;
+    width: 100%;
+}
+
+.table-container {
+    height: 30%
+}
+
+.button-container {
+    height: 10%
+}

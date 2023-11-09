@@ -9,7 +9,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
     route: "/main/products",
   },
   {
-    id: 'myprofile', name: 'MYPROFILE', icon: 'remove_red_eye', opened: false,
+    id: 'myprofile', name: 'MYPROFILE', icon: 'home', opened: false,
     items: [
       {
         id: 'mydata',
@@ -26,7 +26,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
       {
         id: 'myRentals',
         name: 'MYRENTALS',
-        icon: 'row',
+        icon: 'check_box',
         route: '/main/profile/myRentals',
       }
 

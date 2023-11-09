@@ -1,0 +1,9 @@
+.in-container{
+    height: 50%;
+}
+.out-container{
+    height: 50%;
+}
+.o-table .o-table-container .mat-table.medium tr.mat-row {
+    height: 0px;
+  }
