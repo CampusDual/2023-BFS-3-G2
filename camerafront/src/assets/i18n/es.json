@@ -57,5 +57,20 @@
   "pick a date" : "Escoge fechas",
   "request_text": "Escrive un comentario",
   "INPUT.BUTTON.DATERANGE": "Fechas",
-  "DATERANGE.APPLYLABEL": "Seleciona Fechas"
+  "DATERANGE.APPLYLABEL": "Seleciona Fechas",
+  "start_date": "Inicio alquiler",
+  "end_date": "Fin alquiler",
+  "state": "Estado",
+  "profit": "Beneficio",
+  "pending": "Pendiente",
+  "applied": "Aceptado",
+  "canceled": "Cancelado",
+  "denied": "Denegado",
+  "Apply": "Aceptar",
+  "Deny": "Denegar",
+  "r_user": "Solicitante",
+  "r_phone": "Teléfono",
+  "p_user": "Ofertante",
+  "p_phone": "Teléfono",
+  "profit_diff":"Diferencia"
 }
