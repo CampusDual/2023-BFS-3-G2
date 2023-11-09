@@ -38,7 +38,7 @@
   "avaliable": "Avaliable",
   "plocation": "Location",
   "statusname": "Status",
-  "tuser_user_":"User",
+  "tuser_user_": "User",
   "Excelente": "Excelent",
   "Correcto": "Correct",
   "Muy bueno": "Very good",
@@ -52,9 +52,8 @@
   "PRODUCTS TITLE": "Products for rent",
   "LIGHT": "Light",
   "DARK": "Dark",
-  "MYRENTALS": "My rents",
   "CONFIRM": "Confirm",
-  "pick a date" : " Choose dates",
+  "pick a date": " Choose dates",
   "request_text": "Comment",
   "INPUT.BUTTON.DATERANGE": "Dates",
   "DATERANGE.APPLYLABEL": "Select dates",
@@ -72,9 +71,9 @@
   "r_phone": "Telephone",
   "p_user": "Offeror",
   "p_phone": "Telephone",
-  "phone":"Telephone",
-  "profit_diff":"Difference",
+  "phone": "Telephone",
+  "profit_diff": "Difference",
   "cancelBtn": "Cancel button",
-  "MYRENTALS": "My rentals"
-
+  "MYRENTALS": "My rentals",
+  "PAGE_TITLE": "Audiovisual equipment rental to individuals and companies near you"
 }

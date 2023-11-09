@@ -52,9 +52,8 @@
   "PRODUCTS TITLE": "Busca un equipo cerca de ti",
   "LIGHT": "Claro",
   "DARK": "Oscuro",
-  "PAGE_TITLE": "CAMERA RENT",
   "CONFIRM": "Confirmar",
-  "pick a date" : "Escoge fechas",
+  "pick a date": "Escoge fechas",
   "request_text": "Escrive un comentario",
   "INPUT.BUTTON.DATERANGE": "Fechas",
   "DATERANGE.APPLYLABEL": "Seleciona Fechas",
@@ -72,8 +71,9 @@
   "r_phone": "Teléfono",
   "p_user": "Ofertante",
   "p_phone": "Teléfono",
-  "phone":"Teléfono",
-  "profit_diff":"Diferencia",
+  "phone": "Teléfono",
+  "profit_diff": "Diferencia",
   "cancelBtn": "Botón cancelar",
-  "MYRENTALS": "Mis solicitudes"
+  "MYRENTALS": "Mis solicitudes",
+  "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti"
 }
