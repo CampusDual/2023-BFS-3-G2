@@ -20,7 +20,6 @@ export class ProductsHomeComponent implements OnInit {
     typeText: 'PHOTO'
   },];
 
-  selected =''
   constructor(protected dialog: MatDialog) {
     
    }
@@ -48,8 +47,8 @@ export class ProductsHomeComponent implements OnInit {
   // }
  
 	onSelected():void {
-		this.selected = this.bindingInput.getValue();
-    const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', this.selected);
+		let selected = this.bindingInput.getValue();
+    const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
     const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
 
     this.grid.queryData(basicExpr);
