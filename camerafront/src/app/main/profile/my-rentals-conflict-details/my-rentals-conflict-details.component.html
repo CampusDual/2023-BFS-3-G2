@@ -4,7 +4,8 @@
     <div class="img-container">
         <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
     </div>
-    <b>Profit: </b><span>{{data.profit}}€</span>
+    <b>Profit: </b><span>{{data.profit}}€ </span>
+    <span>{{data.start_date | date: 'dd/MM/yyyy'}}</span><b> - </b><span>{{data.end_date | date: 'dd/MM/yyyy'}}</span>
 </div>
 <div class="table_container">
     <o-table #table2 service="productsRequest" entity="myProductRequestEntry"

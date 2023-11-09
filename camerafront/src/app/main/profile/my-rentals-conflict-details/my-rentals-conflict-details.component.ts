@@ -17,7 +17,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     protected productRequestService: OntimizeService,
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
     public dialogRef: MatDialogRef<MyRentalsConflictDetailsComponent>,
-  ) { 
+  ) {
   }
 
   ngOnInit() {
@@ -32,21 +32,20 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
               element['profit'] = this.calcProfit(element);
               element['profit_diff'] = this.calcProfitDif(element);
               resultArr.push(element);
-              this.table2.setDataArray(resultArr);
             }
           }
+          this.table2.setDataArray(resultArr);
         }
-        
       }
     );
   }
 
-  public calcProfitDif(element): number{
+  public calcProfitDif(element): number {
 
-    return ( element["profit"] - this.data.profit);
+    return (element["profit"] - this.data.profit);
   }
 
-  calcProfit(element){
+  calcProfit(element) {
     const diferenciaEnMilisegundos = element["end_date"] - element["start_date"];
     const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
     return diferenciaEnDias * element["price"]
@@ -70,7 +69,6 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
 
   updateState() {
     let tableData = this.table2.getDataArray();
-    console.log(tableData);
     this.updateRequests(tableData, "denied");
     this.updateRequests([this.data], "applied");
     this.dialogRef.close();
@@ -80,7 +78,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  updateRequests( tData, state) {
+  updateRequests(tData, state) {
     let atribMap = {
       "state": state
     }
@@ -88,7 +86,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
       this.productRequestService.update({ "id_prequest": element.id_prequest }, atribMap, "productRequest").subscribe(
         response => {
           if (response) {
-            console.log("Modificado " + element.product_name + " REQUEST ID:" + element.id_prequest + " STATE:" + state );
+            console.log("Modificado " + element.product_name + " REQUEST ID:" + element.id_prequest + " STATE:" + state);
           } else {
             console.error("Invalid data format in API response.");
           }

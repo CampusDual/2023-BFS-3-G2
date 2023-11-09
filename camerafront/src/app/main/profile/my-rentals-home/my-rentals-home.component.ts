@@ -31,27 +31,10 @@ export class MyRentalsHomeComponent implements OnInit {
     this.ontimizeService.configureService(this.ontimizeService.getDefaultServiceConfiguration('productsRequest'));
   }
   ngAfterViewInit() {
-    //  this.tableIn.queryData({r_user: this.auth.getSessionInfo().user});
-
-    //  this.tableOut.queryData({p_user: this.auth.getSessionInfo().user});
-    // const filterExpr = FilterExpressionUtils.buildExpressionLess('end_date', );
-    // const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-    // const complexExpr =FilterExpressionUtils.buildComplexExpression
-    // basicExpr['EMPLOYEETYPEID'] = 1;
-    // this.table.queryData(basicExpr);
   }
 
-  mayorEdad(event) {
-    console.log(event);
-    // if(event.state == "applied" || "pending"){
-    //   return true;
-    // }else 
-    return false;
-
-  }
   public calculateProfitFunction(rowData: Array<any>): number {
     const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
-    // Convertir la diferencia a días
     const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
     return diferenciaEnDias * rowData["price"]
   }
@@ -63,7 +46,7 @@ export class MyRentalsHomeComponent implements OnInit {
       data: rowData,
       panelClass: 'custom-dialog-container'
     });
-    const sub = this.dialog.afterAllClosed.subscribe((data: any) => {
+    this.dialog.afterAllClosed.subscribe((data: any) => {
       console.log("Se Cerrro el dialogo")
       this.tableOut.reloadData();
     });
@@ -99,76 +82,43 @@ export class MyRentalsHomeComponent implements OnInit {
     }
 
   }
-  public loadData(ev) {
-    //this.tableOut.getValue();
-    this.data2 = ev;
-    let exp1 = FilterExpressionUtils.buildExpressionLess("start_date", ev.start_date);
-    let exp2 = FilterExpressionUtils.buildExpressionMore("end_date", ev.end_date);
-    let filter = FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND);
-    //filter['tproducts_id_product'] = ev.data.tproducts_id_product;
-    filter['state'] = "pending";
-    //this.table2.queryData();
-  }
-  // createFilter(values: Array<{ attr, value }>): Expression {
+  // stateUpdate(rowData: any) {
 
-  //   let filters = [];
-
-  //         filters.push(FilterExpressionUtils.buildExpressionLike(fil.attr, fil.value));
-  //         filters.push(FilterExpressionUtils.buildExpressionEquals(fil.attr, fil.value));
-
-
-  //   let ce: Expression;
-  //   if (filters.length > 0) {
-  //     ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
+  //   let atribMap = {
+  //     "state": "denied"
   //   }
-
-  //   return ce;
-
+  //   let keyMap = {
+  //     "id_prequest": rowData.id_prequest
+  //   }
+  //   this.updateRequests(keyMap, atribMap);
+  //   this.tableOut.reloadData();
   // }
-  // calculateProfit(){
-  //   console.log("Profit funciona");
+  // destroyConflictedRents(rowData: any) {
+
+  //   let atribMap = [
+  //     'start_date', 'end_date', 'id_prequest'
+  //   ];
+  //   let deniedAtribMap = [];
+  //   let keyMap = {
+  //     "tproducts_id_product": rowData.tproducts_id_product,
+  //     "state": "pending"
+  //   };
+  //   this.ontimizeService.query(keyMap, atribMap, "myProductRequestEntry").subscribe(
+  //     res => {
+  //       if (res.data && res.data.length) {
+  //         for (let element of res.data) {
+  //           if (element.id_prequest != rowData.id_prequest) {
+  //             if (element.start_date > rowData.start_date && element.start_date < rowData.end_date) {
+  //               deniedAtribMap.push(element);
+  //             } else if (element.end_date >= rowData.start_date && element.end_date <= rowData.end_date) {
+  //               deniedAtribMap.push(element);
+  //             }
+  //           }
+  //         }
+  //       }
+  //     });
+  //   console.log(deniedAtribMap);
   // }
-  filterTable(ev) {
-    let siONo = ev;
-    console.log(siONo);
-  }
-  stateUpdate(rowData: any) {
-
-    let atribMap = {
-      "state": "denied"
-    }
-    let keyMap = {
-      "id_prequest": rowData.id_prequest
-    }
-    this.updateRequests(keyMap, atribMap);
-    this.tableOut.reloadData();
-  }
-  destroyConflictedRents(rowData: any) {
-
-    let atribMap = [
-      'start_date', 'end_date', 'id_prequest'
-    ];
-    let deniedAtribMap = [];
-    let keyMap = {
-      "tproducts_id_product": rowData.tproducts_id_product,
-      "state": "pending"
-    };
-    this.ontimizeService.query(keyMap, atribMap, "myProductRequestEntry").subscribe(
-      res => {
-        if (res.data && res.data.length) {
-          for (let element of res.data) {
-            if (element.id_prequest != rowData.id_prequest) {
-              if (element.start_date > rowData.start_date && element.start_date < rowData.end_date) {
-                deniedAtribMap.push(element);
-              } else if (element.end_date >= rowData.start_date && element.end_date <= rowData.end_date) {
-                deniedAtribMap.push(element);
-              }
-            }
-          }
-        }
-      });
-    console.log(deniedAtribMap);
-  }
   updateRequests(keyMap: any, atribMap: any) {
     this.ontimizeService.update(keyMap, atribMap, "productRequest").subscribe(
       response => {
