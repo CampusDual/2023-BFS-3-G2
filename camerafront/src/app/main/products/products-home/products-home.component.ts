@@ -21,15 +21,10 @@ export class ProductsHomeComponent implements OnInit {
   },];
 
   constructor(protected dialog: MatDialog) {
-    
    }
-
   ngOnInit() {
+
   }
-
-
-
-
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
       height: '70%',
@@ -38,14 +33,6 @@ export class ProductsHomeComponent implements OnInit {
       panelClass: 'custom-dialog-container'
     });
   }
-  // public gridFilter(): void {
-  //   const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', this.selected);
-  //   const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-
-  //   this.grid.queryData(basicExpr);
-
-  // }
- 
 	onSelected():void {
 		let selected = this.bindingInput.getValue();
     const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
@@ -54,7 +41,7 @@ export class ProductsHomeComponent implements OnInit {
     this.grid.queryData(basicExpr);
 	}
 
-
+//
   // createFilter(values: Array<{ attr, value }>): Expression {
 
   //   let filters = [];

@@ -54,7 +54,7 @@
   "DARK": "Oscuro",
   "CONFIRM": "Confirmar",
   "pick a date": "Escoge fechas",
-  "request_text": "Escrive un comentario",
+  "request_text": "Escribe un comentario",
   "INPUT.BUTTON.DATERANGE": "Fechas",
   "DATERANGE.APPLYLABEL": "Seleciona Fechas",
   "start_date": "Inicio alquiler",
@@ -75,5 +75,7 @@
   "profit_diff": "Diferencia",
   "cancelBtn": "Botón cancelar",
   "MYRENTALS": "Mis solicitudes",
-  "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti"
+  "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti",
+  "COST": "Coste",
+  "RENT": "Alquilar"
 }

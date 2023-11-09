@@ -1,6 +1,6 @@
 <o-form #form show-header="no" layout-direction="column" (onDataLoaded)="loadData($event)">
     <div fxLayout="column" class="container" layout-padding>
-        <b>{{'product' | oTranslate}}: </b><span>{{data.product_name}}</span>
+        <b>{{'PRODUCT' | oTranslate}}: </b><span>{{data.product_name}}</span>
         <!-- <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input> -->
         
         <o-daterange-input attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
