@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { AuthService, Expression, FilterExpressionUtils, OColumnComponent, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
+import { AuthService, DialogService, Expression, FilterExpressionUtils, OColumnComponent, OTableComponent, OntimizeService } from 'ontimize-web-ngx';
 import { MyRentalsConflictDetailsComponent } from '../my-rentals-conflict-details/my-rentals-conflict-details.component';
 import { calculateProfitFunction } from 'src/app/shared/shared.module';
 
@@ -20,7 +20,9 @@ export class MyRentalsHomeComponent implements OnInit {
     private auth: AuthService,
     private ontimizeService: OntimizeService,
     private cd: ChangeDetectorRef,
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    protected dialogService: DialogService,
+
     // private data: any
   ) { }
   public data2: any;
@@ -38,7 +40,16 @@ export class MyRentalsHomeComponent implements OnInit {
     // basicExpr['EMPLOYEETYPEID'] = 1;
     // this.table.queryData(basicExpr);
   }
-  public calculateProfitFunction (rowData: Array<any>): number {
+
+  mayorEdad(event) {
+    console.log(event);
+    // if(event.state == "applied" || "pending"){
+    //   return true;
+    // }else 
+    return false;
+
+  }
+  public calculateProfitFunction(rowData: Array<any>): number {
     const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
     // Convertir la diferencia a días
     const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
@@ -47,7 +58,7 @@ export class MyRentalsHomeComponent implements OnInit {
   public openDetail(rowData: any): void {
     rowData["profit"] = this.calculateProfitFunction(rowData);
     this.dialog.open(MyRentalsConflictDetailsComponent, {
-      height: '70%',
+      height: '80%',
       width: '75%',
       data: rowData,
       panelClass: 'custom-dialog-container'
@@ -55,7 +66,38 @@ export class MyRentalsHomeComponent implements OnInit {
     const sub = this.dialog.afterAllClosed.subscribe((data: any) => {
       console.log("Se Cerrro el dialogo")
       this.tableOut.reloadData();
-  });
+    });
+  }
+  waitFunc(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  cancelRequest(event) {
+    let atribMap = {
+      "state": "canceled"
+    }
+    let keyMap = {
+      "id_prequest": event.id_prequest
+    }
+    if (this.dialogService) {
+      if (event.state == "canceled") {
+        this.dialogService.info('No se puede realizar la accion', 'El pedido ya ha sido cancelado.');
+      } else if (event.state == "denied") {
+        this.dialogService.info('No se puede cancelar este pedido', 'El pedido te ha sido denegado.');
+      } else {
+        this.dialogService.confirm('Confirm cancel request', 'Do you really want to accept?');
+        this.dialogService.dialogRef.afterClosed().subscribe(async result => {
+          if (result) {
+            this.updateRequests(keyMap, atribMap);
+            await this.waitFunc(50);
+            this.tableIn.reloadData();
+          } else {
+            console.log("Se ha cancelado el cancelado ;D");
+          }
+
+        })
+      }
+    }
+
   }
   public loadData(ev) {
     //this.tableOut.getValue();

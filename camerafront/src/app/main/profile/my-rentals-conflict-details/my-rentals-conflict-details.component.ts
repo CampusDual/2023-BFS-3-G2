@@ -21,23 +21,22 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    let resultArr = [];
     this.configureService();
     let kv = this.configureFilter();
     this.productRequestService.query(kv, ['main_photo', 'id_prequest', 'product_name', 'start_date', 'end_date', 'tproducts_id_product', 'state', 'price', 'request_text', 'r_user', 'p_user'], 'myProductRequestEntry', { start_date: 91, end_date: 91 }).subscribe(
       result => {
         if (result.data && result.data.length) {
-          let resultArr = [];
           for (let element of result.data) {
             if (element.id_prequest !== this.data.id_prequest) {
-              console.log("A- " + element);
               element['profit'] = this.calcProfit(element);
               element['profit_diff'] = this.calcProfitDif(element);
-              console.log("B- " + element);
               resultArr.push(element);
+              this.table2.setDataArray(resultArr);
             }
           }
-          this.table2.setDataArray(resultArr);
         }
+        
       }
     );
   }

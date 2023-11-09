@@ -8,6 +8,7 @@ import { OBaseTableCellRenderer } from 'ontimize-web-ngx';
 })
 export class ProfitDifColumnRendererComponent extends OBaseTableCellRenderer implements OnInit {
   @ViewChild('templateref', { read: TemplateRef, static: false }) public templateref: TemplateRef<any>;
+  
 
   constructor(protected injector: Injector) {
     super(injector);

@@ -1,0 +1,25 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+.detail-container {
+    height: 30%;
+
+}
+
+.detail-container img {
+    height: 200px;
+}
+
+img-container {
+    height: 100px;
+    width: 100px;
+}
+
+.table-container {
+    height: 20%
+}
+
+.button-container {
+    height: 10%
+}

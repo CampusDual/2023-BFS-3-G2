@@ -8,4 +8,7 @@
     <span *ngIf="cellvalue == 'pending'" style="color:rgb(224, 138, 25)" fxLayoutAlign="end center">
         <mat-icon>remove</mat-icon>{{ cellvalue }}
       </span>
+      <span *ngIf="cellvalue == 'canceled'" style="color:rgb(131, 9, 179)" fxLayoutAlign="end center">
+        <mat-icon>undo</mat-icon>{{ cellvalue }}
+      </span>
   </ng-template>
