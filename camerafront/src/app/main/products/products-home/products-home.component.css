@@ -43,7 +43,6 @@
     height: 15%;
     font-size: 150%;
     text-align: center;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
   }
   .details {
     /* flex: 1; */
@@ -75,10 +74,13 @@
     /* justify-content: flex-end; */
     max-height: 10%;
     text-align: right;
+<<<<<<< HEAD
     font-size: 100%;
+=======
+    font-size: 110%;
+>>>>>>> isaurinha
     margin: 1px 6px 1px 1px;
     overflow: hidden;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
   }
   .price .number{
     font-size: 180%;
