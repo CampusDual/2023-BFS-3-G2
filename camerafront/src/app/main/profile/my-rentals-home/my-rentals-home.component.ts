@@ -41,8 +41,8 @@ export class MyRentalsHomeComponent implements OnInit {
   public openDetail(rowData: any): void {
     rowData["profit"] = this.calculateProfitFunction(rowData);
     this.dialog.open(MyRentalsConflictDetailsComponent, {
-      height: '80%',
-      width: '75%',
+      height: '800px',
+      width: '700px',
       data: rowData,
       panelClass: 'custom-dialog-container'
     });

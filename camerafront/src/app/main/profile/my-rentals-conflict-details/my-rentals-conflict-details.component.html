@@ -1,31 +1,33 @@
-<div class="container">
-<div class="detail_container">
-    <h2>{{data.product_name}}</h2>
-    <div class="img-container">
-        <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
+<o-column class="container">
+    <div class="detail-container">
+        <h2>{{data.product_name| oTranslate}}</h2>{{'ID' | oTranslate}}
+        <div class="img-container">
+            <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
+        </div>
+        <b>{{'profit' | oTranslate}}: </b><span>{{data.profit}}€ </span>
+        <p><span>{{data.start_date | date: 'dd/MM/yyyy'}}</span><b> - </b><span>{{data.end_date | date:
+            'dd/MM/yyyy'}}</span></p>
     </div>
-    <b>Profit: </b><span>{{data.profit}}€ </span>
-    <span>{{data.start_date | date: 'dd/MM/yyyy'}}</span><b> - </b><span>{{data.end_date | date: 'dd/MM/yyyy'}}</span>
-</div>
-<div class="table_container">
-    <o-table #table2 service="productsRequest" entity="myProductRequestEntry"
-        columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
-        visible-columns="start_date;end_date;r_user;profit;profit_diff" pageable="no" insert-button="no"
-        delete-button="no" detail-mode="none" refresh-button="none" query-on-init="no">
-        <o-table-column attr="start_date" title="start_date" type="date" format="L"></o-table-column>
-        <o-table-column attr="end_date" title="end_date" type="date" format="L"></o-table-column>
-        <o-table-column attr="profit" title="profit" currency-symbol="€" type="currency" currency-symbol-position="right"></o-table-column>
-        <o-table-column attr="profit_diff" title="profit_diff" >
-            <app-profit-dif-column-renderer></app-profit-dif-column-renderer>
-        </o-table-column>
-        <!-- <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit.bind(this)">
+    <div class="table_container">
+        <o-table #table2 service="productsRequest" entity="myProductRequestEntry"
+            columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
+            visible-columns="start_date;end_date;r_user;profit;profit_diff" pageable="no" insert-button="no"
+            delete-button="no" detail-mode="none" refresh-button="none" query-on-init="no">
+            <o-table-column attr="start_date" title="start_date" type="date" format="L"></o-table-column>
+            <o-table-column attr="end_date" title="end_date" type="date" format="L"></o-table-column>
+            <o-table-column attr="profit" title="profit" currency-symbol="€" type="currency"
+                currency-symbol-position="right"></o-table-column>
+            <o-table-column attr="profit_diff" title="profit_diff">
+                <app-profit-dif-column-renderer></app-profit-dif-column-renderer>
+            </o-table-column>
+            <!-- <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit.bind(this)">
         </o-table-column-calculated>
         <o-table-column-calculated attr="profitdiff" title="profitdiff" [operation-function]="calculateProfitDiff.bind(this)">
         </o-table-column-calculated> -->
-    </o-table>
-</div>
-<div class="button_container">
-    <o-button attr="bconfirm" type="BASIC" label="Aceptar" layout-padding (click)="updateState()"></o-button>
-    <o-button attr="bcancel" type="BASIC" label="Cancelar" layout-padding (click)="closeDialog()"></o-button>
-</div>
-</div>
+        </o-table>
+    </div>
+    <div class="button_container">
+        <o-button attr="bconfirm" type="BASIC" label="Aceptar" layout-padding (click)="updateState()"></o-button>
+        <o-button attr="bcancel" type="BASIC" label="Cancelar" layout-padding (click)="closeDialog()"></o-button>
+    </div>
+</o-column>
