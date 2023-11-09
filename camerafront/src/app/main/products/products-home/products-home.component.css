@@ -1,10 +1,10 @@
 .container-item {
-  width: 100%;
+  width: 95%;
   height: 95%;
   /* background-color: linear-gradient(to right, #0c4411, #00ff37); */
   /* background-color: rgb(119, 118, 116); */
   background-color: #85A3B6;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   /* align-items: center;
@@ -14,7 +14,7 @@
 
 
   .image {
-    flex:9;
+    flex:8;
     /* width: auto; */
     /* margin-right: 2px;
     margin-left: 2px; */
@@ -29,7 +29,7 @@
   }
 
   .image img {
-    border-radius: 12px;
+    border-radius: 10px;
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -43,6 +43,7 @@
     height: 15%;
     font-size: 150%;
     text-align: center;
+   
   }
   .details {
     /* flex: 1; */
@@ -74,13 +75,10 @@
     /* justify-content: flex-end; */
     max-height: 10%;
     text-align: right;
-<<<<<<< HEAD
     font-size: 100%;
-=======
-    font-size: 110%;
->>>>>>> isaurinha
     margin: 1px 6px 1px 1px;
     overflow: hidden;
+   
   }
   .price .number{
     font-size: 180%;
@@ -89,7 +87,7 @@
     font-size: 50%;
   }
   .name, .details, .price {
-    flex: 1; /* These take up 1 part of the space */
+    flex: 2; /* These take up 1 part of the space */
     /* Adjust as needed */
   }
   .hidden-info {
