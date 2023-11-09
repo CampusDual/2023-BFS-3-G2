@@ -71,7 +71,10 @@
   "r_user": "Applicant",
   "r_phone": "Telephone",
   "p_user": "Offeror",
-  "p_phone": "Teléfono",
-  "profit_diff":"Difference"
+  "p_phone": "Telephone",
+  "phone":"Telephone",
+  "profit_diff":"Difference",
+  "cancelBtn": "Cancel button",
+  "MYRENTALS": "My rentals"
 
 }

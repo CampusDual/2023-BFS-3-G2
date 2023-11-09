@@ -4,6 +4,7 @@
     visible-columns="main_photo;product_name;start_date;end_date;state;profit" query-rows="10" pageable="no"
     insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" >
     <!-- (onDataLoaded)="filterTable($event)" -->
+    <o-table-column class="o-table-column-centered" attr="product_name" title="product_name" ></o-table-column>
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
@@ -14,7 +15,7 @@
     <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit" currency-symbol="€" type="currency" currency-symbol-position="right">
     </o-table-column-calculated>
 
-    <o-table-column attr="state" title="state">
+    <o-table-column attr="state" title="state" class="o-table-column-centered">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>
     <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right" >
@@ -46,14 +47,15 @@
     columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user;p_phone;r_phone"
     visible-columns="main_photo;product_name;start_date;end_date;state;price;p_user;p_phone" query-rows="10"
     pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none">
+    <o-table-column class="o-table-column-centered" attr="product_name" title="product_name" ></o-table-column>
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
     </o-table-column>
     <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="L"></o-table-column>
     <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="L"></o-table-column>
-    <o-table-column attr="price" title="price" currency-symbol="€" type="currency"></o-table-column>
     <o-table-column attr="p_phone" title="phone" type="phone"></o-table-column>
+        <o-table-column attr="price" title="price" currency-symbol="€" type="currency" currency-symbol-position="right"></o-table-column>
     <o-table-column attr="state" title="state" class="o-table-column-centered">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>

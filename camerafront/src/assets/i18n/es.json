@@ -72,5 +72,8 @@
   "r_phone": "Teléfono",
   "p_user": "Ofertante",
   "p_phone": "Teléfono",
-  "profit_diff":"Diferencia"
+  "phone":"Teléfono",
+  "profit_diff":"Diferencia",
+  "cancelBtn": "Botón cancelar",
+  "MYRENTALS": "Mis solicitudes"
 }
