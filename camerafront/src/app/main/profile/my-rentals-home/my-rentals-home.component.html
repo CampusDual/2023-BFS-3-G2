@@ -2,7 +2,8 @@
   <o-table #tableout service="productsRequest" entity="myProductRequestEntry" keys="id_prequest"
     columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user;p_phone;r_phone"
     visible-columns="main_photo;product_name;start_date;end_date;state;profit" query-rows="10" pageable="no"
-    insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" (onDataLoaded)="filterTable($event)">
+    insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" >
+    <!-- (onDataLoaded)="filterTable($event)" -->
     <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
       <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
       </o-table-cell-renderer-image>
@@ -16,9 +17,9 @@
     <o-table-column attr="state" title="state">
       <app-status-column-renderer></app-status-column-renderer>
     </o-table-column>
-    <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right" (onExpanded)="loadData($event)">
+    <o-table-row-expandable icon-collapse="expand_more" icon-expand="chevron_right" >
       <ng-template let-row>
-        <!-- title="RENT DATA" icon="info" layout-gap="12px" class="container-expandable"(onDataLoaded)=-->
+        <!-- title="RENT DATA" icon="info" layout-gap="12px" class="container-expandable"(onDataLoaded)=(onExpanded)="loadData($event)"-->
         <!-- <o-column>  -->
         <div>
           <div class="detail-container">
