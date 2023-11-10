@@ -30,7 +30,7 @@
             <span fxFlex="20%"><strong>{{'request_text' | oTranslate}}</strong>: {{row.request_text}}</span>
             <span fxFlex="20%"><strong>{{'price' | oTranslate}}</strong>: {{row.price}}€</span>
           </div>
-          <div fxLayout="row wrap" fxLayoutGap="14px">
+          <div *ngIf="row.state=='pending'" fxLayout="row wrap" fxLayoutGap="14px">
             <o-button attr="applyBtn" type="RAISED" label="Apply" layout-padding color="Accent"
               (click)="openDetail(row)"></o-button>
             <o-button attr="denyBtn" type="STROKED" label="Deny" layout-padding color="Warn"
