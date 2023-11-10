@@ -16,6 +16,7 @@ export class MyRentalsHomeComponent implements OnInit {
   @ViewChild('table2', { static: true }) table2: OTableComponent;
   @ViewChild('profit', { static: true }) columnProfit: OColumnComponent;
   public calculateProfit = this.calculateProfitFunction;
+  message:string;
   constructor(
     private auth: AuthService,
     private ontimizeService: OntimizeService,
@@ -32,7 +33,7 @@ export class MyRentalsHomeComponent implements OnInit {
   }
   ngAfterViewInit() {
   }
-
+  
   public calculateProfitFunction(rowData: Array<any>): number {
     const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
     const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
@@ -62,12 +63,7 @@ export class MyRentalsHomeComponent implements OnInit {
       "id_prequest": event.id_prequest
     }
     if (this.dialogService) {
-      if (event.state == "canceled") {
-        this.dialogService.info('No se puede realizar la accion', 'El pedido ya ha sido cancelado.');
-      } else if (event.state == "denied") {
-        this.dialogService.info('No se puede cancelar este pedido', 'El pedido te ha sido denegado.');
-      } else {
-        this.dialogService.confirm('Confirm cancel request', 'Do you really want to accept?');
+        this.dialogService.confirm('RENT_CANCEL_DIALOG_TITLE', 'Do you really want to accept?');
         this.dialogService.dialogRef.afterClosed().subscribe(async result => {
           if (result) {
             this.updateRequests(keyMap, atribMap);
@@ -78,7 +74,6 @@ export class MyRentalsHomeComponent implements OnInit {
           }
 
         })
-      }
     }
 
   }

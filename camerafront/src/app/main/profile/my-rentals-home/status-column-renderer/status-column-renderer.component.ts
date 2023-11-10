@@ -27,6 +27,9 @@ export class StatusColumnRendererComponent extends OBaseTableCellRenderer implem
     //   thousandSeparator: '.'
     // };
   }
+  sayHola(){
+    console.log()
+  }
 
   // getCellData(value: any) {
   //   let cellValue: string;
