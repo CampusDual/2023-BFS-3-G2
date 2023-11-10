@@ -38,7 +38,7 @@ export class ProductsHomeComponent implements OnInit {
   }
   onSelected(): void {
     let selected = this.bindingInput.getValue();
-    if (selected != "ALL PRODUCTS") {
+    if (selected != "ALL") {
       const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
       const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
       this.grid.queryData(basicExpr);
