@@ -12,16 +12,19 @@ export class ProductsHomeComponent implements OnInit {
   @ViewChild('grid', { static: true }) grid: OGridComponent;
   @ViewChild('bindingInput', { static: true }) bindingInput: OComboComponent;
 
-  public productTypeArray = [{
-    typeText: 'SOUND'
-  }, {
-    typeText: 'VIDEO'
-  }, {
-    typeText: 'PHOTO'
-  },];
+  public productTypeArray = [
+    {
+      typeText: 'ALL'
+    }, {
+      typeText: 'SOUND'
+    }, {
+      typeText: 'VIDEO'
+    }, {
+      typeText: 'PHOTO'
+    },];
 
   constructor(protected dialog: MatDialog) {
-   }
+  }
   ngOnInit() {
 
   }
@@ -33,15 +36,17 @@ export class ProductsHomeComponent implements OnInit {
       panelClass: 'custom-dialog-container'
     });
   }
-	onSelected():void {
-		let selected = this.bindingInput.getValue();
-    const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
-    const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+  onSelected(): void {
+    let selected = this.bindingInput.getValue();
+    if (selected != "ALL PRODUCTS") {
+      const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
+      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+      this.grid.queryData(basicExpr);
+    } else this.grid.reloadData();
 
-    this.grid.queryData(basicExpr);
-	}
+  }
 
-//
+  //
   // createFilter(values: Array<{ attr, value }>): Expression {
 
   //   let filters = [];
