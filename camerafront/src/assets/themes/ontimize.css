@@ -5523,7 +5523,7 @@ textarea:disabled {
 }
 
 .o-table .o-table-container .mat-table.medium tr.mat-row {
-  height: 32px;
+  height: 2px;
 }
 .o-table .o-table-container .mat-table.medium tr.mat-row .mat-cell {
   font-size: 12px;
