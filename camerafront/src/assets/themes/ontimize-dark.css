@@ -2611,7 +2611,7 @@ textarea.cdk-textarea-autosize-measuring {
 .mat-button.mat-primary,
 .mat-icon-button.mat-primary,
 .mat-stroked-button.mat-primary {
-  color: #8ab2d2;
+  color: white;
 }
 .mat-button.mat-accent,
 .mat-icon-button.mat-accent,
@@ -5961,7 +5961,7 @@ ngx-material-timepicker-container
     * styles
     */
 .md-drppicker {
-  background-color: #303030;
+  background-color: #85A3B6;
   /* ranges */
 }
 .md-drppicker:after,
