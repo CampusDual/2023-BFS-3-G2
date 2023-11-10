@@ -101,3 +101,6 @@
   /* color: red; */
   background: linear-gradient(to top left,#a15e5e, #e71515 );
 }
+.miBotonPersonalizado {
+  background-color: #FFA099;
+}
