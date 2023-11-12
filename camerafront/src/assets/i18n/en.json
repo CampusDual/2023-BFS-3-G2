@@ -77,5 +77,8 @@
   "MYRENTALS": "My Requests",
   "PAGE_TITLE": "Audiovisual equipment rental to individuals and companies near you",
   "COST": "Cost",
-  "RENT": "Rent"
+  "RENT": "Rent",
+  "ALL": "All categories",
+  "RENT_CANCEL_DIALOG_TITLE": "Cancel request",
+  "Do you really want to accept?": "Do you really want to accept?"
 }

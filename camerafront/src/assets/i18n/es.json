@@ -77,5 +77,8 @@
   "MYRENTALS": "Mis solicitudes",
   "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti",
   "COST": "Coste",
-  "RENT": "Alquilar"
+  "RENT": "Alquilar",
+  "ALL": "Todas las categorias",
+  "RENT_CANCEL_DIALOG_TITLE": "Cancelar petición",
+  "Do you really want to accept?": "Deseas cancelar esta petición?"
 }
