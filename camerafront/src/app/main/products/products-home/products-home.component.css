@@ -47,12 +47,10 @@
    
   }
   .details {
-    flex: 1;
-    /* height: 20%; */
-    /* overflow: hidden; */
-    /* margin-top: 10px; */
-    text-align: center;
-  
+    display: flex;
+    justify-content: space-between; /* Esto alinea los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 0 5px; /* Añade un poco de padding si es necesario */
   }
 
   /*.details b {
