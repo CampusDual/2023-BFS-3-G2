@@ -15,7 +15,7 @@
 
 
   .image {
-    flex:8;
+    flex:9;
     /* width: auto; */
     /* margin-right: 2px;
     margin-left: 2px; */
@@ -41,32 +41,32 @@
     /* margin-bottom: 8px; */
     /* font-size: 0.9em; */
     margin-top: 5px;
-    height: 15%;
-    font-size: 150%;
+    height: auto;
+    font-size: 100%;
     text-align: center;
    
   }
   .details {
-    /* flex: 1; */
-    height: 20%;
+    flex: 1;
+    /* height: 20%; */
     /* overflow: hidden; */
     /* margin-top: 10px; */
     text-align: center;
   
   }
 
-  .details b {
-    /* text-overflow: ellipsis;
+  /*.details b {
+     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; */
-  }
+    overflow: hidden;
+  }*/
 
   .details .mat-icon {
     /* font-size: 30px; */
     height: 30px;
     width: 30px;
     vertical-align: middle;
-    -webkit-background-clip: text;
+    /* -webkit-background-clip: text; */
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: transparent;
     text-shadow: none;
@@ -88,7 +88,7 @@
     font-size: 50%;
   }
   .name, .details, .price {
-    flex: 2; /* These take up 1 part of the space */
+    flex: 1; /* These take up 1 part of the space */
     /* Adjust as needed */
   }
   .hidden-info {
