@@ -80,5 +80,11 @@
   "RENT": "Rent",
   "ALL": "All categories",
   "RENT_CANCEL_DIALOG_TITLE": "Cancel request",
-  "Do you really want to accept?": "Do you really want to accept?"
+  "Do you really want to accept?": "Do you really want to accept?",
+  "YOUR RENTAL REQUESTS": "Your rental requests",
+  "YOUR RENTALS": "Your rentals",
+  "COMMENT":"Comment",
+  "CONFLICTED RENTS": "Conflicted rents",
+  "APPLY REQUEST": "Apply request"
+
 }

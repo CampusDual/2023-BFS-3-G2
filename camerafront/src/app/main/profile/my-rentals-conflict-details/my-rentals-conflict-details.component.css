@@ -1,9 +1,12 @@
 .container{
     height: 100%;
     width: auto;
+    display: flex;
+    flex-direction: column;
 }
 .detail-container {
     height: 45%;
+    text-align: center;
 
 }
   .img-container {
@@ -23,6 +26,12 @@
     height: 30%
 }
 
-.button-container {
-    height: 10%
+.button_container {
+    display: flex;
+    height: 10%;
+    justify-content: end;
+    padding-right: 5%;
+}
+.data-container{
+    padding: 10px;
 }
