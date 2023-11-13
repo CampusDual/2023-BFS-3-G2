@@ -30,7 +30,7 @@
           <div class="detail-container">
             <span fxFlex="20%"><mat-icon>person</mat-icon> {{row.r_user}}</span>
             <span fxFlex="20%"><mat-icon>call</mat-icon> {{row.r_phone}}</span>
-            <div class="coment-container">
+            <div *ngIf="row.request_text != '' && row.request_text != null " class="coment-container">
               <strong>{{'COMMENT' | oTranslate}}: </strong>
               <span fxFlex="20%">{{row.request_text}}</span>
             </div>
