@@ -33,10 +33,10 @@
           <span>{{ 'product_type' | oTranslate}}: </span><b>{{list.product_type | oTranslate}}</b>
         </div> -->
         <div class="plocation">
-          <span>{{ 'plocation' | oTranslate}}: </span><b>{{ list.plocation }} </b>
+          <span><mat-icon>location_on</mat-icon></span><b>{{ list.plocation }} </b>
         </div>
       <!--div class="avaliable" class="hidden-info">
-          <!-- <span>{{ 'avaliable' | oTranslate}}: </span>
+           <span>{{ 'avaliable' | oTranslate}}: </span>
           <b>
             <mat-icon [ngClass]="{
                 'green-check': list.avaliable,
@@ -46,12 +46,13 @@
             </mat-icon>
           </b> 
         </div> -->
-      </div>
+      
       <div class="price">
         <!-- <b>{{ 'from' | oTranslate}} </b> -->
         <b class="number">{{ list.price }}</b><b>€</b><b class="day">/{{ 'day' |
           oTranslate}} </b>
       </div>
+    </div>
       <!-- </div> -->
     </o-column>
   </o-grid-item>

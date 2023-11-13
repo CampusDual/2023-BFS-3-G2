@@ -8,6 +8,7 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  color: #eff3f6f1;
   /* align-items: center;
   overflow: hidden; */
   /* justify-content: flex-end; */
@@ -15,7 +16,7 @@
 
 
   .image {
-    flex:8;
+    flex:9;
     /* width: auto; */
     /* margin-right: 2px;
     margin-left: 2px; */
@@ -40,44 +41,49 @@
   .name {
     /* margin-bottom: 8px; */
     /* font-size: 0.9em; */
-    margin-top: 5px;
-    height: 15%;
-    font-size: 150%;
-    text-align: center;
+    padding: 0 10px;
+    margin-top: 8px;
+    height: auto;
+    font-size: 120%;
+    /* text-align: center; */
    
   }
   .details {
-    /* flex: 1; */
-    height: 20%;
-    /* overflow: hidden; */
-    /* margin-top: 10px; */
-    text-align: center;
-  
+    display: flex; 
+    justify-content: space-between; /* Esto alinea los elementos a los extremos */
+    align-items: center; /* Alinea los elementos verticalmente */
+    padding: 0 5px; /* Añade un poco de padding si es necesario */
+    
+  }
+  .plocation{
+    color: #eff3f6e3;
   }
 
-  .details b {
-    /* text-overflow: ellipsis;
+  /*.details b {
+     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; */
-  }
+    overflow: hidden;
+  }*/
 
   .details .mat-icon {
     /* font-size: 30px; */
     height: 30px;
     width: 30px;
     vertical-align: middle;
-    -webkit-background-clip: text;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    color: transparent;
-    text-shadow: none;
+    color: rgba(255, 255, 255, 0.651);
+    /* -webkit-background-clip: text; */
+    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    text-shadow: none; */
 
   }
   .price{
-    /* justify-content: flex-end; */
-    max-height: 10%;
     text-align: right;
-    font-size: 100%;
-    margin: 1px 6px 1px 1px;
+    /* justify-content: flex-end; */
+    /* max-height: 10%;
+    
+    font-size: 100%; */
+    /* margin: 1px 6px 1px 1px; */
     overflow: hidden;
    
   }
@@ -88,7 +94,7 @@
     font-size: 50%;
   }
   .name, .details, .price {
-    flex: 2; /* These take up 1 part of the space */
+    flex: 1; /* These take up 1 part of the space */
     /* Adjust as needed */
   }
   .hidden-info {

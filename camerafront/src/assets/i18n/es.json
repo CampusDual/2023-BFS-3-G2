@@ -80,5 +80,10 @@
   "RENT": "Alquilar",
   "ALL": "Todas las categorias",
   "RENT_CANCEL_DIALOG_TITLE": "Cancelar petición",
-  "Do you really want to accept?": "Deseas cancelar esta petición?"
+  "Do you really want to accept?": "Deseas cancelar esta petición?",
+  "YOUR RENTAL REQUESTS": "Tus peticiones de alquiler",
+  "YOUR RENTALS": "Tus alquileres",
+  "COMMENT":"Comentario",
+  "CONFLICTED RENTS": "Peticiones en conflicto",
+  "APPLY REQUEST": "Aceptar petición"
 }

@@ -4,6 +4,21 @@
 .out-container{
     height: 50%;
 }
-.o-table .o-table-container .mat-table.medium tr.mat-row {
-    height: 0px;
+  .detail-container{
+    display: inline-block;
+    padding: 4px;
+  }
+  .button-container{
+    display: inline-block;
+    justify-content: end;
+  }
+  .coment-container{
+    padding: 4px;
+    /* display: block; */
+    display: flex;
+    flex-direction: column;
+  }
+  .expandable-container{
+    /* height: 3vw; */
+    font-size: 1.2em;    
   }

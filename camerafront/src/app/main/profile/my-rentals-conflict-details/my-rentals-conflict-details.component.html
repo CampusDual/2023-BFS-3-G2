@@ -4,12 +4,15 @@
         <div class="img-container">
             <img src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
         </div>
-        <b>{{'profit' | oTranslate}}: </b><span>{{data.profit}}€ </span>
-        <p><span>{{data.start_date | date: 'dd/MM/yyyy'}}</span><b> - </b><span>{{data.end_date | date:
-            'dd/MM/yyyy'}}</span></p>
+        <div class="data-container">
+            <b>{{'profit' | oTranslate}}: </b><span>{{data.profit}}€ </span>
+            <p><span>{{data.start_date | date: 'dd/MM/yyyy'}}</span><b> - </b><span>{{data.end_date | date:
+                    'dd/MM/yyyy'}}</span></p>
+        </div>
     </div>
     <div class="table_container">
-        <o-table #table2 service="productsRequest" entity="myProductRequestEntry"
+        <o-table #table2 show-title="true" title="{{'CONFLICTED RENTS' | oTranslate }}" service="productsRequest"
+            entity="myProductRequestEntry"
             columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;price;request_text;r_user;p_user"
             visible-columns="start_date;end_date;r_user;profit;profit_diff" pageable="no" insert-button="no"
             delete-button="no" detail-mode="none" refresh-button="none" query-on-init="no">
@@ -27,7 +30,7 @@
         </o-table>
     </div>
     <div class="button_container">
-        <o-button attr="bconfirm" type="BASIC" label="Aceptar" layout-padding (click)="updateState()"></o-button>
-        <o-button attr="bcancel" type="BASIC" label="Cancelar" layout-padding (click)="closeDialog()"></o-button>
+        <o-button attr="bconfirm" type="RAISED" layout-padding color="Accent" label="APPLY REQUEST" layout-padding (click)="updateState()"></o-button>
+        <o-button attr="bcancel" type="STROKED" layout-padding color="Warn" label="CANCEL" layout-padding (click)="closeDialog()"></o-button>
     </div>
 </o-column>
