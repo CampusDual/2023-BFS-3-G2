@@ -77,16 +77,17 @@ export class MyRentalsHomeComponent implements OnInit {
     }
 
   }
-  // stateUpdate(rowData: any) {
+  async stateUpdate(rowData: any) {
 
-  //   let atribMap = {
-  //     "state": "denied"
-  //   }
-  //   let keyMap = {
-  //     "id_prequest": rowData.id_prequest
-  //   }
-  //   this.updateRequests(keyMap, atribMap);
-  //   this.tableOut.reloadData();
+     let atribMap = {
+       "state": "denied"
+     }
+    let keyMap = {
+      "id_prequest": rowData.id_prequest
+    }
+     this.updateRequests(keyMap, atribMap);
+     await this.waitFunc(50);
+     this.tableOut.reloadData();
   // }
   // destroyConflictedRents(rowData: any) {
 
@@ -113,7 +114,7 @@ export class MyRentalsHomeComponent implements OnInit {
   //       }
   //     });
   //   console.log(deniedAtribMap);
-  // }
+  }
   updateRequests(keyMap: any, atribMap: any) {
     this.ontimizeService.update(keyMap, atribMap, "productRequest").subscribe(
       response => {
