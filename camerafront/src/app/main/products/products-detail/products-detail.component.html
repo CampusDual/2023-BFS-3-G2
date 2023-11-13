@@ -31,7 +31,7 @@
       <div class="plocation">
         <span>{{ 'plocation' | oTranslate}}: </span><b>{{ data.plocation }} </b>
       </div>
-      <div>
+      <div *ngIf ="data.pdetails != '' && data.pdetails != null">
         <span>{{ 'pdetails' | oTranslate}}</span>
         <b>: {{data.pdetails}}</b>
       </div>
