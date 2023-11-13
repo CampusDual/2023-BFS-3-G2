@@ -60,7 +60,7 @@
   "start_date": "Inicio alquiler",
   "end_date": "Fin alquiler",
   "state": "Estado",
-  "profit": "Beneficio",
+  "profit": "Total",
   "pending": "Pendiente",
   "applied": "Aceptado",
   "canceled": "Cancelado",
@@ -72,7 +72,7 @@
   "p_user": "Ofertante",
   "p_phone": "Teléfono",
   "phone": "Teléfono",
-  "profit_diff": "Diferencia",
+  "profit_diff": "Diferencia del total",
   "cancelBtn": "Botón cancelar",
   "MYRENTALS": "Mis solicitudes",
   "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti",
@@ -85,5 +85,6 @@
   "YOUR RENTALS": "Tus alquileres",
   "COMMENT":"Comentario",
   "CONFLICTED RENTS": "Peticiones en conflicto",
-  "APPLY REQUEST": "Aceptar petición"
+  "APPLY REQUEST": "Aceptar petición",
+  "€/DAY":"€/día"
 }

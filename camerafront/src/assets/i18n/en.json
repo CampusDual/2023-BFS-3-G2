@@ -60,7 +60,7 @@
   "start_date": "Rental Start",
   "end_date": "Rental End",
   "state": "State",
-  "profit": "Profit",
+  "profit": "Total",
   "pending": "Pending",
   "applied": "Accepted",
   "canceled": "Canceled",
@@ -72,7 +72,7 @@
   "p_user": "Provider",
   "p_phone": "Phone",
   "phone": "Phone",
-  "profit_diff": "Profit Difference",
+  "profit_diff": "Total Difference",
   "cancelBtn": "Cancel Button",
   "MYRENTALS": "My Requests",
   "PAGE_TITLE": "Audiovisual equipment rental to individuals and companies near you",
@@ -85,6 +85,7 @@
   "YOUR RENTALS": "Your rentals",
   "COMMENT":"Comment",
   "CONFLICTED RENTS": "Conflicted rents",
-  "APPLY REQUEST": "Apply request"
+  "APPLY REQUEST": "Apply request",
+  "€/DAY":"€/day"
 
 }

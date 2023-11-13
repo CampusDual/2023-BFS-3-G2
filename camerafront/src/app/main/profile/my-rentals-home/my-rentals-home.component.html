@@ -12,10 +12,10 @@
     </o-table-column>
     <o-table-column attr="start_date" title="start_date" width="22%" type="date" format="L"></o-table-column>
     <o-table-column attr="end_date" title="end_date" width="22%" type="date" format="L"></o-table-column>
-    <o-table-column attr="price" title="price" currency-symbol="€" type="currency"
+    <o-table-column attr="price" title="price" currency-symbol="{{'€/DAY' | oTranslate}}" type="currency"
       currency-symbol-position="right"></o-table-column>
     <!-- <o-table-column #profit attr="profit" title="profit" >    </o-table-column> -->
-    <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit" currency-symbol="€"
+    <o-table-column-calculated attr="profit" title="TOTAL" [operation-function]="calculateProfit" currency-symbol="€"
       type="currency" currency-symbol-position="right">
     </o-table-column-calculated>
 
