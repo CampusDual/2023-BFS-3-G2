@@ -24,5 +24,29 @@
                 ]]>
             </Sentence>
         </Query>
+        <Query id="myOutRents">
+            <AmbiguousColumns>
+                <AmbiguousColumn name="r_user" prefix="r" databaseName="tuser_user_" />
+                <AmbiguousColumn name="p_user" prefix="p" databaseName="tuser_user_" />
+                <AmbiguousColumn name="r_phone" prefix="u2" databaseName="phone_num" />
+                <AmbiguousColumn name="p_phone" prefix="u1" databaseName="phone_num" />
+
+            </AmbiguousColumns>
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.tprequest r
+                        left join ${mainschema}.tproducts p
+                        on r.tproducts_id_product = p.id_product
+                        left join ${mainschema}.tuser u1
+                        on u1.user_ = p.tuser_user_
+                        left join ${mainschema}.tuser u2
+                        on u2.user_ = r.tuser_user_
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

@@ -22,11 +22,11 @@
     overflow: auto;
 
     .login-bg-container {
-      background-image:url(https://cdn.discordapp.com/attachments/1153576792486064158/1167019126393425980/pexels-rogelio-rosa-2831711.jpg?ex=654c9a41&is=653a2541&hm=e1705c8110a929e0c31fbce917dc22c5cbd30fd60f020077d92e241ccace7d39&);
+      background-image: url(https://cdn.discordapp.com/attachments/1153576792486064158/1172508510731391047/portada.png?ex=656092a5&is=654e1da5&hm=e2513a5ad3b4581d04a01dcaad40dd55c93bf3c9a96751b48914c59c1e84f717&);
       width: calc(100% - 640px);
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
+      background-position: left;
       position: relative;
       z-index: 1;
     }
@@ -40,8 +40,8 @@
       height: 100%;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, .1);
-      opacity: .8;
+      background: rgba(0, 0, 0, 0.1);
+      opacity: 0.8;
     }
 
     .wrapp-login {
@@ -88,8 +88,7 @@
           font-size: 9pt;
         }
 
-        .login_info{
-          
+        .login_info {
         }
         .title_text {
           font-size: 14px;
@@ -106,7 +105,6 @@
         }
       }
     }
-
   }
 
   .footer-container {
@@ -128,11 +126,9 @@
         padding-right: 4px;
       }
     }
-
   }
-
 }
-@media(max-width:576px) {
+@media (max-width: 576px) {
   .full-page {
     .login-outer-container {
       .wrapp-login {
@@ -157,4 +153,34 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1000px) {
+  .title_page {
+    display: none;
+  }
+}
+.img-container {
+  text-align: left;
+}
+
+.logo_page {
+  // display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 150px;
+  padding-top: 370px;
+  text-align: left;
+  background-color: transparent;
+
+}
+
+.title_page {
+  text-align: left;
+  margin-top: 1px;
+  font-weight: bold;
+  font-size: 1.8rem;
+  font-family: "League Spartan";
+  color: white;
+  padding-left: 20px;
 }

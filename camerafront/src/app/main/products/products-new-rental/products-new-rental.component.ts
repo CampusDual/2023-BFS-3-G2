@@ -27,6 +27,9 @@ export class ProductsNewRentalComponent implements OnInit {
   public validateReservation(ev) {
 
   }
+  closeDialog() {
+    this.dialogRef.close();
+  }
   public update() {
     let requestText = this.form.getFieldValue("request_text");
     let rangeDate = this.form.getFieldValue("date");

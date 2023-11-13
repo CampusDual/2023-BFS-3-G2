@@ -1,7 +1,7 @@
 import { MenuRootItem } from "ontimize-web-ngx";
 
 export const MENU_CONFIG: MenuRootItem[] = [
- 
+
   {
     id: "products",
     name: "PRODUCTS",
@@ -9,7 +9,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
     route: "/main/products",
   },
   {
-    id: 'myprofile', name: 'MYPROFILE', icon: 'remove_red_eye', opened: false,
+    id: 'myprofile', name: 'MYPROFILE', icon: 'home', opened: false,
     items: [
       {
         id: 'mydata',
@@ -22,7 +22,14 @@ export const MENU_CONFIG: MenuRootItem[] = [
         name: 'MYPRODUCTS',
         icon: 'shop',
         route: '/main/profile/myProducts',
+      },
+      {
+        id: 'myRentals',
+        name: 'MYRENTALS',
+        icon: 'check_box',
+        route: '/main/profile/myRentals',
       }
+
     ]
   },
   {
@@ -32,4 +39,9 @@ export const MENU_CONFIG: MenuRootItem[] = [
     icon: "power_settings_new",
     confirm: "yes",
   },
+  // {
+  //   id: "locale", name: "LOCALE", opened : false,
+  //   items:
+  //     [{ id: 'lang_it', name: 'LOCALE_it', icon: 'language', locale: 'it' }]
+  // },
 ];
