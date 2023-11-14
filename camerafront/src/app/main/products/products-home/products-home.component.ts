@@ -1,7 +1,7 @@
-import { Component, Injector, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductsDetailComponent } from '../products-detail/products-detail.component';
 import { MatDialog } from '@angular/material';
-import { FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
+import { OComboComponent, OGridComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-products-home',
@@ -13,21 +13,19 @@ export class ProductsHomeComponent implements OnInit {
   @ViewChild('bindingInput', { static: true }) bindingInput: OComboComponent;
 
   public productTypeArray = [
-    {
-      typeText: 'ALL'
-    }, {
-      typeText: 'SOUND'
-    }, {
-      typeText: 'VIDEO'
-    }, {
-      typeText: 'PHOTO'
-    },];
+    { typeText: 'ALL' },
+    { typeText: 'SOUND' },
+    { typeText: 'VIDEO' },
+    { typeText: 'PHOTO' },
+  ];
 
-  constructor(protected dialog: MatDialog) {
-  }
-  ngOnInit() {
+  searchTerm: string = '';
+  searchType: string = 'ALL'; // Valor predeterminado
 
-  }
+  constructor(protected dialog: MatDialog) {}
+
+  ngOnInit() {}
+
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
       height: '70%',
@@ -36,32 +34,17 @@ export class ProductsHomeComponent implements OnInit {
       panelClass: 'custom-dialog-container'
     });
   }
-  onSelected(): void {
-    let selected = this.bindingInput.getValue();
-    if (selected != "ALL") {
-      const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
-      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-      this.grid.queryData(basicExpr);
-    } else this.grid.reloadData();
 
+  onSelected(): void {
+    if (this.searchType !== 'ALL') {
+      this.grid.queryData({ product_type: this.searchType });
+    } else {
+      this.grid.reloadData();
+    }
   }
 
-  //
-  // createFilter(values: Array<{ attr, value }>): Expression {
-
-  //   let filters = [];
-  //   values.forEach(fil => {
-  //     if (fil.value) {
-  //       filters.push(FilterExpressionUtils.buildExpressionEquals('product_type', 'VIDEO'));
-  //     }
-  //   });
-  //   let ce: Expression;
-  //   if (filters.length > 0) {
-  //     ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
-  //   }
-
-  //   return ce;
-
-  // }
-
+  performSearch(): void {
+    // Realizar búsqueda basada en 'searchTerm' en varios campos (nombre, localización, palabras clave, precio)
+    // Lógica de búsqueda aquí...
+  }
 }

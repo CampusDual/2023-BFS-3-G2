@@ -1,3 +1,16 @@
+
+<div class="container">
+  <div class="search-container">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar en Camera Rent..." (input)="performSearch()">
+      <button (click)="performSearch()">Buscar</button>
+  </div>
+
+  <ul>
+      <li *ngFor="let result of searchResults" class="search-result">
+          {{ result }}
+      </li>
+  </ul>
+</div>
 <o-grid #grid attr="productGrid" title="{{'PRODUCTS TITLE' | oTranslate}}" cols="5" query-rows="8" quick-filter="true"
   grid-item-height="2:3" insert-button="false" gutter-size="5px" fixed-header="yes" [ngStyle]="{ height: 'auto' }"
   service="products" entity="product" keys="id_product" orderable="yes" detail-mode="none"

@@ -115,3 +115,72 @@
   background: linear-gradient(to top left,#a15e5e, #e71515 );
 }
 .mat-dialog-container {padding: 0px;}
+
+/* styles.css o en tu componente específico */
+body {
+  font-family: 'League Spartan', 'Arial', sans-serif;
+  background-color: #426D83;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px; /* Ancho máximo del contenedor */
+  margin-top: 50px; /* Espacio en la parte superior del contenedor */
+}
+
+.search-container {
+  display: flex;
+  align-content: center;
+  margin-bottom: 20px;
+  background-color: #FFA099; /* Tono del botón de búsqueda */
+  border-radius: 24px; /* Esquinas redondeadas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+  width: 100%; /* Ancho del 100% del contenedor */
+}
+
+input {
+  padding: 15px; /* Ajusta el relleno para que sea más parecido al de Google */
+  font-size: 16px;
+  border: none;
+  border-radius: 24px 0 0 24px; /* Esquinas redondeadas a la izquierda */
+  width: 100%; /* Ancho del 100% del contenedor */
+  outline: none; /* Elimina el contorno predeterminado del input */
+}
+
+button {
+  padding: 15px 20px; /* Aumenta el espacio alrededor del texto del botón */
+  font-size: 16px;
+  border: none;
+  border-radius: 0 24px 24px 0; /* Esquinas redondeadas a la derecha */
+  background-color: #FFA099; /* Tono del botón de búsqueda */
+  color: #fff; /* Texto de color blanco */
+  cursor: pointer;
+  outline: none; /* Elimina el contorno predeterminado del botón */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%; /* Ancho del 100% del contenedor */
+}
+
+.search-result {
+  margin: 5px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background-color: #426D83; /* Tono del color de fondo de los resultados de búsqueda */
+  color: #fff; /* Texto de color blanco */
+  border-radius: 8px; /* Esquinas redondeadas */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra */
+  width: 100%; /* Ancho del 100% del contenedor */
+}
