@@ -2,6 +2,7 @@ import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
 import { OFormComponent, OntimizeService } from 'ontimize-web-ngx';
 import { ProductsNewRentalComponent } from '../products-new-rental/products-new-rental.component';
+import { GalleryImageSize } from 'ontimize-web-ngx-gallery';
 
 @Component({
   selector: 'app-products-detail',
@@ -32,10 +33,28 @@ export class ProductsDetailComponent implements OnInit {
     {
       breakpoint: 1920,
       height: "100%",
-      // width: "auto",
       image: true,
       thumbnails: true,
-      preview: true
+      preview: true,
+      imageArrows: true,
+      imagePercent: 100,
+      imageSize: GalleryImageSize.Cover,
+      thumbnailSize: GalleryImageSize.Cover,
+      thumbnailsColumns: 3,
+      thumbnailsRows: 1,
+      thumbnailsPercent: 25,
+      thumbnailsMargin: 10,
+      thumbnailMargin: 10,
+      previewArrows: true,
+      previewAutoPlay: false,
+      previewCloseOnClick: true,
+      previewCloseOnEsc: true,
+      previewKeyboardNavigation: true,
+      previewDownload: true,
+      previewRotate: true,
+      previewZoom: true,
+      previewDescription: false,
+      previewFullscreen: true
     }
   ];
   constructor(
