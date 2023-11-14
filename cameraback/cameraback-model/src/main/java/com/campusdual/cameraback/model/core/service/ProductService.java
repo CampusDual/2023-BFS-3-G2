@@ -2,6 +2,7 @@ package com.campusdual.cameraback.model.core.service;
 
 import com.campusdual.cameraback.api.core.service.IProductService;
 import com.campusdual.cameraback.model.core.dao.ProductDao;
+import com.campusdual.cameraback.model.core.dao.ProductImageDao;
 import com.campusdual.cameraback.model.core.dao.ProductStatusDao;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
@@ -21,6 +22,8 @@ public class ProductService implements IProductService {
     private ProductDao productDao;
     @Autowired
     private ProductStatusDao productStatusDao;
+    @Autowired
+    private ProductImageDao imageDao;
 
     @Autowired
     private DefaultOntimizeDaoHelper daoHelper;
@@ -76,5 +79,25 @@ public class ProductService implements IProductService {
     @Override
     public EntityResult productStatusDelete(Map<String, Object> keyMap) {
         return null;
+    }
+
+    @Override
+    public EntityResult productImageQuery(Map<String, Object> keyMap, List<String> attrList) {
+        return this.daoHelper.query(imageDao, keyMap, attrList);
+    }
+
+    @Override
+    public EntityResult productImageInsert(Map<String, Object> attrMap) {
+        return this.daoHelper.insert(imageDao, attrMap);
+    }
+
+    @Override
+    public EntityResult productImageUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) {
+        return this.daoHelper.update(imageDao, attrMap, keyMap);
+    }
+
+    @Override
+    public EntityResult productImageDelete(Map<String, Object> keyMap) {
+        return this.daoHelper.delete(imageDao, keyMap);
     }
 }

@@ -12,11 +12,38 @@ import { ProductsNewRentalComponent } from '../products-new-rental/products-new-
 export class ProductsDetailComponent implements OnInit {
   @ViewChild('form', { static: false }) form: OFormComponent;
   // public resultado2;
-  // protected productRequestService: OntimizeService;
+  
+  public galleryImages = [
+    {
+      small: "assets/images/no-image.png",
+      medium: "assets/images/no-image.png",
+      big: "assets/images/no-image.png"
+    }, {
+      small: "assets/images/no-image.png",
+      medium: "assets/images/no-image.png",
+      big: "assets/images/no-image.png"
+    }, {
+      small: "assets/images/no-image.png",
+      medium: "assets/images/no-image.png",
+      big: "assets/images/no-image.png"
+    }
+  ];
+  public galleryOptions = [
+    {
+      breakpoint: 1920,
+      height: "100%",
+      // width: "auto",
+      image: true,
+      thumbnails: true,
+      preview: true
+    }
+  ];
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
     protected injector: Injector,
-    protected dialog: MatDialog
+    protected dialog: MatDialog,
+    protected imageRequestService: OntimizeService
+    
   ) {
     // this.productRequestService = this.injector.get(OntimizeService);
   }
@@ -29,7 +56,8 @@ export class ProductsDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    // this.configureService();
+     this.configureService();
+     this.queryImages(this.data.id_product);
   }
   public loadData(ev) {
     this.data = ev;
@@ -41,6 +69,34 @@ export class ProductsDetailComponent implements OnInit {
       data: this.data,
       panelClass: 'custom-dialog-container'
     });
+  }
+  createImageArray(dataImages){
+    this.galleryImages = [
+      {
+        small: "data:image/png;base64," + dataImages.img1,
+        medium: "data:image/png;base64," + dataImages.img1,
+        big: "data:image/png;base64,"  + dataImages.img1
+      }, {
+        small: "data:image/png;base64," + dataImages.img2,
+        medium: "data:image/png;base64," + dataImages.img2,
+        big: "data:image/png;base64," + dataImages.img2
+      }, {
+        small: "data:image/png;base64,"  + dataImages.img3,
+        medium: "data:image/png;base64," + dataImages.img3,
+        big: "data:image/png;base64," + dataImages.img3
+      }
+    ];
+  }
+  queryImages(idProduct){
+    this.imageRequestService.query({ "tproducts_id_product": idProduct }, ['img1', 'img2', 'img3', 'img4'], 'productImage').subscribe(
+      result => {
+        if (result.data && result.data.length) {
+          console.log(result.data[0].img2);
+          this.createImageArray(result.data[0]);
+
+        }
+      }
+    );
   }
   // public validateReservation(ev) {
   //   // const columns = ["rent_id", "car_id", "brand", "model", "car_photo", "user_rent", "rental_start_date", "rental_end_date", "total_price", "observations"];
@@ -101,10 +157,10 @@ export class ProductsDetailComponent implements OnInit {
   //     });
   // }
 
-  // protected configureService() {
+  protected configureService() {
 
-  //   const conf = this.productRequestService.getDefaultServiceConfiguration('productsRequest');
-  //   this.productRequestService.configureService(conf);
-  // }
+    const conf = this.imageRequestService.getDefaultServiceConfiguration('products');
+    this.imageRequestService.configureService(conf);
+  }
 
 }
