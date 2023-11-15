@@ -24,13 +24,13 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     let resultArr = [];
     this.configureService();
     let kv = this.configureFilter();
-    this.productRequestService.query(kv, ['main_photo', 'id_prequest', 'product_name', 'start_date', 'end_date', 'tproducts_id_product', 'state', 'price', 'request_text', 'r_user', 'p_user'], 'myProductRequestEntry', { start_date: 91, end_date: 91 }).subscribe(
+    this.productRequestService.query(kv, ['main_photo', 'id_prequest', 'product_name', 'start_date', 'end_date', 'tproducts_id_product', 'state', 'rprice', 'request_text', 'r_user', 'p_user','rprofit'], 'myProductRequestEntry', { start_date: 91, end_date: 91 }).subscribe(
       result => {
         if (result.data && result.data.length) {
           for (let element of result.data) {
             if (element.id_prequest !== this.data.id_prequest) {
-              element['profit'] = this.calcProfit(element);
-              element['profit_diff'] = this.calcProfitDif(element);
+              // element['profit'] = this.calcProfit(element);
+               element['profit_diff'] = this.calcProfitDif(element);
               resultArr.push(element);
             }
           }
@@ -42,14 +42,14 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
 
   public calcProfitDif(element): number {
 
-    return (element["profit"] - this.data.profit);
+    return (element["rprofit"] - this.data.rprofit);
   }
 
-  calcProfit(element) {
-    const diferenciaEnMilisegundos = element["end_date"] - element["start_date"];
-    const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
-    return diferenciaEnDias * element["price"]
-  }
+  // calcProfit(element) {
+  //   const diferenciaEnMilisegundos = element["end_date"] - element["start_date"];
+  //   const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
+  //   return diferenciaEnDias * element["price"]
+  // }
 
 
   private configureFilter() {

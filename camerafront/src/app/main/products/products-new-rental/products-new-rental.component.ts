@@ -33,14 +33,17 @@ export class ProductsNewRentalComponent implements OnInit {
   public update() {
     let requestText = this.form.getFieldValue("request_text");
     let rangeDate = this.form.getFieldValue("date");
-    let startDate = rangeDate.startDate.format('YYYY-MM-DD');
-    let endDate = rangeDate.endDate.format('YYYY-MM-DD');
+    let startDate = rangeDate.startDate;
+    let endDate = rangeDate.endDate;
     const atribMap = {
       "tproducts_id_product": this.data.id_product,
       "state": "pending",
       "request_text": requestText,
-      "start_date": startDate,
-      "end_date": endDate
+      "start_date": startDate.format('YYYY-MM-DD'),
+      "end_date": endDate.format('YYYY-MM-DD'),
+      "rprice": this.data.price,
+      //"rprofit" : 1
+      "rprofit" : this.calcProfit(startDate, endDate)
     };
     // this.productRequestService.query()
     this.productRequestService.insert(atribMap, "productRequest").subscribe(
@@ -53,6 +56,12 @@ export class ProductsNewRentalComponent implements OnInit {
         }
       });
       this.dialogRef.close();
+  }
+  calcProfit(startDate, endDate) {
+    // const diferenciaEnMilisegundos = endDate.toDate().getTime() - startDate.toDate().getTime();
+    let diferenciaEnDias = endDate.diff(startDate, 'days') + 1;
+    //const diferenciaEnDias = (diferenciaEnMilisegundos  / (1000 * 60 * 60 * 24)) + 1;
+    return diferenciaEnDias * this.data.price
   }
 
   protected configureService() {
