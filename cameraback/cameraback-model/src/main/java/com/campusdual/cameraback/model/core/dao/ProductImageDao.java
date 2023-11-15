@@ -12,11 +12,10 @@ import org.springframework.stereotype.Repository;
         configurationFilePlaceholder = "dao/placeholders.properties")
 public class ProductImageDao extends OntimizeJdbcDaoSupport {
 
-    public static final String ID = "tproducts_id_product";
-    public static final String IMG1 = "img1";
-    public static final String IMG2 = "img2";
-    public static final String IMG3 = "img3";
-    public static final String IMG4 = "img4";
+    public static final String ID = "id_image";
+    public static final String ID_PRODUCT = "tproducts_id_product";
+    public static final String IMG = "pimage";
+
 
 
 }

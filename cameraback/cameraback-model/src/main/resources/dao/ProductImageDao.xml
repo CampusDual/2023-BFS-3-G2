@@ -6,12 +6,11 @@
         catalog="" schema="${mainschema}" table="timages"
         datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
     <DeleteKeys>
-        <Column>tproducts_id_product</Column>
+        <Column>id_image</Column>
     </DeleteKeys>
     <UpdateKeys>
-        <Column>tproducts_id_product</Column>
+        <Column>id_image</Column>
     </UpdateKeys>
-    <GeneratedKey>tproducts_id_product</GeneratedKey>
     <Queries>
         <Query id="default">
             <Sentence>

@@ -16,17 +16,17 @@ export class ProductsDetailComponent implements OnInit {
   
   public galleryImages = [
     {
-      small: "assets/images/no-image.png",
+      // small: "assets/images/no-image.png",
       medium: "assets/images/no-image.png",
-      big: "assets/images/no-image.png"
+      // big: "assets/images/no-image.png"
     }, {
-      small: "assets/images/no-image.png",
+      // small: "assets/images/no-image.png",
       medium: "assets/images/no-image.png",
-      big: "assets/images/no-image.png"
+      // big: "assets/images/no-image.png"
     }, {
-      small: "assets/images/no-image.png",
+      // small: "assets/images/no-image.png",
       medium: "assets/images/no-image.png",
-      big: "assets/images/no-image.png"
+      // big: "assets/images/no-image.png"
     }
   ];
   public galleryOptions = [
@@ -90,28 +90,36 @@ export class ProductsDetailComponent implements OnInit {
     });
   }
   createImageArray(dataImages){
-    this.galleryImages = [
+    this.galleryImages = []
+    for (let element of dataImages) {
+    this.galleryImages.push(
       {
-        small: "data:image/png;base64," + dataImages.img1,
-        medium: "data:image/png;base64," + dataImages.img1,
-        big: "data:image/png;base64,"  + dataImages.img1
-      }, {
-        small: "data:image/png;base64," + dataImages.img2,
-        medium: "data:image/png;base64," + dataImages.img2,
-        big: "data:image/png;base64," + dataImages.img2
-      }, {
-        small: "data:image/png;base64,"  + dataImages.img3,
-        medium: "data:image/png;base64," + dataImages.img3,
-        big: "data:image/png;base64," + dataImages.img3
-      }
-    ];
+        medium: "data:image/png;base64," + element.pimage
+      });
+    }
+    
+    // this.galleryImages = [
+    //   {
+    //     small: "data:image/png;base64," + dataImages.img1,
+    //     medium: "data:image/png;base64," + dataImages.img1,
+    //     big: "data:image/png;base64,"  + dataImages.img1
+    //   }, {
+    //     small: "data:image/png;base64," + dataImages.img2,
+    //     medium: "data:image/png;base64," + dataImages.img2,
+    //     big: "data:image/png;base64," + dataImages.img2
+    //   }, {
+    //     small: "data:image/png;base64,"  + dataImages.img3,
+    //     medium: "data:image/png;base64," + dataImages.img3,
+    //     big: "data:image/png;base64," + dataImages.img3
+    //   }
+    // ];
   }
   queryImages(idProduct){
-    this.imageRequestService.query({ "tproducts_id_product": idProduct }, ['img1', 'img2', 'img3', 'img4'], 'productImage').subscribe(
+    this.imageRequestService.query({ "tproducts_id_product": idProduct }, ['pimage'], 'productImage').subscribe(
       result => {
         if (result.data && result.data.length) {
-          console.log(result.data[0].img2);
-          this.createImageArray(result.data[0]);
+          console.log(result.data);
+          this.createImageArray(result.data);
 
         }
       }

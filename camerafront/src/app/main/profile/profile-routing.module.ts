@@ -6,6 +6,7 @@ import { MyproductsDetailComponent } from './myproducts-detail/myproducts-detail
 import { MyproductsNewComponent } from './myproducts-new/myproducts-new.component';
 import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.component';
 import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details/my-rentals-conflict-details.component';
+import { MyproductsDetailsImageComponent } from './myproducts-details-image/myproducts-details-image.component';
 
 
 const routes: Routes = [{
@@ -31,6 +32,10 @@ const routes: Routes = [{
 {
   path:'myProducts/:id_product',
   component: MyproductsDetailComponent
+},
+{
+  path:'myProducts/:id_product/:id_image',
+  component: MyproductsDetailsImageComponent
 }
 ];
 
