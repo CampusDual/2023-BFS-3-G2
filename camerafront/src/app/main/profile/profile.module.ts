@@ -10,15 +10,18 @@ import { MyproductsNewComponent } from './myproducts-new/myproducts-new.componen
 import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details/my-rentals-conflict-details.component';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { OChartModule } from 'ontimize-web-ngx-charts';
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent],
+  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, StatisticsComponent],
   imports: [
     CommonModule,
     SharedModule,
     OntimizeWebModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    OChartModule
   ]
 })
 export class ProfileModule { }

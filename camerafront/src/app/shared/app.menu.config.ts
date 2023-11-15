@@ -28,6 +28,12 @@ export const MENU_CONFIG: MenuRootItem[] = [
         name: 'MYRENTALS',
         icon: 'check_box',
         route: '/main/profile/myRentals',
+      },
+      {
+        id: 'statistics',
+        name: 'STATISTICS',
+        icon: 'check_box',
+        route: '/main/profile/statistics',
       }
 
     ]
