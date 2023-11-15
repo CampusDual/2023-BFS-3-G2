@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
 import { ProductsDetailComponent } from '../products-detail/products-detail.component';
 import { MatDialog } from '@angular/material';
-import { FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-products-home',
@@ -26,9 +26,9 @@ export class ProductsHomeComponent implements OnInit {
 
   searchTerm: string = '';
 
-  constructor(protected dialog: MatDialog) {}
+  constructor(protected dialog: MatDialog) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
@@ -39,20 +39,24 @@ export class ProductsHomeComponent implements OnInit {
     });
   }
 
-  onSelected(): void {
+  performSearch(): void {
     let selected = this.bindingInput.getValue();
+    let filters: Array<Expression> = [];
+    filters.push(FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm));
     if (selected !== 'ALL') {
-      const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
-      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-      this.grid.queryData(basicExpr);
-    } else {
-      this.grid.reloadData();
+      filters.push(FilterExpressionUtils.buildExpressionLike('product_type', selected));
     }
+    let kv = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+    this.grid.queryData(kv);
+    // filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", this.data.end_date));
+    // filters.push(FilterExpressionUtils.buildExpressionMoreEqual("end_date", this.data.start_date));
+    // let kv2 = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+    // kv['tproducts_id_product'] = this.data.tproducts_id_product;
+    // kv['state'] = "pending";
   }
 
-  performSearch(): void {
-    const filterExpr = FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm);
-    const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-    this.grid.queryData(basicExpr);
-  }
+  // performSearch(): void {
+
+  //   this.grid.queryData(basicExpr);
+  // }
 }

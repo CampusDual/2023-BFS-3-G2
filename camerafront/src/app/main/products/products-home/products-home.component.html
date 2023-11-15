@@ -18,7 +18,7 @@
 
   <o-combo #bindingInput o-grid-toolbar width="100px" position="end" attr="product_type"
     [static-data]="productTypeArray" value-column="typeText" columns="typeText" visible-columns="typeText"
-    read-only="no" required="yes" null-selection="no" translate="yes" (onValueChange)="onSelected()"
+    read-only="no" required="yes" null-selection="no" translate="yes" (onValueChange)="performSearch()"
     class="form-field"></o-combo>
   <div #bindingInput o-grid-toolbar class="search-container">
       <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar en Camera Rent..." (input)="performSearch()">
