@@ -13,17 +13,9 @@ import { GalleryImageSize } from 'ontimize-web-ngx-gallery';
 export class ProductsDetailComponent implements OnInit {
   @ViewChild('form', { static: false }) form: OFormComponent;
   // public resultado2;
-  
+
   public galleryImages = [
     {
-      // small: "assets/images/no-image.png",
-      medium: "assets/images/no-image.png",
-      // big: "assets/images/no-image.png"
-    }, {
-      // small: "assets/images/no-image.png",
-      medium: "assets/images/no-image.png",
-      // big: "assets/images/no-image.png"
-    }, {
       // small: "assets/images/no-image.png",
       medium: "assets/images/no-image.png",
       // big: "assets/images/no-image.png"
@@ -62,7 +54,7 @@ export class ProductsDetailComponent implements OnInit {
     protected injector: Injector,
     protected dialog: MatDialog,
     protected imageRequestService: OntimizeService
-    
+
   ) {
     // this.productRequestService = this.injector.get(OntimizeService);
   }
@@ -75,8 +67,8 @@ export class ProductsDetailComponent implements OnInit {
 
 
   ngOnInit() {
-     this.configureService();
-     this.queryImages(this.data.id_product);
+    this.configureService();
+    this.queryImages(this.data.id_product)
   }
   public loadData(ev) {
     this.data = ev;
@@ -89,15 +81,23 @@ export class ProductsDetailComponent implements OnInit {
       panelClass: 'custom-dialog-container'
     });
   }
-  createImageArray(dataImages){
+  createImageArray(dataImages) {
+    // let dataImages = this.queryImages(data.id_product)
     this.galleryImages = []
-    for (let element of dataImages) {
     this.galleryImages.push(
       {
-        medium: "data:image/png;base64," + element.pimage
+        medium: "data:image/png;base64," + this.data.main_photo
       });
+    if (dataImages != null) {
+      for (let element of dataImages) {
+        this.galleryImages.push(
+          {
+            medium: "data:image/png;base64," + element.pimage
+          });
+      }
     }
-    
+
+
     // this.galleryImages = [
     //   {
     //     small: "data:image/png;base64," + dataImages.img1,
@@ -114,13 +114,14 @@ export class ProductsDetailComponent implements OnInit {
     //   }
     // ];
   }
-  queryImages(idProduct){
+  queryImages(idProduct) {
     this.imageRequestService.query({ "tproducts_id_product": idProduct }, ['pimage'], 'productImage').subscribe(
       result => {
         if (result.data && result.data.length) {
           console.log(result.data);
           this.createImageArray(result.data);
-
+        } else{
+          this.createImageArray([]);
         }
       }
     );

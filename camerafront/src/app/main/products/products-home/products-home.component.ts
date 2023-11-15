@@ -42,11 +42,20 @@ export class ProductsHomeComponent implements OnInit {
   performSearch(): void {
     let selected = this.bindingInput.getValue();
     let filters: Array<Expression> = [];
-    filters.push(FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm));
-    if (selected !== 'ALL') {
-      filters.push(FilterExpressionUtils.buildExpressionLike('product_type', selected));
+    if (this.searchTerm != '') {
+      // filters.push(C);
+      // filters.push(FilterExpressionUtils.buildExpressionLike('plocation', this.searchTerm));
+      // let kv0 = {'@basic_expression':filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_OR))}
+      let expr1 = FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm);
+      let expr2 = FilterExpressionUtils.buildExpressionLike('plocation', this.searchTerm);
+      filters.push(FilterExpressionUtils.buildComplexExpression(expr1, expr2, FilterExpressionUtils.OP_OR));
     }
-    let kv = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+
+    if (selected !== 'ALL' && selected !== "") {
+      filters.push(FilterExpressionUtils.buildExpressionLike('product_type', selected));
+      
+    }
+    let kv = {'@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND))};
     this.grid.queryData(kv);
     // filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", this.data.end_date));
     // filters.push(FilterExpressionUtils.buildExpressionMoreEqual("end_date", this.data.start_date));
