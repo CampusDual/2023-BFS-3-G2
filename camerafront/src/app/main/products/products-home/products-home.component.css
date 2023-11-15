@@ -138,7 +138,7 @@
   /* justify-content: unsafe center; */
   /* max-width: 600px; 
   margin-top: 50px;  */
-  position: absolute;
+  /* position: absolute; */
   padding-bottom: 40px;
 }
 
@@ -148,8 +148,8 @@
 
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-66%, -40%);
+  top: -5%;
+  transform: translate(-66%, 100%);
 
   /* align-content: center; */
   /* vertical-align: center; */
