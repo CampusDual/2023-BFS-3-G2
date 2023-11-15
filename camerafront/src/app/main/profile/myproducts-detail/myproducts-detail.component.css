@@ -1,4 +1,4 @@
-.container{
+.container {
     /* text-align: center; */
     /* height: auto; */
     width: 100%;
@@ -9,25 +9,28 @@
     align-items: center; */
 }
 
-.image-container{
-}
-.image-container o-image{
+.image-container {}
 
-    }
-.detail-container{
+.grid-container {
+    height: 50%;
+}
+
+.detail-container {
     /* display: flex;
     flex-direction: column;
         align-items: center;
         text-align: center; */
     /* width: 80%; */
-    height: 100%;
+    height: 50%;
     padding: 0px 60px 60px 60px;
 }
+
 .detail-container o-row {
     padding: 5px 0px 5px 5px;
     /* width: 100%; */
 
 }
+
 .avaliable-container {
     padding: 5px 0px 5px 5px;
     height: 50px;

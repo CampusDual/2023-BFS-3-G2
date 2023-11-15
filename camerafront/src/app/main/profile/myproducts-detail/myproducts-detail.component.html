@@ -1,10 +1,10 @@
 <div class="container">
-  <o-form fxLayout="column" service="products" entity="product" keys="id_product"
-  columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
-  show-header-navigation="yes" header-actions="U;D">
-  <!-- (onDataLoaded)="loadData($event)" -->
-  <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
-  <!-- <o-row> -->
+  <o-form #form fxLayout="column" service="products" entity="product" keys="id_product"
+    columns="id_product;product_name;price;status;product_type;avaliable;main_photo;plocation;tuser_user_"
+    show-header-navigation="yes" header-actions="U;D" (onDataLoaded)="loadData($event)">
+    <!-- (onDataLoaded)="loadData($event)" -->
+    <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
+    <!-- <o-row> -->
     <o-column class="image-container">
       <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
         image-type="base64"></o-image>
@@ -14,8 +14,9 @@
         <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input>
       </o-row>
       <o-row>
-        <o-combo fxFill attr="status" service="products" entity="productStatus" keys="id" value-column="id" columns="id;status"
-          visible-columns="status" read-only="no" required="yes" translate="yes" null-selection="no"></o-combo>
+        <o-combo fxFill attr="status" service="products" entity="productStatus" keys="id" value-column="id"
+          columns="id;status" visible-columns="status" read-only="no" required="yes" translate="yes"
+          null-selection="no"></o-combo>
       </o-row>
 
       <o-row>
@@ -26,15 +27,61 @@
         <o-text-input fxFill attr="plocation"></o-text-input>
       </o-row>
       <o-row>
-        <o-currency-input fxFill attr="price"  currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
+        <o-currency-input fxFill attr="price" currency-symbol="EUR" max-decimal-digits="2"></o-currency-input>
       </o-row>
       <o-row>
-        <o-text-input fxFill attr="pdetails" ></o-text-input>
+        <o-text-input fxFill attr="pdetails"></o-text-input>
       </o-row>
       <o-row class="avaliable-container">
         <o-checkbox attr="avaliable" read-only="no"></o-checkbox>
       </o-row>
     </o-column>
-  <!-- </o-row> -->
+    <!-- </o-row> -->
+  
+  <o-column class="grid-container">
+
+    <o-list #list attr="list" title="List" service="products" entity="productImage" parent-keys="tproducts_id_product:id_product" columns="id_image;tproducts_id_product;pimage" keys="id_image"
+   refresh-button="true" insert-button="true" delete-mode="true"
+  quick-filter="no" row-height="medium" detail-mode="true" delete-button="yes" selectable="yes" insert-button="yes" insert-button-floatable="yes" insert-button-position="top">
+
+  <o-list-item *ngFor="let row of list.dataArray">
+    <o-list-item-card-image 
+      image="data:image/png;base64,{{ row.pimage }}"></o-list-item-card-image>
+       <!-- (icon-action)="onIconAction()" collapsible="false" collapsed="false" -->
+  </o-list-item>
+
+</o-list>
+    <!-- <o-grid #grid attr="grid" title="Grid" [fixed-header]="true" style="height:'600px'"
+    insert-button="true" insert-button-floatable="true" detail-mode="click"> -->
+      <!--(click)="openZoomDialog(list)" service="products" entity="productImage" parent-keys="id_product" keys="tproducts_id_product"  columns="id_image;tproducts_id_product;pimage" -->
+      <!-- <o-grid-item *ngFor="let list of grid.dataArray">
+        <o-column layout-padding class="container-item">
+          <img  src="data:image/png;base64,{{list.pimage}}" empty-image="assets/images/no-image.png">
+        </o-column>
+      </o-grid-item> -->
+      <!-- <o-grid-item>
+        <o-column layout-padding class="container-new-item">
+          <img (click)="openNewDialog(list)" src="assets/images/no-image.png">
+        </o-column>
+      </o-grid-item> -->
+    <!-- </o-grid> -->
+  </o-column>
 </o-form>
 </div>
+
+
+<!-- <o-form fxLayout="column" service="products" entity="productImage" parent-keys="id_product" keys="tproducts_id_product" show-header-navigation="no"
+    header-actions="R;I;U;D">
+    <mat-tab-group oTabGroup="ontimize">
+      <mat-tab label="First">
+        <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
+          image-type="base64"></o-image> -->
+<!-- </mat-tab>
+      <mat-tab label="Second">
+        <o-image id="img2" attr="img2" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
+      </mat-tab>
+      <mat-tab label="Third">
+        <o-image id="img3" attr="img3" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
+      </mat-tab>
+    </mat-tab-group>
+  </o-form> -->

@@ -1,6 +1,7 @@
 <o-row layout-padding class="container" (onDataLoaded)="loadData($event)">
   <div class="img-container">
-    <img class="image" src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png">
+    <!-- <img class="image" src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png"lazyLoading=true> -->
+    <o-gallery [gallery-images]="galleryImages"  [gallery-options]="galleryOptions"></o-gallery>
   </div>
   <div class="data-container">
     <div class="name-container">

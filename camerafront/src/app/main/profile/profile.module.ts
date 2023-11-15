@@ -10,10 +10,11 @@ import { MyproductsNewComponent } from './myproducts-new/myproducts-new.componen
 import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details/my-rentals-conflict-details.component';
+import { MyproductsDetailsImageComponent } from './myproducts-details-image/myproducts-details-image.component';
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent],
+  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, MyproductsDetailsImageComponent],
   imports: [
     CommonModule,
     SharedModule,
