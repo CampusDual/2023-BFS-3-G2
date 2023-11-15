@@ -23,6 +23,8 @@ public class ProductRequestDao extends OntimizeJdbcDaoSupport {
     public static final String PUSER_ = "p_user";
     public static final String PPhone = "p_phone";
     public static final String RPhone = "r_phone";
+    public static final String PRICE = "rprice";
+    public static final String RPROFIT = "rprofit";
 
 
 }

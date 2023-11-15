@@ -15,7 +15,7 @@ export class MyRentalsHomeComponent implements OnInit {
   @ViewChild('tableout', { static: true }) tableOut: OTableComponent;
   @ViewChild('table2', { static: true }) table2: OTableComponent;
   @ViewChild('profit', { static: true }) columnProfit: OColumnComponent;
-  public calculateProfit = this.calculateProfitFunction;
+  // public calculateProfit = this.calculateProfitFunction;
   message:string;
   constructor(
     private auth: AuthService,
@@ -34,13 +34,13 @@ export class MyRentalsHomeComponent implements OnInit {
   ngAfterViewInit() {
   }
   
-  public calculateProfitFunction(rowData: Array<any>): number {
-    const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
-    const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
-    return diferenciaEnDias * rowData["price"]
-  }
+  // public calculateProfitFunction(rowData: Array<any>): number {
+  //   const diferenciaEnMilisegundos = rowData["end_date"] - rowData["start_date"];
+  //   const diferenciaEnDias = diferenciaEnMilisegundos / (1000 * 60 * 60 * 24);
+  //   return diferenciaEnDias * rowData["price"]
+  // }
   public openDetail(rowData: any): void {
-    rowData["profit"] = this.calculateProfitFunction(rowData);
+    // rowData["profit"] = this.calculateProfitFunction(rowData);
     this.dialog.open(MyRentalsConflictDetailsComponent, {
       height: '800px',
       width: '700px',

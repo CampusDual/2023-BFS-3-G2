@@ -12,10 +12,12 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details/my-rentals-conflict-details.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { OChartModule } from 'ontimize-web-ngx-charts';
+import { MyproductsDetailsImageComponent } from './myproducts-details-image/myproducts-details-image.component';
+
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, StatisticsComponent],
+  declarations: [ProfileHomeComponent,StatisticsComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, MyproductsDetailsImageComponent],
   imports: [
     CommonModule,
     SharedModule,
