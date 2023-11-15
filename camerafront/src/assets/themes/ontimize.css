@@ -162,6 +162,9 @@ o-app-header .o-app-header-title {
 .o-app-header {
   background-color: white;
 }
+.o-data-toolbar{
+  padding: 0px 4px 15px 4px;
+} 
 
 /* FORM */
 .o-form-toolbar .mat-toolbar {

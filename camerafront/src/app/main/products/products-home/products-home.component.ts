@@ -1,7 +1,7 @@
 import { Component, Injector, OnInit, ViewChild } from '@angular/core';
 import { ProductsDetailComponent } from '../products-detail/products-detail.component';
 import { MatDialog } from '@angular/material';
-import { FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils, OComboComponent, OGridComponent } from 'ontimize-web-ngx';
 
 @Component({
   selector: 'app-products-home',
@@ -21,13 +21,15 @@ export class ProductsHomeComponent implements OnInit {
       typeText: 'VIDEO'
     }, {
       typeText: 'PHOTO'
-    },];
+    },
+  ];
 
-  constructor(protected dialog: MatDialog) {
-  }
-  ngOnInit() {
+  searchTerm: string = '';
 
-  }
+  constructor(protected dialog: MatDialog) { }
+
+  ngOnInit() { }
+
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
       height: '70%',
@@ -36,32 +38,25 @@ export class ProductsHomeComponent implements OnInit {
       panelClass: 'custom-dialog-container'
     });
   }
-  onSelected(): void {
-    let selected = this.bindingInput.getValue();
-    if (selected != "ALL") {
-      const filterExpr = FilterExpressionUtils.buildExpressionLike('product_type', selected);
-      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-      this.grid.queryData(basicExpr);
-    } else this.grid.reloadData();
 
+  performSearch(): void {
+    let selected = this.bindingInput.getValue();
+    let filters: Array<Expression> = [];
+    filters.push(FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm));
+    if (selected !== 'ALL') {
+      filters.push(FilterExpressionUtils.buildExpressionLike('product_type', selected));
+    }
+    let kv = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+    this.grid.queryData(kv);
+    // filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", this.data.end_date));
+    // filters.push(FilterExpressionUtils.buildExpressionMoreEqual("end_date", this.data.start_date));
+    // let kv2 = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+    // kv['tproducts_id_product'] = this.data.tproducts_id_product;
+    // kv['state'] = "pending";
   }
 
-  //
-  // createFilter(values: Array<{ attr, value }>): Expression {
+  // performSearch(): void {
 
-  //   let filters = [];
-  //   values.forEach(fil => {
-  //     if (fil.value) {
-  //       filters.push(FilterExpressionUtils.buildExpressionEquals('product_type', 'VIDEO'));
-  //     }
-  //   });
-  //   let ce: Expression;
-  //   if (filters.length > 0) {
-  //     ce = filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND));
-  //   }
-
-  //   return ce;
-
+  //   this.grid.queryData(basicExpr);
   // }
-
 }
