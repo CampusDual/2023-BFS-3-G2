@@ -1,2 +1,13 @@
-<p>statistics works!</p>
-<o-chart type="pie" layout-fill service="productsRequest" entity="myProductRequestEntry" x-axis="product_name" y-axis="rprofit"></o-chart>
+<o-chart #pie type="pie" layout-fill service="productsRequest" entity="myProductRequestEntry" x-axis="product_name"
+    y-axis="rprofit"></o-chart>
+
+
+<o-form #formFilter editable-detail="no" show-header="no" layout-direction="column">
+    <div fxLayout="column" layout-padding>
+        <o-daterange-input attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
+            required="yes" (onChange)="filterBuilder()" clear-button="yes" format="LL" separator=" to "
+            mode="desktop">
+        </o-daterange-input>
+        <o-button id="customButton" attr="bconfirm" type="BASIC" label="CONFIRM" (click)="filterBuilder()"></o-button>
+    </div>
+</o-form>
