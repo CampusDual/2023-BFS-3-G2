@@ -9,7 +9,7 @@ import { } from 'src/app/shared/d3-locale/d3-locale.service';
   styleUrls: ['./statistics.component.css']
 })
 
-export class StatisticsComponent implements OnInit {
+export class StatisticsComponent{
   public selected: {};
   @ViewChild('pie', { static: true }) pie: OChartComponent;
   @ViewChild('formFilter', { static: false }) private formFilter: OFormComponent;
@@ -19,7 +19,9 @@ export class StatisticsComponent implements OnInit {
   }
 
 
-  ngOnInit() { }
+  ngAfterViewInit(){
+    this.filterBuilder()
+  }
 
   filterBuilder() {
     let dates = this.formFilter.getFieldValue("date")
@@ -35,9 +37,15 @@ export class StatisticsComponent implements OnInit {
       let kv = {
         '@basic_expression': filters.reduce((exp1, exp2) =>
           FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND))
-      };
+      }
+      kv["state"]= "applied"
       this.pie.queryData(kv, { sqltypes: { start_date: 91 } });
     }
-  }
+    else {
+      const filterExpr = FilterExpressionUtils.buildExpressionLike("state", "applied");
+      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+      this.pie.queryData(basicExpr);
+    }
 
+  }
 }
