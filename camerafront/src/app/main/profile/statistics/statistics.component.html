@@ -1,12 +1,19 @@
-<o-chart #pie type="pie" layout-fill service="productsRequest" entity="myProductRequestEntry" x-axis="product_name"
-    y-axis="rprofit"></o-chart>
+<div class="piechart">
+    <h1>{{ title | oTranslate }}</h1>
+    <div class="content-wrapper">
+        <o-chart class="pie" #pie type="pie" layout-fill service="productsRequest"
+            entity="myProductRequestEntry" x-axis="product_name" y-axis="rprofit"></o-chart>
 
+        <o-form class="oform" #formFilter editable-detail="no" show-header="no" layout-direction="column">
+            <div fxLayout="column" layout-padding>
+                <o-daterange-input class="calendar" show-ranges="true" attr="date"
+                    label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" text-input-enabled="no" read-only="no"
+                    required="yes" (onChange)="filterBuilder()" clear-button="yes" format="LL" separator=" to "
+                    mode="desktop">
+                </o-daterange-input>
+                <p (onDataLoaded)="loadData()">{{profits}}</p>
+            </div>
+        </o-form>
 
-<o-form #formFilter editable-detail="no" show-header="no" layout-direction="column">
-    <div fxLayout="column" layout-padding>
-        <o-daterange-input attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" read-only="no"
-            required="yes" (onChange)="filterBuilder()" clear-button="yes" format="LL" separator=" to "
-            mode="desktop">
-        </o-daterange-input>
     </div>
-</o-form>
+</div>
