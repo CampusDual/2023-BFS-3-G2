@@ -43,9 +43,6 @@ export class ProductsHomeComponent implements OnInit {
     let selected = this.bindingInput.getValue();
     let filters: Array<Expression> = [];
     if (this.searchTerm != '') {
-      // filters.push(C);
-      // filters.push(FilterExpressionUtils.buildExpressionLike('plocation', this.searchTerm));
-      // let kv0 = {'@basic_expression':filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_OR))}
       let expr1 = FilterExpressionUtils.buildExpressionLike('product_name', this.searchTerm);
       let expr2 = FilterExpressionUtils.buildExpressionLike('plocation', this.searchTerm);
       filters.push(FilterExpressionUtils.buildComplexExpression(expr1, expr2, FilterExpressionUtils.OP_OR));
