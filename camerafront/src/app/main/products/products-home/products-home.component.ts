@@ -50,10 +50,13 @@ export class ProductsHomeComponent implements OnInit {
 
     if (selected !== 'ALL' && selected !== "") {
       filters.push(FilterExpressionUtils.buildExpressionLike('product_type', selected));
-      
+
     }
-    let kv = {'@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND))};
-    this.grid.queryData(kv);
+    if (filters.length) {
+      let kv = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
+      this.grid.queryData(kv);
+    }else this.grid.queryData();
+
     // filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", this.data.end_date));
     // filters.push(FilterExpressionUtils.buildExpressionMoreEqual("end_date", this.data.start_date));
     // let kv2 = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
