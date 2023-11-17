@@ -2,13 +2,47 @@
 <div class="container">
   <span>{{'YOUR DATA' | oTranslate}}:</span>
   <div class="data-container">
-    <o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column" keys="user_"
+    <o-form #form attr="profile_detail" service="tuser" entity="user_" fxLayout="column" keys="user_"
       keys-sql-types="VARCHAR" show-header="no" header-actions="R" show-header-navigation="no" editable-detail="no">
       <o-text-input attr="user_" label="NICKNAME" Fx></o-text-input>
       <o-text-input attr="name" label="NAME"></o-text-input>
       <o-text-input attr="surname" label="SURNAME"></o-text-input>
       <o-text-input attr="email" label="EMAIL"></o-text-input>
-      <o-text-input attr="ulocation" label="LOCATION"></o-text-input>
+      <o-text-input attr="plocation" label="LOCATION"></o-text-input>
     </o-form>
   </div>
 </div>
+<o-form service="tuser" entity="user_" keys="CUSTOMERID" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-text-input attr="CUSTOMERID" sql-type="INTEGER" enabled="no"></o-text-input>
+  <o-row>
+    <o-column>
+      <o-image id="CUSTOMER_PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+    </o-column>
+    <o-column title-label="CUSTOMER_PERSONAL_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="NAME" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="SURNAME" fxFlex="40" required="yes"></o-text-input>
+        
+      </o-row>
+      <o-row>
+
+        <o-integer-input attr="phone_num" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
+        <o-combo attr="CUSTOMERTYPEID" class="input-padding" fxFlex="20" service="customers" 
+           entity="customerType" keys="CUSTOMERTYPEID" columns="CUSTOMERTYPEID;DESCRIPTION" 
+           visible-columns="DESCRIPTION" value-column="CUSTOMERTYPEID"></o-combo>
+      </o-row>
+      <o-row>
+        <o-email-input attr="email" fxFlex></o-email-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="ulocation" fxFlex></o-text-input>
+      </o-row>
+     
+        
+
+      <o-row>
+          <o-textarea-input attr="COMMENTS" fxFlex></o-textarea-input>
+        </o-row>
+    </o-column>
+  </o-row>
+</o-form>
