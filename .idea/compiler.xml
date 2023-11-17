@@ -12,13 +12,6 @@
         <module name="cameraback-api" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="cameraback" target="11" />
-      <module name="cameraback-api" target="11" />
-      <module name="cameraback-boot" target="11" />
-      <module name="cameraback-model" target="11" />
-      <module name="cameraback-ws" target="11" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

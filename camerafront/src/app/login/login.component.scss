@@ -30,6 +30,9 @@
       position: relative;
       z-index: 1;
     }
+    .login-inner-container{
+      background-color: #416D83 !important;
+    }
 
     .login-bg-container::before {
       content: "";
@@ -81,6 +84,8 @@
           margin: 32px 0 0;
           height: 42px;
           font-size: 16px;
+          background-color: #FFA099;
+          border-radius: 10px;
         }
 
         .dark_text {
