@@ -13,8 +13,7 @@ import { RegisterComponent } from './register/register.component';
     LoginRoutingModule
   ],
   declarations: [
-    LoginComponent,
-    RegisterComponent
+    LoginComponent
   ]
 })
 export class LoginModule { }

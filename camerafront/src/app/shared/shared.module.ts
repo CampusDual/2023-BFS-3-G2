@@ -18,6 +18,7 @@ export function calculateProfitFunction (rowData: Array<any>): number {
     
   ],
   declarations: [
+    RegisterComponent,
     StatusColumnRendererComponent,
     ProfitDifColumnRendererComponent,
     ButtonColumnRendererComponent
