@@ -7,5 +7,8 @@ export const SERVICE_CONFIG: Object = {
   },
   'productsRequest':{
     'path': '/productsRequest'
+  },
+  'register':{
+    'path': '/register'
   }
 };

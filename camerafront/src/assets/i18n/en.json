@@ -87,6 +87,7 @@
   "CONFLICTED RENTS": "Conflicted rents",
   "APPLY REQUEST": "Apply request",
   "€/DAY":"€/day",
-  "SEARCH_PLACEHOLDER": "Search on Camera Rent..."
+  "SEARCH_PLACEHOLDER": "Search on Camera Rent...",
+  "USER_ALREADY_EXIST": "Nickname already exist"
 
 }

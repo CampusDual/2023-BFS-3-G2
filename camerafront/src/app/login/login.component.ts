@@ -1,8 +1,10 @@
 import { Component, Inject, Injector, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService, LocalStorageService, NavigationService } from 'ontimize-web-ngx';
 import { Observable } from 'rxjs';
+import { RegisterComponent } from './register/register.component';
 
 @Component({
   selector: 'login',
@@ -25,7 +27,8 @@ export class LoginComponent implements OnInit {
     @Inject(NavigationService) public navigation: NavigationService,
     @Inject(AuthService) private authService: AuthService,
     @Inject(LocalStorageService) private localStorageService,
-    public injector: Injector
+    public injector: Injector,
+    public dialog: MatDialog
   ) {
     this.router = router;
 
@@ -42,7 +45,9 @@ export class LoginComponent implements OnInit {
     });
 
   }
-
+  public createNewAccount() {
+    this.dialog.open(RegisterComponent)
+  }
   ngOnInit(): any {
     this.navigation.setVisible(false);
 
