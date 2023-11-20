@@ -21,6 +21,7 @@ export class StatisticsComponent {
   @ViewChild("totalOutput", { static: false }) totalOutput: OTextInputComponent;
   public data3;
   public pieTotal = 0;
+  public pieMonth;
 
 
   constructor(
@@ -32,6 +33,7 @@ export class StatisticsComponent {
 
   ) {
     this.translateService.onLanguageChanged.subscribe(() => this.reloadComponent());
+    this.pieMonth = { firstNum: "", first: "", separator: "to", secondNum: "", second: "" }
 
   }
   reloadComponent() {
@@ -150,6 +152,7 @@ export class StatisticsComponent {
 
   ngAfterViewInit() {
     let kv = this.filterBuilder()
+    this.queryPie();
     this.calculatePieTotal(kv);
     this.configureService();
     this.queryMultiBar();
@@ -186,6 +189,16 @@ export class StatisticsComponent {
     if (dates) {
       const startDate = dates.startDate.format('YYYY-MM-DD')
       const endDate = dates.endDate.format('YYYY-MM-DD')
+      let startDateNum = dates.startDate.format('D');
+      let endDateNum = dates.endDate.format('D');
+      let startDateString = dates.startDate.format('MMMM');
+      let endDateString = dates.endDate.format('MMMM');
+      this.pieMonth.firstNum = startDateNum;
+      this.pieMonth.first = startDateString;
+      this.pieMonth.secondNum = endDateNum;
+      this.pieMonth.second = endDateString;
+      this.pieMonth.separator = "to";
+
       let filters: Array<Expression> = [];
       filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", endDate));
       filters.push(FilterExpressionUtils.buildExpressionMoreEqual("start_date", startDate));
@@ -198,10 +211,27 @@ export class StatisticsComponent {
       // this.pie.queryData(kv, { sqltypes: { start_date: 91 } });
     }
     else {
-      const filterExpr = FilterExpressionUtils.buildExpressionLike("state", "applied");
-      const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
+      const actualDate: Date = new Date();
+      this.pieMonth.first = actualDate.toLocaleString('en-EN', { month: 'long' });
+      this.pieMonth.separator = "";
+      this.pieMonth.firstNum = "";
+      this.pieMonth.secondNum = "";
+      this.pieMonth.second = "";
+      const firstDay: Date = new Date(actualDate.getFullYear(), actualDate.getMonth(), 1);
+      const lastDay: Date = new Date(actualDate.getFullYear(), actualDate.getMonth() + 1, 0);
+      let filters: Array<Expression> = [];
+      filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", lastDay));
+      filters.push(FilterExpressionUtils.buildExpressionMoreEqual("start_date", firstDay));
+      let kv = {
+        '@basic_expression': filters.reduce((exp1, exp2) =>
+          FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND))
+      }
+      kv["state"] = "applied"
+      return kv;
+      // const filterExpr = FilterExpressionUtils.buildExpressionLike("state", "applied");
+      // const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
       // this.pie.queryData(basicExpr);
-      return basicExpr;
+      // return basicExpr;
     }
   }
 }

@@ -1,6 +1,6 @@
 .container {
   height: 100%;
-  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filter-container {
@@ -33,13 +33,13 @@
 
 .pie-container {
   height: 100%;
-  width: 50%;
+  width: 30%;
   text-align: center;
 }
 
 .barchart-container {
   height: 100%;
-  width: 50%;
+  width: 60%;
   padding-left: 40px;
 }
 
