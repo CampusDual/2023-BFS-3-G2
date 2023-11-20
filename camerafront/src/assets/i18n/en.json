@@ -55,7 +55,7 @@
   "CONFIRM": "Confirm",
   "pick a date": "Choose Dates",
   "request_text": "Write a comment",
-  "INPUT.BUTTON.DATERANGE": "Dates",
+  "INPUT.BUTTON.DATERANGE": "Period",
   "DATERANGE.APPLYLABEL": "Select Dates",
   "start_date": "Rental Start",
   "end_date": "Rental End",
@@ -87,6 +87,7 @@
   "CONFLICTED RENTS": "Conflicted rents",
   "APPLY REQUEST": "Apply request",
   "€/DAY":"€/day",
-  "SEARCH_PLACEHOLDER": "Search on Camera Rent..."
+  "SEARCH_PLACEHOLDER": "Search on Camera Rent...",
+  "STATISTICS": "Statistics"
 
 }

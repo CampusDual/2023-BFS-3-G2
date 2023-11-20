@@ -32,7 +32,7 @@ export const MENU_CONFIG: MenuRootItem[] = [
       {
         id: 'statistics',
         name: 'STATISTICS',
-        icon: 'check_box',
+        icon: 'query_stats',
         route: '/main/profile/statistics',
       }
 

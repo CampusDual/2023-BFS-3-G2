@@ -90,7 +90,7 @@ export class StatisticsComponent {
   calculatePieTotal(kv) {
     this.pieTotal = 0;
     this.configureService();
-    this.productRequestService.query(kv, ["product_name", "rprofit"], "myProductRequestEntry",{ start_date: 91 }).subscribe(
+    this.productRequestService.query(kv, ["product_name", "rprofit"], "myProductRequestEntry", { start_date: 91 }).subscribe(
       result => {
         if (result.data && result.data.length) {
           for (let element of result.data) {
@@ -99,10 +99,6 @@ export class StatisticsComponent {
         }
       }
     );
-    if(this.totalOutput){
-      this.totalOutput.setValue(this.pieTotal);
-    }
-    
   }
 
   adaptData(values) {
@@ -164,6 +160,7 @@ export class StatisticsComponent {
       let chartService: ChartService = this.multiBar.getChartService();
       if (chartService) {
         let chartOps = chartService.getChartOptions();
+        console.log(chartOps);
 
         // Configuring x axis...
         chartOps['xAxis']['tickFormat'] =
@@ -174,11 +171,11 @@ export class StatisticsComponent {
           return d3.format(',f')(d) + '€';
         };
 
-
         // Configuring y axis...
         var yScale = d3.scale.linear();
         chartOps['yScale'] = yScale;
-        chartOps['yDomain'] = [0, 20000];
+        // chartOps['yDomain'] = [0, 20000];
+        console.log(chartOps);
       }
     }
   }
