@@ -1,14 +1,25 @@
 
-<div class="container">
-  <span>{{'YOUR DATA' | oTranslate}}:</span>
-  <div class="data-container">
-    <o-form #form attr="profile_detail" service="users" entity="user" fxLayout="column" keys="user_"
-      keys-sql-types="VARCHAR" show-header="no" header-actions="R" show-header-navigation="no" editable-detail="no">
-      <o-text-input attr="user_" label="NICKNAME" Fx></o-text-input>
-      <o-text-input attr="name" label="NAME"></o-text-input>
-      <o-text-input attr="surname" label="SURNAME"></o-text-input>
-      <o-text-input attr="email" label="EMAIL"></o-text-input>
-      <o-text-input attr="ulocation" label="LOCATION"></o-text-input>
-    </o-form>
-  </div>
-</div>
+<o-form #form service="users" entity="myUser" keys="user_" header-actions="R;U" show-header-navigation="no">
+  <o-text-input attr="user_" label="NICKNAME" read-only="yes" required="yes"></o-text-input>
+  <o-row>
+    <o-column>
+      <o-image id="CUSTOMER_PHOTO" attr="user_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+    </o-column>
+    <o-column title-label='YOUR DATA' fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="name" fxFlex="40" required="yes" ></o-text-input>
+        <o-text-input class="input-padding" attr="surname" fxFlex="40" required="yes"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-phone-input attr="phone_num" label="PHONE" read-only="no"required="yes"></o-phone-input>
+        <o-nif-input #nif attr="nif" label="NIF"  read-only="no" required="yes" ></o-nif-input>
+      </o-row>
+      <o-row>
+        <o-email-input attr="email" label="EMAIL" read-only="no" required="yes" ></o-email-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="ulocation" label="LOCATION" required="yes"></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>

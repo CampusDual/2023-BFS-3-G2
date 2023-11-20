@@ -14,4 +14,5 @@ public interface IUserService {
 	public EntityResult userUpdate(Map<?, ?> attrMap, Map<?, ?> keyMap);
 	public EntityResult userDelete(Map<?, ?> keyMap);
 	public EntityResult myUserQuery(Map<String, Object> keyMap, List<String> attrList);
+	public EntityResult myUserUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap);
 }
