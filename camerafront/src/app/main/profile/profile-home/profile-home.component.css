@@ -5,6 +5,7 @@
 
 .img-container {
     padding: 10px;
+    max-width: 30%;
 }
 
 .hspacer {
