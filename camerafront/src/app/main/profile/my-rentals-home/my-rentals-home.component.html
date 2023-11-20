@@ -1,4 +1,37 @@
 <mat-tab-group oTabGroup="My rentals">
+    <mat-tab label="{{'YOUR RENTAL REQUESTS' | oTranslate }}">
+    <div class="out-container">
+      <o-table #tablein service="productsRequest" entity="myProductRequest"
+        columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;rprice;request_text;r_user;p_user;p_phone;r_phone;rprofit"
+        visible-columns="main_photo;product_name;start_date;end_date;p_user;p_phone;rprice;state;rprofit"
+        query-rows="20" pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none"
+        show-title="true" title="{{'YOUR RENTAL REQUESTS' | oTranslate }}" auto-adjust="yes" auto-align-titles="yes">
+        <o-table-column attr="product_name" title="product_name"></o-table-column>
+        <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
+          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
+          </o-table-cell-renderer-image>
+        </o-table-column>
+        <o-table-column attr="product_name" title="product_name"></o-table-column>
+        <o-table-column attr="start_date" title="start_date" width="12%" type="date" format="L"></o-table-column>
+        <o-table-column attr="end_date" title="end_date" width="12%" type="date" format="L"></o-table-column>
+        <o-table-column attr="p_user" title="p_user"></o-table-column>
+        <o-table-column attr="p_phone" title="phone" type="phone"></o-table-column>
+        <o-table-column attr="rprice" title="price" currency-symbol="€" type="currency"
+          currency-symbol-position="right"></o-table-column>
+        <o-table-column attr="state" title="state">
+          <app-status-column-renderer></app-status-column-renderer>
+        </o-table-column>
+        <!-- [operation-function]="calculateProfit" -calculated -->
+        <o-table-column attr="rprofit" title="COST" currency-symbol="€" type="currency"
+          currency-symbol-position="right">
+        </o-table-column>
+        <o-table-column attr="CANCEL" title="" icon="close">
+          <!-- <o-table-cell-renderer-action (onClick)="cancelRequest($event)" icon="event_busy"></o-table-cell-renderer-action> -->
+          <app-button-column-renderer (messageEvent)="cancelRequest($event)"></app-button-column-renderer>
+        </o-table-column>
+      </o-table>
+    </div>
+  </mat-tab>
   <mat-tab label="{{'YOUR RENTALS' | oTranslate }}">
     <div class="out-container">
       <o-table #tableout show-title="true" title="{{'YOUR RENTALS' | oTranslate }}" auto-adjust="yes"
@@ -19,9 +52,9 @@
         <!-- <o-table-column-calculated attr="profit" title="TOTAL" [operation-function]="calculateProfit"
           currency-symbol="€" type="currency" currency-symbol-position="right">
         </o-table-column-calculated> -->
-        <o-table-column attr="rprofit" title="COST"  currency-symbol="€"
-        type="currency" currency-symbol-position="right">
-      </o-table-column>
+        <o-table-column attr="rprofit" title="COST" currency-symbol="€" type="currency"
+          currency-symbol-position="right">
+        </o-table-column>
         <o-table-column attr="state" title="state" class="o-table-column-centered">
           <app-status-column-renderer></app-status-column-renderer>
         </o-table-column>
@@ -48,37 +81,5 @@
       </o-table>
     </div>
   </mat-tab>
-  <mat-tab label="{{'YOUR RENTAL REQUESTS' | oTranslate }}">
-    <div class="out-container">
-      <o-table #tablein service="productsRequest" entity="myProductRequest"
-        columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;rprice;request_text;r_user;p_user;p_phone;r_phone;rprofit"
-        visible-columns="main_photo;product_name;start_date;end_date;p_user;p_phone;rprice;state;rprofit" query-rows="20"
-        pageable="no" insert-button="no" delete-button="no" detail-mode="none" refresh-button="none" show-title="true"
-        title="{{'YOUR RENTAL REQUESTS' | oTranslate }}" auto-adjust="yes" auto-align-titles="yes">
-        <o-table-column attr="product_name" title="product_name"></o-table-column>
-        <o-table-column attr="main_photo" orderable="no" searchable="no" width="64px">
-          <o-table-cell-renderer-image image-type="base64" empty-image="assets/images/no-image.png" avatar="yes">
-          </o-table-cell-renderer-image>
-        </o-table-column>
-        <o-table-column attr="product_name" title="product_name"></o-table-column>
-        <o-table-column attr="start_date" title="start_date" width="12%" type="date" format="L"></o-table-column>
-        <o-table-column attr="end_date" title="end_date" width="12%" type="date" format="L"></o-table-column>
-        <o-table-column attr="p_user" title="p_user"></o-table-column>
-        <o-table-column attr="p_phone" title="phone" type="phone"></o-table-column>
-        <o-table-column attr="rprice" title="price" currency-symbol="€" type="currency"
-          currency-symbol-position="right"></o-table-column>
-        <o-table-column attr="state" title="state">
-          <app-status-column-renderer></app-status-column-renderer>
-        </o-table-column>
-        <!-- [operation-function]="calculateProfit" -calculated -->
-        <o-table-column attr="rprofit" title="COST"  currency-symbol="€"
-          type="currency" currency-symbol-position="right">
-        </o-table-column>
-        <o-table-column attr="CANCEL" title="" icon="close">
-          <!-- <o-table-cell-renderer-action (onClick)="cancelRequest($event)" icon="event_busy"></o-table-cell-renderer-action> -->
-          <app-button-column-renderer (messageEvent)="cancelRequest($event)"></app-button-column-renderer>
-        </o-table-column>
-      </o-table>
-    </div>
-  </mat-tab>
+
 </mat-tab-group>
