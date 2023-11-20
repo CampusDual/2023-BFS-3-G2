@@ -88,6 +88,7 @@
   "APPLY REQUEST": "Apply request",
   "€/DAY":"€/day",
   "SEARCH_PLACEHOLDER": "Search on Camera Rent...",
-  "USER_ALREADY_EXIST": "Nickname already exist"
+  "USER_ALREADY_EXIST": "Nickname already exist",
+  "user_photo": "Profile photo"
 
 }

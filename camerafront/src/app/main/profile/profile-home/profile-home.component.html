@@ -1,24 +1,25 @@
 
-<o-form #form service="users" entity="myUser" keys="user_" header-actions="R;U" show-header-navigation="no">
-  <o-text-input attr="user_" label="NICKNAME" read-only="yes" required="yes"></o-text-input>
-  <o-row>
-    <o-column>
+<o-form #form class="campo-blanco" service="users" entity="myUser" keys="user_" header-actions="R;U" show-header-navigation="no">
+  <o-text-input class="campo-blanco"  attr="user_" label="NICKNAME" read-only="yes" required="yes"></o-text-input>
+  <o-row class="campo-blanco" >
+    <o-column class="campo-blanco" >
       <o-image id="CUSTOMER_PHOTO" attr="user_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
     </o-column>
-    <o-column title-label='YOUR DATA' fxFlex>
-      <o-row>
-        <o-text-input class="input-padding" attr="name" fxFlex="40" required="yes" ></o-text-input>
-        <o-text-input class="input-padding" attr="surname" fxFlex="40" required="yes"></o-text-input>
+    <o-column title-label='YOUR DATA' fxFlex class="campo-blanco" >
+      <o-row class="campo-blanco">
+        <o-text-input class="campo-blanco" label="NAME" attr="name" fxFlex="40" required="yes" ></o-text-input>
+        <o-text-input class="campo-blanco" label="SURNAME" attr="surname" fxFlex="40" required="yes"></o-text-input>
       </o-row>
-      <o-row>
-        <o-phone-input attr="phone_num" label="PHONE" read-only="no"required="yes"></o-phone-input>
-        <o-nif-input #nif attr="nif" label="NIF"  read-only="no" required="yes" ></o-nif-input>
+      <o-row class="campo-blanco" >
+        <o-phone-input class="campo-blanco" attr="phone_num" label="phone" read-only="no" required="yes"></o-phone-input>
       </o-row>
-      <o-row>
-        <o-email-input attr="email" label="EMAIL" read-only="no" required="yes" ></o-email-input>
+      <o-row class="campo-blanco" >        
+        <o-nif-input class="campo-blanco" #nif attr="nif" label="NIF"  read-only="no" required="yes" ></o-nif-input>
+
+        <o-email-input class="campo-blanco" attr="email" label="EMAIL" read-only="no" required="yes" ></o-email-input>
       </o-row>
-      <o-row>
-        <o-text-input attr="ulocation" label="LOCATION" required="yes"></o-text-input>
+      <o-row class="campo-blanco" >
+        <o-text-input class="campo-blanco" attr="ulocation" label="LOCATION" required="yes"></o-text-input>
       </o-row>
     </o-column>
   </o-row>

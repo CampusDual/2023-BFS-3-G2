@@ -88,5 +88,6 @@
   "APPLY REQUEST": "Aceptar petición",
   "€/DAY":"€/día",
   "SEARCH_PLACEHOLDER": "Buscar en Camera Rent...",
-  "USER_ALREADY_EXIST": "Nombre de usario ya existe"
+  "USER_ALREADY_EXIST": "Nombre de usario ya existe",
+  "user_photo": "Foto perfil"
 }
