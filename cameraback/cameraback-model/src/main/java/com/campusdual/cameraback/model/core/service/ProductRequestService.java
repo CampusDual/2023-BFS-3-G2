@@ -65,4 +65,18 @@ public class ProductRequestService implements IProductRequestService {
         keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
         return this.daoHelper.query(productRequestDao, keyMap, attrList,"myOutRents");
     }
+
+    @Override
+    public EntityResult rentBalanceQuery(Map<String, Object> keyMap, List<String> attrList) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
+        return this.daoHelper.query(productRequestDao, keyMap, attrList,"rentBalance");
+    }
+
+    @Override
+    public EntityResult rentBalanceTotalQuery(Map<String, Object> keyMap, List<String> attrList) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        keyMap.put(ProductRequestDao.PUSER_, authentication.getName());
+        return this.daoHelper.query(productRequestDao, keyMap, attrList,"rentBalanceTotal");
+    }
 }

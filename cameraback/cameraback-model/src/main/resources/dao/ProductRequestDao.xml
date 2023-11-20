@@ -48,5 +48,27 @@
                 ]]>
             </Sentence>
         </Query>
+        <Query id="rentBalance">
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.vrentbalance
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
+        <Query id="rentBalanceTotal">
+            <Sentence>
+                <![CDATA[
+                    SELECT
+                        #COLUMNS#
+                    FROM
+                        ${mainschema}.vrentbalancetotal
+                    #WHERE#
+                ]]>
+            </Sentence>
+        </Query>
     </Queries>
 </JdbcEntitySetup>

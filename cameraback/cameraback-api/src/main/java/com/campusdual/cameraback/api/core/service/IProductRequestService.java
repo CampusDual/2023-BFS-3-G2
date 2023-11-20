@@ -14,4 +14,6 @@ public interface IProductRequestService {
     public EntityResult myProductRequestUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap);
     public EntityResult myProductRequestDelete(Map<String, Object> keyMap);
     public EntityResult myProductRequestEntryQuery(Map<String, Object> keyMap, List<String> attrList);
+    public EntityResult rentBalanceQuery(Map<String, Object> keyMap, List<String> attrList);
+    public EntityResult rentBalanceTotalQuery(Map<String, Object> keyMap, List<String> attrList);
 }

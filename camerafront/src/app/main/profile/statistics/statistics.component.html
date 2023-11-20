@@ -8,12 +8,22 @@
             <div fxLayout="column" layout-padding>
                 <o-daterange-input class="calendar" show-ranges="true" attr="date"
                     label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" text-input-enabled="no" read-only="no"
-                    required="yes" (onChange)="filterBuilder()" clear-button="yes" format="LL" separator=" to "
+                    required="yes" (onChange)="queryAll()" clear-button="yes" format="LL" separator=" to "
                     mode="desktop">
                 </o-daterange-input>
-                <p (onDataLoaded)="loadData()">{{profits}}</p>
+                <o-text-input #totalOutput></o-text-input>
             </div>
         </o-form>
-
     </div>
 </div>
+<div class="barchart">
+     <!-- <o-chart type="discreteBar" x-label="product_name" y-label="product_name"
+    service="productsRequest"
+    entity="rentBalance" x-axis="start_month" y-axis="total"></o-chartx-data-type="time" x-label="Time" y-label="Amount (€)"> [chart-parameters]="chartParams" -->
+ <o-chart #multiBar type="multiBar" layout-fill [data]="data3" ></o-chart> 
+</div>
+<!-- <div class="barchart2">
+    <o-chart type="discreteBar" x-label="start_month" y-label="total"
+    service="productsRequest"
+    entity="rentBalanceTotal" x-axis="start_month" y-axis="total"></o-chart>
+</div> -->
