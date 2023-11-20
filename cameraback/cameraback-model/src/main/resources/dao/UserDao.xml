@@ -25,6 +25,7 @@
                 <Column>lastpasswordupdate</Column>
                 <Column>firstlogin</Column>
                 <Column>phone_num</Column>
+                <Column>user_photo</Column>
             </ValidColumns>
             <Sentence>
                 <![CDATA[

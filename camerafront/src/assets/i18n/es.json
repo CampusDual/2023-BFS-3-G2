@@ -109,6 +109,8 @@
   "DATERANGE.last_7days": "Última semana",
   "DATERANGE.last_30days": "Últimos 30 días",
   "DATERANGE.this_month": "Este mes",
-  "DATERANGE.this_year": "Este año"
+  "DATERANGE.this_year": "Este año",
 
+  "USER_ALREADY_EXIST": "Nombre de usario ya existe",
+  "user_photo": "Foto perfil"
 }

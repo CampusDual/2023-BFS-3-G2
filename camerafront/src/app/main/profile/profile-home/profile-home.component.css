@@ -9,10 +9,12 @@
     border: 5px double;
     background-color: #426D83;
     border-image-slice: 1;
-    color: rgba(255, 255, 255, 0.918);
 }
 
 .data-container o-text-input {
     padding: 8px;
 
+}
+.campo-blanco {
+    background-color: #c7c7c7; 
 }
