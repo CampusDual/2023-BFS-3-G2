@@ -4,12 +4,16 @@
     width: 100%;
     height: 100%;
     /* overflow: hidden; */
-    /* display: flex;
+    /* 
     flex-direction: column; 
     align-items: center; */
+    display: flex;
+    justify-content: center;
 }
 
-.image-container {}
+.image-container {
+    max-width: 50%;
+}
 
 .grid-container {
     height: 50%;
