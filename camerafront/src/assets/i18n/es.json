@@ -112,5 +112,6 @@
   "DATERANGE.this_year": "Este año",
   "USER_ALREADY_EXIST": "Nombre de usario ya existe",
   "user_photo": "Foto perfil",
-  "SECONDARY_IMAGES": "Secondary images"
+  "SECONDARY_IMAGES": "Imagenes secundarias",
+  "Create new account": "Registrarse"
 }
