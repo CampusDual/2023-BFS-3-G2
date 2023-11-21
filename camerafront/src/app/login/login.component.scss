@@ -112,6 +112,7 @@
     }
   }
 
+
   .footer-container {
     position: absolute;
     left: 0;
@@ -132,6 +133,12 @@
       }
     }
   }
+}
+.btnreg-container{
+  display: flex;
+  vertical-align: center;
+  justify-content: center;
+
 }
 @media (max-width: 576px) {
   .full-page {
@@ -190,4 +197,8 @@
   font-family: "League Spartan";
   color: white;
   padding-left: 20px;
+}
+ .mat-input-element {
+  color: #ffffff !important; /* Brighter white color when focused */
+  caret-color: #ffffff !important; /* Bright white caret color when focused */
 }
