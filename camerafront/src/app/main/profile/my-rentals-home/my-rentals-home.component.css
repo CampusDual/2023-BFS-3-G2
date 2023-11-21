@@ -22,3 +22,6 @@
     /* height: 3vw; */
     font-size: 1.2em;    
   }
+  .out-container tr{
+    height: 200px;
+  }

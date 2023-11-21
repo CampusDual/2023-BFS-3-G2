@@ -6,9 +6,12 @@
     background-color: #85A3B6;
     overflow: hidden;
 }
-.o-data-toolbar{
-    padding: 0px 4px 15px 4px;
-  } 
+.o-app-sidenav .o-app-sidenav-container .mat-drawer.o-app-sidenav-sidenav .mat-drawer-inner-container  a {
+    font-size: 16px !important;
+}
+// .o-data-toolbar{
+//     padding: 50px 40px 150px 40px;
+//   } 
 //   .mat-input-element {
 //     color: white; /* Default color */
 //     caret-color: white; /* Color of the caret when the element is not focused */
@@ -37,10 +40,10 @@
 
 
 .mat-focused .mat-form-field-label {
-    color: #85A3B6 !important; /* Brighter white label when focused */
+    color: #537083 !important; /* Brighter white label when focused */
 }
 .mat-form-field-ripple {
-    background-color: #85A3B6 !important; /* Brighter white underline color when focused */
+    background-color: #537083  !important; /* Brighter white underline color when focused */
 }
 
 

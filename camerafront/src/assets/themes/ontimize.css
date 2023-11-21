@@ -771,7 +771,7 @@ o-row.o-row.bg-level-1 {
 }
 
 .o-table-quickfilter-menu .mat-checkbox {
-  font-size: 14px;
+  font-size: 20px;
 }
 .o-table-quickfilter-menu .mat-checkbox .mat-checkbox-inner-container {
   width: 16px;
@@ -868,7 +868,7 @@ o-row.o-row.bg-level-1 {
 }
 
 .mat-form-field.mat-form-field {
-  font-size: 14px;
+  font-size: 20px;
 }
 .mat-form-field.mat-form-field.mat-form-field-invalid .mat-error {
   display: none;
@@ -969,7 +969,7 @@ o-row.o-row.bg-level-1 {
 }
 
 .o-checkbox .mat-checkbox {
-  font-size: 14px;
+  font-size: 17px;
 }
 .o-checkbox .mat-checkbox .mat-checkbox-ripple {
   left: calc(50% - 17px);
@@ -1193,7 +1193,7 @@ o-row.o-row.bg-level-1 {
 }
 
 .o-search-input-menu .mat-checkbox {
-  font-size: 14px;
+  font-size: 20px;
 }
 .o-search-input-menu .mat-checkbox .mat-checkbox-inner-container {
   width: 16px;
@@ -1297,7 +1297,7 @@ o-row.o-row.bg-level-1 {
   max-height: 36px;
   padding: 0 4px;
   box-shadow: none;
-  font-size: 16px;
+  font-size: 20px;
 }
 .o-form .o-form-toolbar .o-form-toolbar-header.breadcrumb {
   height: 28px;
@@ -1397,7 +1397,7 @@ o-row.o-row.bg-level-1 {
 /* stylelint-enable */
 .mat-badge-content {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 15px;
   font-family: 'League Spartan', sans-serif;
 }
 
@@ -1588,7 +1588,7 @@ o-row.o-row.bg-level-1 {
 
 .mat-expansion-panel-header {
   font-family: 'League Spartan', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -1900,7 +1900,7 @@ input.mat-input-element {
 }
 
 .mat-tooltip-handset {
-  font-size: 14px;
+  font-size: 18px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
@@ -1914,7 +1914,7 @@ input.mat-input-element {
 }
 
 .mat-list-base .mat-list-item {
-  font-size: 14px;
+  font-size: 18px;
 }
 .mat-list-base .mat-list-item .mat-line {
   white-space: nowrap;
@@ -1928,7 +1928,7 @@ input.mat-input-element {
 }
 
 .mat-list-base .mat-list-option {
-  font-size: 14px;
+  font-size: 18px;
 }
 .mat-list-base .mat-list-option .mat-line {
   white-space: nowrap;
@@ -1983,7 +1983,7 @@ input.mat-input-element {
 
 .mat-option {
   font-family: 'League Spartan', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .mat-optgroup-label {
@@ -4427,7 +4427,7 @@ textarea {
 .o-list-picker-dialog .mat-dialog-container .mat-dialog-title {
   border-bottom: 1px solid #1464a5;
   line-height: 14px;
-  font-size: 14px;
+  font-size: 18px;
 }
 .o-dialog-class .mat-dialog-container .mat-dialog-title .mat-icon,
 .o-form-layout-dialog-overlay .mat-dialog-container .mat-dialog-title .mat-icon,
@@ -5083,7 +5083,7 @@ o-chart .nvd3 .nv-axis path {
   > .mat-expansion-panel-header
   .o-container-title
   span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -5524,12 +5524,15 @@ textarea:disabled {
   .mat-header-cell {
   font-size: 13px;
 }
-
 .o-table .o-table-container .mat-table.medium tr.mat-row {
-  height: 2px;
+  height: 70px;
+}
+
+.o-table .o-table-container .mat-table.medium tr.mat-row.o-table-row-expanded {
+  height: 0px;
 }
 .o-table .o-table-container .mat-table.medium tr.mat-row .mat-cell {
-  font-size: 14px;
+  font-size: 18px;
 }
 .o-table
   .o-table-container
@@ -5595,7 +5598,7 @@ textarea:disabled {
   height: 40px;
 }
 .o-table .o-table-container .mat-table.large tr.mat-row .mat-cell {
-  font-size: 14px;
+  font-size: 18px;
 }
 .o-table
   .o-table-container
@@ -5603,7 +5606,7 @@ textarea:disabled {
   tr.mat-row
   .mat-cell
   .mat-form-field {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .o-table
@@ -5617,7 +5620,7 @@ textarea:disabled {
   .mat-table.large
   tr.o-table-insertable.mat-header-row
   .mat-table-sticky {
-  font-size: 14px;
+  font-size: 18px;
 }
 .o-table
   .o-table-container
@@ -5625,11 +5628,11 @@ textarea:disabled {
   tr.o-table-insertable.mat-header-row
   .mat-table-sticky
   .mat-form-field {
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .o-table .o-table-container .mat-table.large .o-table-no-results span {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 40px;
 }
 
@@ -6329,7 +6332,7 @@ ngx-material-timepicker-container
   font-weight: bold;
 }
 .o-form .o-form-toolbar .o-form-toolbar-header .o-form-navigation span {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: normal;
 }
 .o-form

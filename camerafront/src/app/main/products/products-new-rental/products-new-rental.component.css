@@ -15,3 +15,10 @@
     justify-content: end;
     padding: 3%;
 }
+ .mat-focused .mat-input-element {
+         color: #ffffff; /* Brighter white color when focused */
+         caret-color: #ffffff !important; /* Bright white caret color when focused */
+     }
+      .mat-form-field-underline {
+             background-color: white !important; /* Default underline color */
+         } 

@@ -2,10 +2,10 @@
     <div fxLayout="column" class="container" layout-padding>
         <h1>{{data.product_name}}</h1>
         <!-- <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input> -->
-        <o-daterange-input attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
+        <o-daterange-input style="color:aliceblue" attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
             (click)="validateReservation($event)" Filter="myFilter">
         </o-daterange-input>
-        <o-text-input fxFill attr="request_text" label="request_text"></o-text-input>
+        <o-text-input style="color:aliceblue" fxFill attr="request_text" label="request_text"></o-text-input>
     </div>
     <div class="button-container">
         <o-button id="customButton" attr="bconfirm" type="BASIC" label="CONFIRM" (click)="update()"></o-button>
