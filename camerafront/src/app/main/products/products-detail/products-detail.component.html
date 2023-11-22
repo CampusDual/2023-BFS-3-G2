@@ -1,24 +1,13 @@
 <o-row layout-padding class="container" (onDataLoaded)="loadData($event)">
   <div class="img-container">
     <!-- <img class="image" src="data:image/png;base64,{{data.main_photo}}" empty-image="assets/images/no-image.png"lazyLoading=true> -->
-    <o-gallery class="image" [gallery-images]="galleryImages"  [gallery-options]="galleryOptions"></o-gallery>
+    <o-gallery class="image" [gallery-images]="galleryImages" [gallery-options]="galleryOptions"></o-gallery>
   </div>
   <div class="data-container">
     <div class="name-container">
       <b>{{ data.product_name }}</b>
     </div>
     <div class="detail-container">
-      <!-- <div class="avaliable">
-        <span>{{ 'avaliable' | oTranslate}}: </span>
-        <b>
-          <mat-icon [ngClass]="{
-            'green-check': data.avaliable,
-            'red-check': !data.avaliable
-          }">
-            {{ data.avaliable ? "check_circle" : "cancel" }}
-          </mat-icon>
-        </b>
-      </div> -->
       <div>
         <span>{{ 'tuser_user_' | oTranslate}}</span>
         <b>: {{data.tuser_user_}}</b>
@@ -32,17 +21,16 @@
       <div class="plocation">
         <span>{{ 'plocation' | oTranslate}}: </span><b>{{ data.plocation }} </b>
       </div>
-      <div *ngIf ="data.pdetails != '' && data.pdetails != null">
+      <div *ngIf="data.pdetails != '' && data.pdetails != null">
         <span>{{ 'pdetails' | oTranslate}}</span>
         <b>: {{data.pdetails}}</b>
       </div>
     </div>
-
-    <div class="price-container">
-      <b class="number">{{ data.price }}</b><b>€</b><b class="day">/{{ 'day' |
+    <div class="price-container" *ngIf="data.price != '' && data.price != null">
+      <b  class="number">{{ data.price }}</b><b class="simbol">€</b><b class="day">/{{ 'day' |
         oTranslate}} </b>
     </div>
-        <div class="button-container">
+    <div class="button-container">
       <o-button attr="bconfirm" type="BASIC" label="{{'RENT' | oTranslate }}" layout-padding (click)="openRentDialog()"
         class="miBotonPersonalizado"></o-button>
     </div>

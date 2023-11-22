@@ -85,13 +85,16 @@
     font-size: 100%; */
     /* margin: 1px 6px 1px 1px; */
     overflow: hidden;
-   
   }
+
   .price .number{
-    font-size: 180%;
+    font-size: 2.5em;
+  }
+  .price .simbol{
+    font-size: 1.5em;
   }
   .price .day{
-    font-size: 50%;
+    font-size: 1.2em;
   }
   .name, .details, .price {
     flex: 1; /* These take up 1 part of the space */

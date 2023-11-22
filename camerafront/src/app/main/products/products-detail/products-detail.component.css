@@ -1,6 +1,6 @@
 .container {
   text-align: center;
-  width: 98%;
+  width: 100%;
   height: 100%;
   background-color: #85A3B6;
   overflow: hidden;
@@ -11,14 +11,14 @@
 .img-container {
   display: flex;
   /* height: auto; */
-  border-radius: 10px;
+  border-radius: 8px;
   height: 99%;
-  width: 80%;
+
   overflow: hidden;
   /* vertical-align: middle; */
   align-items: center;
-  justify-content: center;
-  background-color: #FFFFFF;
+  justify-content: start;
+  background-color: transparent;
 }
 
 .image {
@@ -39,31 +39,40 @@
 
 .data-container {
   /* height: 100%; */
-  width: 20%;
-  height: 90%;
-  margin: 10px;
+  margin: 20px;
+  /* width: %; */
+  height: 95%;
+  /* margin: 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .name-container {
-  font-size: 30px;
+  font-size: 2em;
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); */
   height: 25%;
   padding-top: 5%;
 }
 
 .detail-container {
-  font-size: 1.2em;
+  font-size: 1.5em;
   text-align: left;
-  height: 50%;
+  height: 60%;
+}
+.detail-container div{
+margin: 10px;
 }
 
-.detail-container div {
+
+/* .detail-container div {
   padding: 2px;
-}
+} */
 
 .price-container {
-  height: 15%;
-  text-align: right;
+  /* height: 15%; */
+  text-align: center;
+  /* margin-right: 30px; */
 
   /* justify-content: flex-end; */
   /* max-height: 10%; */
@@ -77,12 +86,15 @@
 }
 
 .price-container .number {
-  font-size: 180%;
+  font-size: 2.5em;
   text-align: center;
 }
 
 .price-container .day {
-  font-size: 50%;
+  font-size: 1.2em;
+}
+.price-container .simbol {
+  font-size: 1.5em;
 }
 
 .detail-container .mat-icon {
@@ -115,6 +127,6 @@
 
 .button-container {
   display: flex;
-  justify-content: end;
-  padding: 3%;
+  justify-content: center;
+  margin: 30px;
 }

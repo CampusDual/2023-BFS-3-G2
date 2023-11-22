@@ -75,7 +75,7 @@ export class ProductsDetailComponent implements OnInit {
   }
   public openRentDialog(): void {
     this.dialog.open(ProductsNewRentalComponent, {
-      height: '34%',
+      // height: '34%',
       width: '30%',
       data: this.data,
       panelClass: 'custom-dialog-container'

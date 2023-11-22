@@ -1,10 +1,9 @@
 .container {
   height: 100%;
-  padding-right: 20px;
 }
 
 .filter-container {
-  height: 10%;
+  height: max-content;
   display: flex;
   align-items: center;
   vertical-align: middle;
@@ -12,18 +11,16 @@
 }
 
 .filter-container o-daterange-input {
-  width: 100%;
-
+  margin: 20px;
+  width: 500px;
 }
 
 .oform {
   display: flex;
   align-items: center;
-
 }
 
 .charts-container {
-
   height: 60%;
   display: flex;
   align-items: center;
@@ -42,5 +39,3 @@
   width: 60%;
   padding-left: 40px;
 }
-
-.multibar {}

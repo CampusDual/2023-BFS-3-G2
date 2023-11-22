@@ -1,9 +1,24 @@
 <o-form #form show-header="no" layout-direction="column" (onDataLoaded)="loadData($event)">
     <div fxLayout="column" class="container" layout-padding>
-        <h1>{{data.product_name}}</h1>
+        <div class="title">
+            <div class="image">
+                <img src="data:image/png;base64,{{data.main_photo}}">
+            </div>
+
+            <div class="title-string">
+                <h1>{{data.product_name}}</h1>
+                <div class="location">
+<span><mat-icon>location_on</mat-icon>{{data.plocation}}</span>
+                </div>
+                
+
+            </div>
+
+        </div>
+
         <!-- <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input> -->
-        <o-daterange-input style="color:aliceblue" attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}" required="yes"
-            (click)="validateReservation($event)" Filter="myFilter">
+        <o-daterange-input style="color:aliceblue" attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}"
+            required="yes" (click)="validateReservation($event)" Filter="myFilter">
         </o-daterange-input>
         <o-text-input style="color:aliceblue" fxFill attr="request_text" label="request_text"></o-text-input>
     </div>

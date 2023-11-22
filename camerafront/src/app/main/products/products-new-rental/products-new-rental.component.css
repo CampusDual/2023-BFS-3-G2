@@ -1,24 +1,67 @@
-.container{
+.container {
     margin: 30px;
     height: 25%;
     color: rgba(255, 255, 255, 0.651);
 }
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.title-string {
+    width: 100%;
+}
+
+.title h1 {
+    margin-bottom: 0px;
+
+
+}
+
+.location {
+    width: 100%;
+    text-align: end;
+    font-size: 0.8em;
+}
+
 #customButton {
     background-color: #FFA099;
     border-radius: 10px;
-    color: rgba(255, 255, 255, 0.651);
+    color: rgba(255, 255, 255);
 }
-.button-container{
+
+.button-container {
     color: rgba(255, 255, 255, 0.651);
     display: flex;
     height: 10%;
     justify-content: end;
-    padding: 3%;
+    margin: 15px;
 }
- .mat-focused .mat-input-element {
-         color: #ffffff; /* Brighter white color when focused */
-         caret-color: #ffffff !important; /* Bright white caret color when focused */
-     }
-      .mat-form-field-underline {
-             background-color: white !important; /* Default underline color */
-         } 
+
+.image {
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.image img {
+    height: 40px;
+
+}
+
+.mat-focused .mat-input-element {
+    color: #ffffff;
+    /* Brighter white color when focused */
+    caret-color: #ffffff !important;
+    /* Bright white caret color when focused */
+}
+
+.mat-form-field-underline {
+    background-color: white !important;
+    /* Default underline color */
+}
