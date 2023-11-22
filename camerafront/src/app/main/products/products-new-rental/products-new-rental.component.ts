@@ -1,5 +1,7 @@
 import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import * as moment from 'moment';
 import { FilterExpressionUtils, OFormComponent, OntimizeService } from 'ontimize-web-ngx';
 
 @Component({
@@ -12,17 +14,19 @@ export class ProductsNewRentalComponent implements OnInit {
   protected productRequestService: OntimizeService;
   public noDates: Date[] = [];
   myFilter = (d: Date | null): boolean => {
-    let currentDate = (d || new Date());
+    let currentDate = d ? new Date(d) : new Date();
+    // let currentDateValue = (d || new Date());
     // Prevent Saturday and Sunday from being selected.
     // return day !== 0 && day !== 6;
-  console.log(!this.noDates.some(fecha => fecha.getTime() === currentDate.getTime()))
+    let si = !this.noDates.some(fecha => fecha.getTime() === currentDate.getTime())
+    console.log(si);
     return !this.noDates.some(fecha => fecha.getTime() === currentDate.getTime());
-  }
+  };
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" }, protected injector: Injector,
     public dialogRef: MatDialogRef<ProductsNewRentalComponent>,
-    ) { 
+  ) {
     this.productRequestService = this.injector.get(OntimizeService);
   }
 
@@ -52,7 +56,7 @@ export class ProductsNewRentalComponent implements OnInit {
       "end_date": endDate.format('YYYY-MM-DD'),
       "rprice": this.data.price,
       //"rprofit" : 1
-      "rprofit" : this.calcProfit(startDate, endDate)
+      "rprofit": this.calcProfit(startDate, endDate)
     };
     // this.productRequestService.query()
     this.productRequestService.insert(atribMap, "productRequest").subscribe(
@@ -64,7 +68,7 @@ export class ProductsNewRentalComponent implements OnInit {
           console.error("Invalid data format in API response.");
         }
       });
-      this.dialogRef.close();
+    this.dialogRef.close();
   }
   calcProfit(startDate, endDate) {
     // const diferenciaEnMilisegundos = endDate.toDate().getTime() - startDate.toDate().getTime();
@@ -84,16 +88,25 @@ export class ProductsNewRentalComponent implements OnInit {
     this.productRequestService.query(kv, ['id_prequest', 'start_date', 'end_date', 'tproducts_id_product', 'state'], 'productRequest', { start_date: 91, end_date: 91 }).subscribe(
       result => {
         if (result.data && result.data.length) {
-          for (let element of result.data) {
-            let startDate = new Date(element.start_date);
-            let endDate = new Date(element.end_date);
-            while (startDate <= endDate) {
-              this.noDates.push(new Date(startDate));
-              startDate.setDate(startDate.getDate() + 1);
-            }
+          // for (let element of result.data) {
+          //   let startDate = element.start_date;
+          //   let endDate = element.end_date;
+          //   while (startDate <= endDate) {
+          //     this.noDates.push(new Date(startDate));
+          //     startDate.setDate(new Date(startDate).getDate() + 1);
+          //   }
 
+          //  }
+          for (let element of result.data) {
+            let startDate = moment(element.start_date);
+            let endDate = moment(element.end_date);
+            this.noDates.push(startDate.clone().toDate());
+            while (startDate.isSameOrBefore(endDate)) {
+              this.noDates.push(startDate.clone().toDate()); // Clonamos la fecha para evitar problemas de referencia
+              startDate.add(1, 'day');
+            }
           }
-          console.log(this.noDates);
+          // console.log(this.noDates);
         }
       }
     );
@@ -106,7 +119,7 @@ export class ProductsNewRentalComponent implements OnInit {
   private configureFilter() {
 
     let actualDate: Date = new Date();
-    const filterExpr = FilterExpressionUtils.buildExpressionMoreEqual("end_date", actualDate);
+    const filterExpr = FilterExpressionUtils.buildExpressionMoreEqual("end_date", actualDate.getTime());
     const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
     basicExpr['tproducts_id_product'] = this.data.id_product;
     basicExpr['state'] = "applied";
