@@ -2,6 +2,7 @@ import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { OFormComponent, OGridComponent, OntimizeService } from 'ontimize-web-ngx';
 import { MyproductsDetailsImageComponent } from '../myproducts-details-image/myproducts-details-image.component';
+import { ImageDetailZoomComponent } from './image-detail-zoom/image-detail-zoom.component';
 
 @Component({
   selector: 'app-myproducts-detail',
@@ -54,21 +55,20 @@ export class MyproductsDetailComponent implements OnInit {
     this.productRequestService.configureService(conf);
   }
   public openZoomDialog(data: any): void {
-    this.dialog.open(MyproductsDetailsImageComponent, {
-      height: '70%',
-      width: '75%',
+    this.dialog.open(ImageDetailZoomComponent, {
+      height: '90%',
       data: data,
       panelClass: 'custom-dialog-container'
     });
   }
-  public openNewDialog(data: any): void {
-    this.dialog.open(MyproductsDetailsImageComponent, {
-      height: '70%',
-      width: '75%',
-      data: data,
-      panelClass: 'custom-dialog-container'
-    });
-  }
+  // public openNewDialog(data: any): void {
+  //   this.dialog.open(MyproductsDetailsImageComponent, {
+  //     height: '70%',
+  //     width: '75%',
+  //     data: data,
+  //     panelClass: 'custom-dialog-container'
+  //   });
+  // }
 
 
 }

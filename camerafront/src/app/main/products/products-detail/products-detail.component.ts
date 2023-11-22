@@ -1,6 +1,6 @@
 import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog } from '@angular/material';
-import { OFormComponent, OntimizeService } from 'ontimize-web-ngx';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
+import { Expression, FilterExpressionUtils, OFormComponent, OntimizeService } from 'ontimize-web-ngx';
 import { ProductsNewRentalComponent } from '../products-new-rental/products-new-rental.component';
 import { GalleryImageSize } from 'ontimize-web-ngx-gallery';
 
@@ -12,7 +12,7 @@ import { GalleryImageSize } from 'ontimize-web-ngx-gallery';
 
 export class ProductsDetailComponent implements OnInit {
   @ViewChild('form', { static: false }) form: OFormComponent;
-  // public resultado2;
+
 
   public galleryImages = [
     {
@@ -51,9 +51,12 @@ export class ProductsDetailComponent implements OnInit {
   ];
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
+    public dialogRef: MatDialogRef<ProductsDetailComponent>,
     protected injector: Injector,
     protected dialog: MatDialog,
-    protected imageRequestService: OntimizeService
+    protected imageRequestService: OntimizeService,
+    protected rentRequestService: OntimizeService,
+
 
   ) {
     // this.productRequestService = this.injector.get(OntimizeService);
@@ -68,15 +71,21 @@ export class ProductsDetailComponent implements OnInit {
 
   ngOnInit() {
     this.configureService();
+
     this.queryImages(this.data.id_product)
+
   }
   public loadData(ev) {
     this.data = ev;
   }
+  closeDialog(): void {
+    this.dialogRef.close();
+  }
   public openRentDialog(): void {
     this.dialog.open(ProductsNewRentalComponent, {
       // height: '34%',
-      width: '30%',
+      // width: '30%',
+      minWidth: '30%',
       data: this.data,
       panelClass: 'custom-dialog-container'
     });
@@ -96,23 +105,6 @@ export class ProductsDetailComponent implements OnInit {
           });
       }
     }
-
-
-    // this.galleryImages = [
-    //   {
-    //     small: "data:image/png;base64," + dataImages.img1,
-    //     medium: "data:image/png;base64," + dataImages.img1,
-    //     big: "data:image/png;base64,"  + dataImages.img1
-    //   }, {
-    //     small: "data:image/png;base64," + dataImages.img2,
-    //     medium: "data:image/png;base64," + dataImages.img2,
-    //     big: "data:image/png;base64," + dataImages.img2
-    //   }, {
-    //     small: "data:image/png;base64,"  + dataImages.img3,
-    //     medium: "data:image/png;base64," + dataImages.img3,
-    //     big: "data:image/png;base64," + dataImages.img3
-    //   }
-    // ];
   }
   queryImages(idProduct) {
     this.imageRequestService.query({ "tproducts_id_product": idProduct }, ['pimage'], 'productImage').subscribe(
@@ -120,75 +112,19 @@ export class ProductsDetailComponent implements OnInit {
         if (result.data && result.data.length) {
           console.log(result.data);
           this.createImageArray(result.data);
-        } else{
+        } else {
           this.createImageArray([]);
         }
       }
     );
   }
-  // public validateReservation(ev) {
-  //   // const columns = ["rent_id", "car_id", "brand", "model", "car_photo", "user_rent", "rental_start_date", "rental_end_date", "total_price", "observations"];
-  //   // const entity = "productRequest";
-  //   // this.productRequestService.insert(null,entity).subscribe(
-  //   //   response => {
-  //   //     if (response ) {
-  //   //     } else {
-  //   //       console.error("Invalid data format in API response.");
-  //   //     }
-  //   //   });
-  //   //   },
-  //   //   error => {
-  //   //     console.error(error);
-  //   //   }
-  //   // );
 
-  //   // const resultado = ev.date;
-  //   // let atrib: string[];
-  //   // atrib = ["date"];
-  //   // this.resultado2 = this.form.getFieldValue("date");
-  //   //  let startDate = this.form.getFieldValue("start_date_available");
-  //   //  let rangeDate = this.form.getFieldValue("date");
-  //   //let startDate2 = this.form.getAttributesToQuery();
-  //   //  const fecha = new Date(startDate);
-  //   //  console.log(fecha);
-  //   //  let startDate = rangeDate.startDate;
-  //   //  let endDate = rangeDate.endDate._d;
-  //   // let cosa = this.resultado2.endDate._d;
-  // }
-  // public update() {
-  //   let rangeDate = this.form.getFieldValue("date");
-  //   // let rawStartDate = rangeDate.startDate._d.toISOString();
-  //   let startDate = rangeDate.startDate.format('YYYY-MM-DD');
-  //   let endDate = rangeDate.endDate.format('YYYY-MM-DD');
-  //   // let startIndex = rawStartDate.indexOf("T");
-  //   // let startDate = rawStartDate.slice(0, startIndex);
-  //   // let rawEndDate = rangeDate.endDate._d.toISOString();
-  //   // let endIndex = rawEndDate.indexOf("T");
-  //   // let endDate = rawEndDate.slice(0, endIndex);
-  //   const atribMap = {
-  //     "tuser_user_": this.data.tuser_user_,
-  //     "tproducts_id_product": this.data.id_product,
-  //     "state": "pending",
-  //     "request_text": "Hola buenos dias",
-  //     "start_date": startDate,
-  //     "end_date": endDate
-  //   };
-  //   // this.productRequestService.query()
-  //   this.productRequestService.insert(atribMap, "productRequest").subscribe(
-  //     response => {
-  //       if (response) {
-  //         console.log("zi funciona" + response);
-  //         // console.log(atribMap);
-  //       } else {
-  //         console.error("Invalid data format in API response.");
-  //       }
-  //     });
-  // }
 
   protected configureService() {
 
     const conf = this.imageRequestService.getDefaultServiceConfiguration('products');
     this.imageRequestService.configureService(conf);
   }
+
 
 }

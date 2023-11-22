@@ -1,7 +1,11 @@
+.top-container{
+        position: relative;
+}
 .container {
     margin: 30px;
     height: 25%;
     color: rgba(255, 255, 255, 0.651);
+
 }
 
 .title {
@@ -65,3 +69,10 @@
     background-color: white !important;
     /* Default underline color */
 }
+.close-button {
+    position: absolute;
+    top: 0px;
+    right: 4px;
+    color:aliceblue
+  
+  }

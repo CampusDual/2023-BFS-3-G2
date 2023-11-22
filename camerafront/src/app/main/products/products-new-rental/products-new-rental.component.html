@@ -1,4 +1,4 @@
-<o-form #form show-header="no" layout-direction="column" (onDataLoaded)="loadData($event)">
+<o-form #form show-header="no" layout-direction="column" (onDataLoaded)="loadData($event)" class="top-container">
     <div fxLayout="column" class="container" layout-padding>
         <div class="title">
             <div class="image">
@@ -27,4 +27,7 @@
         <o-button attr="cancelBtn" type="STROKED" label="CANCEL" layout-padding color="Warn"
             (click)="closeDialog()"></o-button>
     </div>
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+      </button>
 </o-form>

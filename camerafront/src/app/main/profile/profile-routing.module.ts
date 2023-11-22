@@ -8,6 +8,7 @@ import { MyRentalsHomeComponent } from './my-rentals-home/my-rentals-home.compon
 import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details/my-rentals-conflict-details.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { MyproductsDetailsImageComponent } from './myproducts-details-image/myproducts-details-image.component';
+import { ImageDetailZoomComponent } from './myproducts-detail/image-detail-zoom/image-detail-zoom.component';
 
 
 const routes: Routes = [{
@@ -39,9 +40,14 @@ const routes: Routes = [{
   component: MyproductsDetailComponent
 },
 {
+  path:'myProducts/:id_product/pimage/:id_image',
+  component: ImageDetailZoomComponent
+},
+{
   path:'myProducts/:id_product/:id_image',
   component: MyproductsDetailsImageComponent
 }
+
 ];
 
 @NgModule({

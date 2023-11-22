@@ -13,11 +13,12 @@ import { MyRentalsConflictDetailsComponent } from './my-rentals-conflict-details
 import { StatisticsComponent } from './statistics/statistics.component';
 import { OChartModule } from 'ontimize-web-ngx-charts';
 import { MyproductsDetailsImageComponent } from './myproducts-details-image/myproducts-details-image.component';
+import { ImageDetailZoomComponent } from './myproducts-detail/image-detail-zoom/image-detail-zoom.component';
 
 
 
 @NgModule({
-  declarations: [ProfileHomeComponent,StatisticsComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, MyproductsDetailsImageComponent],
+  declarations: [ProfileHomeComponent,StatisticsComponent,MyproductsHomeComponent, MyproductsDetailComponent, MyproductsNewComponent, MyRentalsHomeComponent, MyRentalsConflictDetailsComponent, MyproductsDetailsImageComponent, ImageDetailZoomComponent],
   imports: [
     CommonModule,
     SharedModule,

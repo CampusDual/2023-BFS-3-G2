@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="price-container" *ngIf="data.price != '' && data.price != null">
-      <b  class="number">{{ data.price }}</b><b class="simbol">€</b><b class="day">/{{ 'day' |
+      <b class="number">{{ data.price }}</b><b class="simbol">€</b><b class="day">/{{ 'day' |
         oTranslate}} </b>
     </div>
     <div class="button-container">
@@ -35,4 +35,7 @@
         class="miBotonPersonalizado"></o-button>
     </div>
   </div>
+  <button mat-icon-button class="close-button" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+  </button>
 </o-row>

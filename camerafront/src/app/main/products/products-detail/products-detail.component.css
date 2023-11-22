@@ -6,6 +6,7 @@
   overflow: hidden;
   /* margin: 10px; */
   color: rgba(255, 255, 255, 0.842);
+  position: relative;
 }
 
 .img-container {
@@ -107,17 +108,11 @@ margin: 10px;
 
 }
 
-.green-check {
-  background: linear-gradient(to top left, #5f745b, #38c725);
-  /* Cambia los códigos de color según tus preferencias */
+.close-button {
+  position: absolute;
+  top: 0px;
+  right: 4px;
 
-  /* color:
-  background-image: linear-gradient(to top left, #85ac75, #5b40be); */
-}
-
-.red-check {
-  /* color: red; */
-  background: linear-gradient(to top left, #a15e5e, #e71515);
 }
 
 .miBotonPersonalizado {

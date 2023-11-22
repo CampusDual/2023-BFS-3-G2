@@ -22,7 +22,7 @@
               selectable="yes" insert-button="yes" insert-button-floatable="yes" insert-button-position="top"
               collapsed="true" collapsible="true" detail-mode="true">
               <o-list-item *ngFor="let row of list.dataArray">
-                <o-list-item-card-image image="data:image/png;base64,{{row.pimage}}"></o-list-item-card-image>
+                <o-list-item-card-image image="data:image/png;base64,{{row.pimage}}" (click)="openZoomDialog(row)"></o-list-item-card-image>
                 <!-- (icon-action)="onIconAction()" collapsible="false"  -->
               </o-list-item>
             </o-list>
