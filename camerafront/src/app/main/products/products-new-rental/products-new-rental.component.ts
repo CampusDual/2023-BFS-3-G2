@@ -1,6 +1,5 @@
 import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDatepicker } from '@angular/material';
 import * as moment from 'moment';
 import { FilterExpressionUtils, OFormComponent, OntimizeService } from 'ontimize-web-ngx';
 
@@ -10,7 +9,11 @@ import { FilterExpressionUtils, OFormComponent, OntimizeService } from 'ontimize
   styleUrls: ['./products-new-rental.component.css']
 })
 export class ProductsNewRentalComponent implements OnInit {
+  startDate : Date;
+  endDate : Date;
   @ViewChild('form', { static: false }) form: OFormComponent;
+  @ViewChild('picker', { static: false }) picker: MatDatepicker<Date>;
+  @ViewChild('picker2', { static: false }) picker2: MatDatepicker<Date>;
   protected productRequestService: OntimizeService;
   public noDates: Date[] = [];
   myFilter = (d: Date | null): boolean => {
@@ -45,18 +48,20 @@ export class ProductsNewRentalComponent implements OnInit {
   }
   public update() {
     let requestText = this.form.getFieldValue("request_text");
-    let rangeDate = this.form.getFieldValue("date");
-    let startDate = rangeDate.startDate;
-    let endDate = rangeDate.endDate;
+    //let rangeDate = this.form.getFieldValue("date");
+    // let startDate = rangeDate.startDate;
+    console.log(moment(this.startDate).format('DD-MM-YYYY'));
+
+    // let endDate = rangeDate.endDate;
     const atribMap = {
       "tproducts_id_product": this.data.id_product,
       "state": "pending",
       "request_text": requestText,
-      "start_date": startDate.format('YYYY-MM-DD'),
-      "end_date": endDate.format('YYYY-MM-DD'),
+      "start_date": moment(this.startDate).format('DD-MM-YYYY'),
+      "end_date": moment(this.endDate).format('DD-MM-YYYY'),
       "rprice": this.data.price,
       //"rprofit" : 1
-      "rprofit": this.calcProfit(startDate, endDate)
+      "rprofit": this.calcProfit(this.startDate, this.endDate)
     };
     // this.productRequestService.query()
     this.productRequestService.insert(atribMap, "productRequest").subscribe(

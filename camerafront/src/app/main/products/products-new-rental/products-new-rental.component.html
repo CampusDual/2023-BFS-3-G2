@@ -15,7 +15,7 @@
             </div>
 
         </div>
-        <mat-form-field appearance="fill">
+        <!-- <mat-form-field appearance="fill">
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
               <input matStartDate formControlName="start" placeholder="Start date">
@@ -26,7 +26,7 @@
           
             <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
             <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
-          </mat-form-field>
+          </mat-form-field> -->
         <!-- <mat-form-field>
             <mat-label>Enter a date range</mat-label>
             <mat-date-range-input>
@@ -42,13 +42,16 @@
                 </mat-date-range-picker-actions>
             </mat-date-range-picker>
         </mat-form-field> -->
-        <!-- <mat-form-field class="example-full-width">
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="startDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field> -->
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker2" placeholder="Choose a date" [(ngModel)]="endDate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
         <!-- <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input> -->
         <!-- <o-daterange-input style="color:aliceblue" attr="date" label="{{ 'INPUT.BUTTON.DATERANGE' | oTranslate }}"
             required="yes" (click)="validateReservation($event)" Filter="myFilter">
