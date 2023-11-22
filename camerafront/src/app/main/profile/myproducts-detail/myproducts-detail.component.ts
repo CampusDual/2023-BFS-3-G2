@@ -32,6 +32,9 @@ export class MyproductsDetailComponent implements OnInit {
 
 
   }
+  sayHola(){
+    console.log("hola")
+  }
   queryImages(data){
     let idProduct = data.id_product;
     this.productRequestService.query({tproducts_id_product: idProduct}, ['id_image,tproducts_id_product,pimage'], 'productImage').subscribe(

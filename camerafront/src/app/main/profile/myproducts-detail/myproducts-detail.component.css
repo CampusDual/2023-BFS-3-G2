@@ -10,11 +10,19 @@
     display: flex;
     justify-content: center;
 }
-
-.image-container {
-    max-width: 50%;
+.images-container{
+    display: flex;
+ 
+    justify-content: space-between;
 }
 
+.image-container {
+    max-width: 70%;
+}
+
+.image-list-container{
+    width: 27%;
+}
 .grid-container {
     height: 50%;
     padding-bottom: 50px;

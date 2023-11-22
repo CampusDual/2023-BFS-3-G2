@@ -5,10 +5,25 @@
     <!-- (onDataLoaded)="loadData($event)" -->
     <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
     <!-- <o-row> -->
-    <o-column class="image-container">
-      <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
-        image-type="base64"></o-image>
-    </o-column>
+    <div class="images-container">
+      <div class="image-container">
+        <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
+          image-type="base64"></o-image>
+      </div>
+      
+      <div class="image-list-container">
+        <o-list #list attr="list" title="{{'SECONDARY_IMAGES' | oTranslate}}" service="products" entity="productImage"
+          parent-keys="tproducts_id_product:id_product" columns="id_image;tproducts_id_product;pimage" keys="id_image"
+          refresh-button="no" insert-button="true" delete-mode="true" quick-filter="no" row-height="big"
+          detail-mode="true" delete-button="yes" selectable="yes" insert-button="yes" insert-button-floatable="yes"
+          insert-button-position="top" collapsed="true" collapsible="true" detail-mode="true">
+          <o-list-item *ngFor="let row of list.dataArray">
+            <o-list-item-card-image image="data:image/png;base64,{{row.pimage}}"></o-list-item-card-image>
+            <!-- (icon-action)="onIconAction()" collapsible="false"  -->
+          </o-list-item>
+        </o-list>
+      </div>
+    </div>
     <o-column class="detail-container">
       <o-row>
         <o-text-input fxFill class="input-padding" attr="product_name" required="yes"></o-text-input>
@@ -37,36 +52,10 @@
       </o-row>
     </o-column>
     <!-- </o-row> -->
-  
-  <o-column class="grid-container">
 
-    <o-list #list attr="list" title="{{'SECONDARY_IMAGES' | oTranslate}}" service="products" entity="productImage" parent-keys="tproducts_id_product:id_product" columns="id_image;tproducts_id_product;pimage" keys="id_image"
-   refresh-button="true" insert-button="true" delete-mode="true"
-  quick-filter="no" row-height="medium" detail-mode="true" delete-button="yes" selectable="yes" insert-button="yes" insert-button-floatable="yes" insert-button-position="top">
-
-  <o-list-item *ngFor="let row of list.dataArray">
-    <o-list-item-card-image 
-      image="data:image/png;base64,{{ row.pimage }}"></o-list-item-card-image>
-       <!-- (icon-action)="onIconAction()" collapsible="false" collapsed="false" -->
-  </o-list-item>
-
-</o-list>
-    <!-- <o-grid #grid attr="grid" title="Grid" [fixed-header]="true" style="height:'600px'"
-    insert-button="true" insert-button-floatable="true" detail-mode="click"> -->
-      <!--(click)="openZoomDialog(list)" service="products" entity="productImage" parent-keys="id_product" keys="tproducts_id_product"  columns="id_image;tproducts_id_product;pimage" -->
-      <!-- <o-grid-item *ngFor="let list of grid.dataArray">
-        <o-column layout-padding class="container-item">
-          <img  src="data:image/png;base64,{{list.pimage}}" empty-image="assets/images/no-image.png">
-        </o-column>
-      </o-grid-item> -->
-      <!-- <o-grid-item>
-        <o-column layout-padding class="container-new-item">
-          <img (click)="openNewDialog(list)" src="assets/images/no-image.png">
-        </o-column>
-      </o-grid-item> -->
-    <!-- </o-grid> -->
-  </o-column>
-</o-form>
+    <!-- <o-column class="grid-container">
+    </o-column> -->
+  </o-form>
 </div>
 
 
