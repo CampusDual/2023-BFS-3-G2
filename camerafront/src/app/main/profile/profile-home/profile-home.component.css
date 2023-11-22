@@ -6,6 +6,7 @@
 .img-container {
     padding: 10px;
     max-width: 30%;
+    margin: 40px;
 }
 
 .hspacer {
@@ -17,7 +18,7 @@
 }
 
 .data-container {
-    margin-top: 5%;
+    margin-top: 8%;
 }
 
 .data-container o-row {

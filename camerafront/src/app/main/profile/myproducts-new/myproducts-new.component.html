@@ -3,7 +3,10 @@
     header-actions="R;I;U;D">
     <!-- (onDataLoaded)="loadData($event)" -->
     <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
-
+    <div class="image-container">
+      <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
+        image-type="base64"></o-image>
+    </div>
 
     <o-column class="detail-container">
       <o-row>
@@ -31,22 +34,6 @@
         <o-checkbox attr="avaliable" read-only="no"></o-checkbox>
       </o-row>
     </o-column>
-    <o-column class="image-container">
-      <!-- <o-form fxLayout="column" service="products" entity="productImage" parent-keys="id_product" keys="tproducts_id_product" show-header-navigation="no"
-        header-actions="R;I;U;D">
-        <mat-tab-group oTabGroup="ontimize">
-          <mat-tab label="First"> -->
-            <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
-              image-type="base64"></o-image>
-          <!-- </mat-tab>
-          <mat-tab label="Second">
-            <o-image id="img2" attr="img2" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
-          </mat-tab>
-          <mat-tab label="Third">
-            <o-image id="img3" attr="img3" empty-image="assets/images/no-image.png" sql-type="OTHER" image-type="base64"></o-image>
-          </mat-tab>
-        </mat-tab-group>
-      </o-form> -->
-    </o-column>
+
   </o-form>
 </div>

@@ -30,7 +30,7 @@
   "EMAIL": "Email",
   "CAMERA": "Camara",
   "LOCATION": "Ubicación",
-  "main_photo": "Foto principal",
+  "main_photo": "Imagen principal",
   "product_name": "Nombre del producto",
   "price": "Precio",
   "status": "Estado",
@@ -113,5 +113,6 @@
   "USER_ALREADY_EXIST": "Nombre de usario ya existe",
   "user_photo": "Foto perfil",
   "SECONDARY_IMAGES": "Imagenes secundarias",
-  "Create new account": "Registrarse"
+  "Create new account": "Registrarse",
+  "pimage": "Nueva imagen"
 }

@@ -1,2 +1,11 @@
+.container{
+width: 100%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+.container mat-icon{
+    color:rgb(214, 69, 69);
+    font-size: 30px;
 
-
+}
