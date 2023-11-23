@@ -114,5 +114,7 @@
   "user_photo": "Foto perfil",
   "SECONDARY_IMAGES": "Imagenes secundarias",
   "Create new account": "Registrarse",
-  "pimage": "Nueva imagen"
+  "pimage": "Nueva imagen",
+  "CHOOSE START DATE": "Elige fecha de inicio",
+  "CHOOSE END DATE": "Elige fecha final"
 }

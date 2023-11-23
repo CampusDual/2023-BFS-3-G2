@@ -95,6 +95,8 @@
   "user_photo": "Profile photo",
   "SECONDARY_IMAGES": "Secondary images",
   "Create new account": "Create new account",
-  "pimage": "New image"
+  "pimage": "New image",
+  "CHOOSE START DATE": "Choose start date",
+  "CHOOSE END DATE": "Choose end date"
 
 }
