@@ -33,6 +33,7 @@
     "@angular/upgrade": "^8.2.14",
     "core-js": "^3.6.4",
     "ngx-material-timepicker": "5.4.3",
+    "ngx-toastr": "^18.0.0",
     "ontimize-web-ngx": "8.11.1",
     "ontimize-web-ngx-charts": "^8.2.0",
     "ontimize-web-ngx-gallery": "^8.1.4",

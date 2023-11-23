@@ -1,16 +1,29 @@
 import { Component, Inject, Injector, OnInit, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDatepicker } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef, MatDatepicker, MAT_DATE_LOCALE, DateAdapter, MAT_DATE_FORMATS } from '@angular/material';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import * as moment from 'moment';
 import { FilterExpressionUtils, OFormComponent, OntimizeService } from 'ontimize-web-ngx';
+import { format } from 'url';
 
 @Component({
   selector: 'app-products-new-rental',
   templateUrl: './products-new-rental.component.html',
-  styleUrls: ['./products-new-rental.component.css']
+  styleUrls: ['./products-new-rental.component.css'],
+  providers: [
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
+    },
+    { provide: MAT_DATE_FORMATS, useValue: MAT_MOMENT_DATE_FORMATS },
+  ],
 })
 export class ProductsNewRentalComponent implements OnInit {
-  startDate : Date;
-  endDate : Date;
+  minDate = new Date();
+
+  startDate: Date;
+  endDate: Date;
   @ViewChild('form', { static: false }) form: OFormComponent;
   @ViewChild('picker', { static: false }) picker: MatDatepicker<Date>;
   @ViewChild('picker2', { static: false }) picker2: MatDatepicker<Date>;
@@ -21,16 +34,19 @@ export class ProductsNewRentalComponent implements OnInit {
     // let currentDateValue = (d || new Date());
     // Prevent Saturday and Sunday from being selected.
     // return day !== 0 && day !== 6;
-    let si = !this.noDates.some(fecha => fecha.getTime() === currentDate.getTime())
-    console.log(si);
-    return !this.noDates.some(fecha => fecha.getTime() === currentDate.getTime());
+    // let si = !this.noDates.some(fecha => fecha.getTime() === currentDate.getTime())
+    // console.log(si);
+    return !this.noDates.some(date => date.getTime() === currentDate.getTime());
   };
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" }, protected injector: Injector,
     public dialogRef: MatDialogRef<ProductsNewRentalComponent>,
+    private _adapter: DateAdapter<any>,
+
   ) {
     this.productRequestService = this.injector.get(OntimizeService);
+
   }
 
   ngOnInit() {
@@ -40,40 +56,75 @@ export class ProductsNewRentalComponent implements OnInit {
   public loadData(ev) {
     this.data = ev;
   }
-  public validateReservation(ev) {
-
+  calcMinDateTwo() {
+    if (this.startDate) {
+      const minDateTwo = new Date(this.startDate);
+      minDateTwo.setDate(minDateTwo.getDate() + 1);
+      return minDateTwo;
+    }
+    return new Date();
   }
+  // french() {
+  //   this._adapter.setLocale('fr');
+  // }
   closeDialog() {
     this.dialogRef.close();
   }
   public update() {
-    let requestText = this.form.getFieldValue("request_text");
-    //let rangeDate = this.form.getFieldValue("date");
-    // let startDate = rangeDate.startDate;
-    console.log(moment(this.startDate).format('DD-MM-YYYY'));
+    // let startDate = moment(this.startDate);
+    // // let endDate = moment(element.end_date);
+    // while (startDate.isSameOrBefore(this.endDate)) {
+    // if(this.noDates.some(date => date.getTime() === startDate.getTime())){
+    //   break;
+    // }
+    //   startDate.add(1, 'day');
+    let startDate = moment(this.startDate);
+    let clean: boolean = true;
+    while (startDate.isSameOrBefore(this.endDate)) {
+      const isDateInArray = this.noDates.some(date => date.getTime() === startDate.toDate().getTime());
 
-    // let endDate = rangeDate.endDate;
-    const atribMap = {
-      "tproducts_id_product": this.data.id_product,
-      "state": "pending",
-      "request_text": requestText,
-      "start_date": moment(this.startDate).format('DD-MM-YYYY'),
-      "end_date": moment(this.endDate).format('DD-MM-YYYY'),
-      "rprice": this.data.price,
-      //"rprofit" : 1
-      "rprofit": this.calcProfit(this.startDate, this.endDate)
-    };
-    // this.productRequestService.query()
-    this.productRequestService.insert(atribMap, "productRequest").subscribe(
-      response => {
-        if (response) {
-          console.log("zi funciona" + response);
-          // console.log(atribMap);
-        } else {
-          console.error("Invalid data format in API response.");
-        }
-      });
-    this.dialogRef.close();
+      if (isDateInArray) {
+        console.log("mal");
+        clean = false;
+        alert('El periodo seleccionado coincide con otra reserva. Prueba otro, por favor.');
+        break;
+      }
+
+      startDate.add(1, 'day');
+    }
+    if (clean) {
+      let requestText = this.form.getFieldValue("request_text");
+      //let rangeDate = this.form.getFieldValue("date");
+      // let startDate = rangeDate.startDate;
+      console.log(moment(this.startDate).format('YYYY-MM-DD'));
+
+      // let endDate = rangeDate.endDate;
+      const atribMap = {
+        "tproducts_id_product": this.data.id_product,
+        "state": "pending",
+        "request_text": requestText,
+        "start_date": moment(this.startDate).format('YYYY-MM-DD'),
+        "end_date": moment(this.endDate).format('YYYY-MM-DD'),
+        "rprice": this.data.price,
+        //"rprofit" : 1
+        "rprofit": this.calcProfit(this.startDate, this.endDate)
+      };
+      // this.productRequestService.query()
+      this.productRequestService.insert(atribMap, "productRequest").subscribe(
+        response => {
+          if (response) {
+            alert('La solicitud se ha creado correctamente');
+            //console.log("zi funciona" + response);
+            // console.log(atribMap);
+          } else {
+            alert('Algo ha ido mal.');
+          }
+        });
+      
+      this.dialogRef.close();
+    }
+
+
   }
   calcProfit(startDate, endDate) {
     // const diferenciaEnMilisegundos = endDate.toDate().getTime() - startDate.toDate().getTime();
