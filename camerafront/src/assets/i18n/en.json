@@ -97,6 +97,10 @@
   "Create new account": "Create new account",
   "pimage": "New image",
   "CHOOSE START DATE": "Choose start date",
-  "CHOOSE END DATE": "Choose end date"
+  "CHOOSE END DATE": "Choose end date",
+  "CONFLICTED PERIOD MESSAGE": "The selected period coincides with another reservation. Try another one, please.",
+  "NO DATE ALERT": "Select date period. Please.",
+  "REQUEST SUCCESS":"The request has been created successfully",
+  "SOMETHING WRONG" :"Something has gone wrong."
 
 }

@@ -38,7 +38,7 @@ export class ProductsNewRentalComponent implements OnInit {
     public dialogRef: MatDialogRef<ProductsNewRentalComponent>,
     private translateService: OTranslateService,
     private _adapter: DateAdapter<any>,
-    
+
   ) {
     this.productRequestService = this.injector.get(OntimizeService);
 
@@ -68,18 +68,26 @@ export class ProductsNewRentalComponent implements OnInit {
     this.dialogRef.close();
   }
   public update() {
-    let startDate = moment(this.startDate);
     let clean: boolean = true;
-    while (startDate.isSameOrBefore(this.endDate)) {
-      const isDateInArray = this.noDates.some(date => date.getTime() === startDate.toDate().getTime());
-      if (isDateInArray) {
-        console.log("mal");
-        clean = false;
-        alert('El periodo seleccionado coincide con otra reserva. Prueba otro, por favor.');
-        break;
+    if (this.startDate && this.endDate) {
+      let startDate = moment(this.startDate);
+      while (startDate.isSameOrBefore(this.endDate)) {
+        const isDateInArray = this.noDates.some(date => date.getTime() === startDate.toDate().getTime());
+        if (isDateInArray) {
+          // console.log("mal");
+          clean = false;
+          alert(this.translateService.get('CONFLICTED PERIOD MESSAGE'));
+          break;
+        }
+        startDate.add(1, 'day');
       }
-      startDate.add(1, 'day');
+    } else {
+      clean = false;
+      alert(this.translateService.get('NO DATE ALERT'));
     }
+
+
+
     if (clean) {
       let requestText = this.form.getFieldValue("request_text");
       console.log(moment(this.startDate).format('YYYY-MM-DD'));
@@ -95,9 +103,9 @@ export class ProductsNewRentalComponent implements OnInit {
       this.productRequestService.insert(atribMap, "productRequest").subscribe(
         response => {
           if (response) {
-            alert('La solicitud se ha creado correctamente');
+            alert(this.translateService.get('REQUEST SUCCESS'));
           } else {
-            alert('Algo ha ido mal.');
+            alert(this.translateService.get('SOMETHING WRONG'));
           }
         });
       this.dialogRef.close();

@@ -116,5 +116,11 @@
   "Create new account": "Registrarse",
   "pimage": "Nueva imagen",
   "CHOOSE START DATE": "Elige fecha de inicio",
-  "CHOOSE END DATE": "Elige fecha final"
+  "CHOOSE END DATE": "Elige fecha final",
+  "CONFLICTED PERIOD MESSAGE": "El periodo seleccionado coincide con otra reserva. Prueba otro, por favor.",
+  "NO DATE ALERT":"Selecciona periodo de fechas. Por favor.",
+  "REQUEST SUCCESS":"La solicitud se ha creado correctamente",
+  "SOMETHING WRONG" :"Algo ha ido mal."
+
+
 }
