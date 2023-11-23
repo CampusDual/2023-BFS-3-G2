@@ -27,7 +27,7 @@
         <o-table-column attr="rprofit" title="COST" currency-symbol="€" type="currency" currency-symbol-position="right"
           title-align="center">
         </o-table-column>
-        <o-table-column max-width="10px" attr="CANCEL" title="" icon="close">
+        <o-table-column max-width="10px"  attr="CANCEL" title="CANCEL" icon="close" title-align="center">
           <!-- <o-table-cell-renderer-action (onClick)="cancelRequest($event)" icon="event_busy"></o-table-cell-renderer-action> -->
           <app-button-column-renderer (messageEvent)="cancelRequest($event)"></app-button-column-renderer>
         </o-table-column>
