@@ -4,13 +4,13 @@
 }
 
 .image-container {
-    max-width: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .image-container o-image{
-    max-width: 70%;
+    max-width: 40%;
 }
 
 .detail-container {

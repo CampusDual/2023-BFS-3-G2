@@ -1,6 +1,6 @@
 <div class="container">
   <o-form fxLayout="column" service="products" entity="product" keys="id_product" show-header-navigation="no"
-    header-actions="R;I;U;D">
+    header-actions="R;I;U;D" editable-detail="yes" after-insert-mode="close" confirm-exit="no">
     <!-- (onDataLoaded)="loadData($event)" -->
     <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
     <div class="image-container">
