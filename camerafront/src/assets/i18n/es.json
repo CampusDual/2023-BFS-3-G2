@@ -72,7 +72,7 @@
   "p_user": "Ofertante",
   "p_phone": "Teléfono",
   "phone": "Teléfono",
-  "profit_diff": "Coste de oportunidad",
+  "profit_diff": "Diferencia",
   "cancelBtn": "Botón cancelar",
   "MYRENTALS": "Mis solicitudes",
   "PAGE_TITLE": "Alquiler de equipos audiovisuales a particulares y empresas cerca de ti",
@@ -84,7 +84,7 @@
   "YOUR RENTAL REQUESTS": "Lo que alquilo",
   "YOUR RENTALS": "Lo que me alquilan",
   "COMMENT":"Comentario",
-  "CONFLICTED RENTS": "Peticiones en conflicto",
+  "CONFLICTED RENTS": "Reservas denegadas al aceptar",
   "APPLY REQUEST": "Aceptar petición",
   "€/DAY":"€/día",
   "SEARCH_PLACEHOLDER": "Buscar en Camera Rent...",
@@ -120,7 +120,8 @@
   "CONFLICTED PERIOD MESSAGE": "El periodo seleccionado coincide con otra reserva. Prueba otro, por favor.",
   "NO DATE ALERT":"Selecciona periodo de fechas. Por favor.",
   "REQUEST SUCCESS":"La solicitud se ha creado correctamente",
-  "SOMETHING WRONG" :"Algo ha ido mal."
+  "SOMETHING WRONG" :"Algo ha ido mal.",
+  "change": "Cambiar"
 
 
 }

@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
 import { Expression, FilterExpressionUtils, OTableComponent, OTableConfiguration, OntimizeService } from 'ontimize-web-ngx';
 
 
@@ -18,6 +18,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     protected productRequestService: OntimizeService,
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
     public dialogRef: MatDialogRef<MyRentalsConflictDetailsComponent>,
+    protected dialog: MatDialog,
   ) {
   }
 
@@ -36,6 +37,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
             }
           }
           this.table2.setDataArray(resultArr);
+          this.table2.visibleColumns= "start_date;end_date;r_user;rprofit;profit_diff;change";
         }
       }
     );
@@ -85,5 +87,20 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
           }
         });
     }
+  }
+  sayHola(ev){
+    console.log("Hola");
+    console.log(ev)
+  }
+  public openDetail(rowData: any): void {
+    this.dialogRef.close(); 
+    
+
+    this.dialog.open(MyRentalsConflictDetailsComponent, {
+      height: '800px',
+      width: '700px',
+      data: rowData,
+      panelClass: 'custom-dialog-container'
+    });
   }
 }
