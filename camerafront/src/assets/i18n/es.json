@@ -121,7 +121,8 @@
   "NO DATE ALERT":"Selecciona periodo de fechas. Por favor.",
   "REQUEST SUCCESS":"La solicitud se ha creado correctamente",
   "SOMETHING WRONG" :"Algo ha ido mal.",
-  "change": "Cambiar"
+  "change": "Cambiar",
+  "APPLIED REQUEST": "Solicitud aceptada"
 
 
 }

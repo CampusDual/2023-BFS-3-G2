@@ -10,16 +10,18 @@
                     'dd/MM/yyyy'}}</span></p>
         </div>
     </div>
+            <!-- service="productsRequest"
+            entity="myProductRequestEntry"            columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;rprice;request_text;r_user;p_user;rprofit;profit_diff;change" -->
     <div class="table_container">
-        <o-table #table2 show-title="true" title="{{'CONFLICTED RENTS' | oTranslate }}:" service="productsRequest"
-            entity="myProductRequestEntry"
-            columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;rprice;request_text;r_user;p_user;rprofit;profit_diff;change"
+        <o-table #table2 show-title="true" title="{{'CONFLICTED RENTS' | oTranslate }}:" 
+
+
             visible-columns="start_date;end_date;r_user;rprofit;profit_diff;change" pageable="no" insert-button="no"
-            delete-button="no" detail-mode="yes" refresh-button="none" query-on-init="no" quick-filter="no" pagination-controls="no" page-size-options="no" virtual-scroll="yes"
+            delete-button="no" detail-mode="no" refresh-button="none" query-on-init="no" quick-filter="no" pagination-controls="no" page-size-options="no" virtual-scroll="yes"
             default-visible-columns="start_date;end_date;r_user;rprofit;profit_diff;change" >
-            <o-table-column attr="change" type="action" icon="swap_horiz" (onClick)="openDetail($event)"></o-table-column>
+            <o-table-column attr="change" title="change" type="action" icon="swap_horiz" (onClick)="openDetail($event)"></o-table-column>
             <!-- detail-button-in-row="true" (click)="sayHola($event)" -->
-            <o-table-column attr="r_user" title="r_user" type="text" width="15%" ></o-table-column>
+            <o-table-column attr="r_user" title="r_user" type="text" width="15%" content-align="center"></o-table-column>
             <o-table-column attr="start_date" title="start_date" type="date" format="L"
                 ></o-table-column>
             <o-table-column attr="end_date" title="end_date" type="date" format="L"></o-table-column>

@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
-import { Expression, FilterExpressionUtils, OTableComponent, OTableConfiguration, OntimizeService } from 'ontimize-web-ngx';
+import { Expression, FilterExpressionUtils, OTableComponent, OTableConfiguration, OTranslateService, OntimizeService } from 'ontimize-web-ngx';
 
 
 @Component({
@@ -19,6 +19,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
     public dialogRef: MatDialogRef<MyRentalsConflictDetailsComponent>,
     protected dialog: MatDialog,
+    private translateService: OTranslateService,
   ) {
   }
 
@@ -37,7 +38,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
             }
           }
           this.table2.setDataArray(resultArr);
-          this.table2.visibleColumns= "start_date;end_date;r_user;rprofit;profit_diff;change";
+          // this.table2.visibleColumns = "start_date;end_date;r_user;rprofit;profit_diff;change";
         }
       }
     );
@@ -66,6 +67,7 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
     let tableData = this.table2.getDataArray();
     this.updateRequests(tableData, "denied");
     this.updateRequests([this.data], "applied");
+    alert(this.translateService.get('APPLIED REQUEST'));
     this.dialogRef.close();
   }
 
@@ -87,10 +89,6 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
           }
         });
     }
-  }
-  sayHola(ev){
-    console.log("Hola");
-    console.log(ev)
   }
   public openDetail(rowData: any): void {
     this.dialogRef.close(); 
