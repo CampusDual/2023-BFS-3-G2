@@ -43,24 +43,12 @@ export class StatisticsComponent {
   }
 
   ngOnInit() {
-
-    // const conf = this.productRequestService.getDefaultServiceConfiguration('productsRequest');
-    // this.productRequestService.configureService(conf);
-    // let kv = this.configureFilter();
-    // this.productRequestService.query(kv, ['start_month', 'p_user', 'num_filas', 'total', 'product_name', 'id_product'], 'rentBalance').subscribe(
-    //   result => {
-    //     if (result.data && result.data.length) {
-    //       this.adaptData(result.data);
-    //     }
-    //   }
-    // );
   }
   queryAll() {
     this.queryMultiBar();
     this.queryPie()
   }
   queryMultiBar() {
-
     let dates = this.formFilter.getFieldValue("date")
     let kv = {};
     if (dates) {
@@ -73,7 +61,6 @@ export class StatisticsComponent {
         '@basic_expression': filters.reduce((exp1, exp2) =>
           FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND))
       }
-      // this.pie.queryData(kv, { sqltypes: { start_date: 91 } });
     }
     this.productRequestService.query(kv, ['start_month', 'p_user', 'num_filas', 'total', 'product_name', 'id_product'], 'rentBalance', { start_month: 91 }).subscribe(
       result => {
@@ -134,16 +121,9 @@ export class StatisticsComponent {
     });
     this.data3 = [];
     nameSet.forEach(element => {
-
       this.data3.push({ "key": element, "values": finalValues[element] });
     });
-    // console.log(nameSet);
-    // console.log(monthSet);
-    // console.log(adaptedValues);
-    // console.log(finalValues);
-    // console.log(this.data3);
   }
-
 
   protected configureService() {
     const conf = this.productRequestService.getDefaultServiceConfiguration('productsRequest');
@@ -177,7 +157,6 @@ export class StatisticsComponent {
         // Configuring y axis...
         var yScale = d3.scale.linear();
         chartOps['yScale'] = yScale;
-        // chartOps['yDomain'] = [0, 20000];
         console.log(chartOps);
       }
     }
@@ -208,7 +187,6 @@ export class StatisticsComponent {
       }
       kv["state"] = "applied"
       return kv;
-      // this.pie.queryData(kv, { sqltypes: { start_date: 91 } });
     }
     else {
       const actualDate: Date = new Date();
@@ -228,10 +206,6 @@ export class StatisticsComponent {
       }
       kv["state"] = "applied"
       return kv;
-      // const filterExpr = FilterExpressionUtils.buildExpressionLike("state", "applied");
-      // const basicExpr = FilterExpressionUtils.buildBasicExpression(filterExpr);
-      // this.pie.queryData(basicExpr);
-      // return basicExpr;
     }
   }
 }

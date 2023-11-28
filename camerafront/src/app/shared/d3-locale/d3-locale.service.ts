@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { OTranslateService } from 'ontimize-web-ngx';
-
 import { D3Locales } from './locales';
 
 declare var d3: any;

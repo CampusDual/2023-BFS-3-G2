@@ -12,30 +12,8 @@ export class StatusColumnRendererComponent extends OBaseTableCellRenderer implem
 
   constructor(protected injector: Injector) {
     super(injector);
-  //   this.setComponentPipe();
-  // }
-  // setComponentPipe() {
-  //   this.componentPipe = new OIconPipe(this.injector);
   }
   ngOnInit() {
-    // this.pipeArguments = {
-    //   currencySimbol: '€',
-    //   currencySymbolPosition: 'right',
-    //   decimalDigits: 2,
-    //   decimalSeparator: ',',
-    //   grouping: true,
-    //   thousandSeparator: '.'
-    // };
-  }
-  sayHola(){
-    console.log()
   }
 
-  // getCellData(value: any) {
-  //   let cellValue: string;
-  //   if (this.componentPipe && typeof this.pipeArguments !== 'undefined' && value !== undefined) {
-  //     cellValue = this.componentPipe.transform(value, this.pipeArguments);
-  //   }
-  //   return cellValue;
-  // }
 }

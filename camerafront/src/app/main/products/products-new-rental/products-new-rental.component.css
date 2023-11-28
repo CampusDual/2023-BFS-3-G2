@@ -1,6 +1,7 @@
-.top-container{
-        position: relative;
+.top-container {
+    position: relative;
 }
+
 .container {
     margin: 30px;
     height: 25%;
@@ -60,19 +61,16 @@
 
 .mat-focused .mat-input-element {
     color: #ffffff;
-    /* Brighter white color when focused */
     caret-color: #ffffff !important;
-    /* Bright white caret color when focused */
 }
 
 .mat-form-field-underline {
     background-color: white !important;
-    /* Default underline color */
 }
+
 .close-button {
     position: absolute;
     top: 0px;
     right: 4px;
-    color:aliceblue
-  
-  }
+    color: aliceblue
+}

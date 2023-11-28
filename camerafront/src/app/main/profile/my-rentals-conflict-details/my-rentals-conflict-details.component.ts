@@ -12,8 +12,6 @@ import { Expression, FilterExpressionUtils, OTableComponent, OTableConfiguration
 export class MyRentalsConflictDetailsComponent implements OnInit {
   public chartParams: OTableConfiguration;
   @ViewChild('table2', { static: true }) table2: OTableComponent;
-  //public calculateProfit = calculateProfitFunction;
-  //public calculateProfitDiff = this.profitDif;
   constructor(
     protected productRequestService: OntimizeService,
     @Inject(MAT_DIALOG_DATA) public data: any = { statusname: "" },
@@ -32,13 +30,11 @@ export class MyRentalsConflictDetailsComponent implements OnInit {
         if (result.data && result.data.length) {
           for (let element of result.data) {
             if (element.id_prequest !== this.data.id_prequest) {
-              // element['profit'] = this.calcProfit(element);
               element['profit_diff'] = this.calcProfitDif(element);
               resultArr.push(element);
             }
           }
           this.table2.setDataArray(resultArr);
-          // this.table2.visibleColumns = "start_date;end_date;r_user;rprofit;profit_diff;change";
         }
       }
     );

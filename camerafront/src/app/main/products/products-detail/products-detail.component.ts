@@ -16,9 +16,7 @@ export class ProductsDetailComponent implements OnInit {
 
   public galleryImages = [
     {
-      // small: "assets/images/no-image.png",
-      medium: "assets/images/no-image.png",
-      // big: "assets/images/no-image.png"
+      medium: "assets/images/no-image.png"
     }
   ];
   public galleryOptions = [
@@ -56,19 +54,8 @@ export class ProductsDetailComponent implements OnInit {
     protected dialog: MatDialog,
     protected imageRequestService: OntimizeService,
     protected rentRequestService: OntimizeService,
-
-
   ) {
-    // this.productRequestService = this.injector.get(OntimizeService);
   }
-  // public data: any ;
-  // myFilter = (d: Date | null): boolean => {
-  //   const day = (d || new Date()).getDay();
-  //   // Prevent Saturday and Sunday from being selected.
-  //   return day !== 0 && day !== 6;
-  // }
-
-
   ngOnInit() {
     this.configureService();
 
@@ -83,15 +70,12 @@ export class ProductsDetailComponent implements OnInit {
   }
   public openRentDialog(): void {
     this.dialog.open(ProductsNewRentalComponent, {
-      // height: '34%',
-      // width: '30%',
       minWidth: '30%',
       data: this.data,
       panelClass: 'custom-dialog-container'
     });
   }
   createImageArray(dataImages) {
-    // let dataImages = this.queryImages(data.id_product)
     this.galleryImages = []
     this.galleryImages.push(
       {

@@ -33,7 +33,6 @@ export class ProductsHomeComponent implements OnInit {
   public openDetail(data: any): void {
     this.dialog.open(ProductsDetailComponent, {
       height: '70%',
-      // width: '70%',
       data: data,
       panelClass: 'custom-dialog-container'
     });
@@ -56,16 +55,5 @@ export class ProductsHomeComponent implements OnInit {
       let kv = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
       this.grid.queryData(kv);
     }else this.grid.queryData();
-
-    // filters.push(FilterExpressionUtils.buildExpressionLessEqual("start_date", this.data.end_date));
-    // filters.push(FilterExpressionUtils.buildExpressionMoreEqual("end_date", this.data.start_date));
-    // let kv2 = { '@basic_expression': filters.reduce((exp1, exp2) => FilterExpressionUtils.buildComplexExpression(exp1, exp2, FilterExpressionUtils.OP_AND)) };
-    // kv['tproducts_id_product'] = this.data.tproducts_id_product;
-    // kv['state'] = "pending";
   }
-
-  // performSearch(): void {
-
-  //   this.grid.queryData(basicExpr);
-  // }
 }

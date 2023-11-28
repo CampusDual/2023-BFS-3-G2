@@ -6,7 +6,6 @@
 
 .detail-container {
   display: flex;
-  /* align-items: center; */
   justify-content: center;
   padding: 10px;
   padding-left: 125px;
@@ -34,16 +33,10 @@
 
 .coment-container {
   padding: 4px;
-  /* display: block; */
   display: flex;
   flex-direction: column;
 }
 
 .expandable-container {
-  /* height: 3vw; */
   font-size: 1.2em;
 }
-
-/* .out-container tr {
-  height: 200px;
-} */

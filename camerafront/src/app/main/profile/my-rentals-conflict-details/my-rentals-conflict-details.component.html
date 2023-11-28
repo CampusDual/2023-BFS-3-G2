@@ -10,30 +10,23 @@
                     'dd/MM/yyyy'}}</span></p>
         </div>
     </div>
-            <!-- service="productsRequest"
-            entity="myProductRequestEntry"            columns="main_photo;id_prequest;product_name;start_date;end_date;tproducts_id_product;state;rprice;request_text;r_user;p_user;rprofit;profit_diff;change" -->
     <div class="table_container">
-        <o-table #table2 show-title="true" title="{{'CONFLICTED RENTS' | oTranslate }}:" 
-
-
+        <o-table #table2 show-title="true" title="{{'CONFLICTED RENTS' | oTranslate }}:"
             visible-columns="start_date;end_date;r_user;rprofit;profit_diff;change" pageable="no" insert-button="no"
-            delete-button="no" detail-mode="no" refresh-button="none" query-on-init="no" quick-filter="no" pagination-controls="no" page-size-options="no" virtual-scroll="yes"
-            default-visible-columns="start_date;end_date;r_user;rprofit;profit_diff;change" >
-            <o-table-column attr="change" title="change" type="action" icon="swap_horiz" (onClick)="openDetail($event)"></o-table-column>
-            <!-- detail-button-in-row="true" (click)="sayHola($event)" -->
-            <o-table-column attr="r_user" title="r_user" type="text" width="15%" content-align="center"></o-table-column>
-            <o-table-column attr="start_date" title="start_date" type="date" format="L"
-                ></o-table-column>
+            delete-button="no" detail-mode="no" refresh-button="none" query-on-init="no" quick-filter="no"
+            pagination-controls="no" page-size-options="no" virtual-scroll="yes"
+            default-visible-columns="start_date;end_date;r_user;rprofit;profit_diff;change">
+            <o-table-column attr="change" title="change" type="action" icon="swap_horiz"
+                (onClick)="openDetail($event)"></o-table-column>
+            <o-table-column attr="r_user" title="r_user" type="text" width="15%"
+                content-align="center"></o-table-column>
+            <o-table-column attr="start_date" title="start_date" type="date" format="L"></o-table-column>
             <o-table-column attr="end_date" title="end_date" type="date" format="L"></o-table-column>
             <o-table-column width="15%" attr="rprofit" title="profit" currency-symbol="€" type="currency"
                 currency-symbol-position="right"></o-table-column>
             <o-table-column attr="profit_diff" title="profit_diff" content-align="center">
                 <app-profit-dif-column-renderer></app-profit-dif-column-renderer>
             </o-table-column>
-            <!-- <o-table-column-calculated attr="profit" title="profit" [operation-function]="calculateProfit.bind(this)">
-        </o-table-column-calculated>
-        <o-table-column-calculated attr="profitdiff" title="profitdiff" [operation-function]="calculateProfitDiff.bind(this)">
-        </o-table-column-calculated> -->
         </o-table>
     </div>
     <div class="button_container">

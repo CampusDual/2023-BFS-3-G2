@@ -74,7 +74,6 @@ export class ProductsNewRentalComponent implements OnInit {
       while (startDate.isSameOrBefore(this.endDate)) {
         const isDateInArray = this.noDates.some(date => date.getTime() === startDate.toDate().getTime());
         if (isDateInArray) {
-          // console.log("mal");
           clean = false;
           alert(this.translateService.get('CONFLICTED PERIOD MESSAGE'));
           break;

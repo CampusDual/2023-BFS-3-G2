@@ -1,7 +1,6 @@
 <div class="container">
   <o-form fxLayout="column" service="products" entity="product" keys="id_product" show-header-navigation="no"
     header-actions="R;I;U;D" editable-detail="yes" after-insert-mode="close" confirm-exit="no">
-    <!-- (onDataLoaded)="loadData($event)" -->
     <o-text-input oHidden enabled="no" attr="id_product" sql-type="INTEGER"></o-text-input>
     <div class="image-container">
       <o-image id="main_photo" attr="main_photo" empty-image="assets/images/no-image.png" sql-type="OTHER"
@@ -24,7 +23,8 @@
         <o-text-input fxFill attr="plocation"></o-text-input>
       </o-row>
       <o-row>
-        <o-currency-input fxFill attr="price" currency-symbol="EUR" max-decimal-digits="2" required="yes"></o-currency-input>
+        <o-currency-input fxFill attr="price" currency-symbol="EUR" max-decimal-digits="2"
+          required="yes"></o-currency-input>
       </o-row>
       <o-row>
         <o-text-input fxFill attr="pdetails"></o-text-input>

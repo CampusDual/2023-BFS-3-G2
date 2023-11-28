@@ -2,32 +2,18 @@
 .container-item {
   width: 95%;
   height: 95%;
-  /* background-color: linear-gradient(to right, #0c4411, #00ff37); */
-  /* background-color: rgb(119, 118, 116); */
   background-color: #85A3B6;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   color: #eff3f6f1;
-  /* align-items: center;
-  overflow: hidden; */
-  /* justify-content: flex-end; */
-
 
 
   .image {
     flex:9;
-    /* width: auto; */
-    /* margin-right: 2px;
-    margin-left: 2px; */
     overflow: hidden;
-    /* margin: 5px; */
     margin: 5px 5px 0px 5px;
     height: calc(90% - 10px);
-    /* flex: 1; */
-    /* max-width: 50%; */
-    /* max-height: 50%; */
-    
   }
 
   .image img {
@@ -39,51 +25,31 @@
   }
 
   .name {
-    /* margin-bottom: 8px; */
-    /* font-size: 0.9em; */
     padding: 0 10px;
     margin-top: 8px;
     height: auto;
     font-size: 120%;
-    /* text-align: center; */
    
   }
   .details {
     display: flex; 
-    justify-content: space-between; /* Esto alinea los elementos a los extremos */
-    align-items: center; /* Alinea los elementos verticalmente */
-    padding: 0 5px; /* Añade un poco de padding si es necesario */
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 0 5px; 
     
   }
   .plocation{
     color: #eff3f6e3;
   }
 
-  /*.details b {
-     text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-  }*/
-
   .details .mat-icon {
-    /* font-size: 30px; */
     height: 30px;
     width: 30px;
     vertical-align: middle;
     color: rgba(255, 255, 255, 0.651);
-    /* -webkit-background-clip: text; */
-    /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    
-    text-shadow: none; */
-
   }
   .price{
     text-align: right;
-    /* justify-content: flex-end; */
-    /* max-height: 10%;
-    
-    font-size: 100%; */
-    /* margin: 1px 6px 1px 1px; */
     overflow: hidden;
   }
 
@@ -97,8 +63,7 @@
     font-size: 1.2em;
   }
   .name, .details, .price {
-    flex: 1; /* These take up 1 part of the space */
-    /* Adjust as needed */
+    flex: 1; 
   }
   .hidden-info {
     display: none;
@@ -107,10 +72,6 @@
 
 .green-check {
   background: linear-gradient(to top left, #5f745b,#38c725 );
-  /* Cambia los códigos de color según tus preferencias */
-
-  /* color:
-  background-image: linear-gradient(to top left, #85ac75, #5b40be); */
 }
 
 .red-check {
@@ -119,89 +80,43 @@
 }
 .mat-dialog-container {padding: 0px;}
 
-/* styles.css o en tu componente específico */
-/* body {
-  font-family: 'League Spartan', 'Arial', sans-serif;
-  background-color: #426D83;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-} */
 
 .search-container0 {
-  /* display: flex; */
-  /* 
-  flex-direction: column;
-  align-content: center;
-  justify-content: center; */
   width: 100%;
-  /* justify-content: unsafe center; */
-  /* max-width: 600px; 
-  margin-top: 50px;  */
-  /* position: absolute; */
   padding-bottom: 40px;
   
 }
 
 .search-container {
-  /* display: flex; */
-
-
   position: absolute;
   left: 50%;
   top: -5%;
   transform: translate(-66%, 100%);
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* align-content: center; */
-  /* vertical-align: center; */
-  
   align-items: center;
-  /* margin-bottom: 20px; */
-  /* margin-left: 20px; */
-  background-color: #FFA099; /* Tono del botón de búsqueda */
-  border-radius: 24px; /* Esquinas redondeadas */
-
+  background-color: #FFA099; 
+  border-radius: 24px; 
   width: 25%;
 }
 
 input {
-  padding: 15px; /* Ajusta el relleno para que sea más parecido al de Google */
+  padding: 15px; 
   font-size: 16px;
   border: none;
-  border-radius: 24px 0 0 24px; /* Esquinas redondeadas a la izquierda */
-  width: 100%; /* Ancho del 100% del contenedor */
-  outline: none; /* Elimina el contorno predeterminado del input */
+  border-radius: 24px 0 0 24px; 
+  width: 100%; 
+  outline: none; 
 }
 
 button {
-  padding: 15px 20px; /* Aumenta el espacio alrededor del texto del botón */
+  padding: 15px 20px; 
   font-size: 16px;
   border: none;
-  border-radius: 0 24px 24px 0; /* Esquinas redondeadas a la derecha */
-  background-color: #FFA099; /* Tono del botón de búsqueda */
-  color: #fff; /* Texto de color blanco */
+  border-radius: 0 24px 24px 0; 
+  background-color: #FFA099; 
+  color: #fff; 
   cursor: pointer;
-  outline: none; /* Elimina el contorno predeterminado del botón */
+  outline: none; 
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
-/* ul {
-  list-style-type: none;
-  padding: 0;
-  width: 100%; Ancho del 100% del contenedor
-} */
-
-/* .search-result {
-  margin: 5px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #426D83; Tono del color de fondo de los resultados de búsqueda
-  color: #fff; Texto de color blanco
-  border-radius: 8px; Esquinas redondeadas
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Sutil sombra
-  width: 100%; Ancho del 100% del contenedor
-} */
