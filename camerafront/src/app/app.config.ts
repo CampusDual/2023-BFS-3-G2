@@ -5,7 +5,7 @@ import { SERVICE_CONFIG } from './shared/app.services.config';
 
 export const CONFIG: Config = {
   // The base path of the URL used by app services.
-  apiEndpoint: 'http://localhost:33333/cameraRent/backservice',
+  apiEndpoint: 'http://localhost:30081/cameraRent/backservice',
   // Application identifier. Is the unique package identifier of the app.
   // It is used when storing or managing temporal data related with the app.
   // By default is set as 'ontimize-web-uuid'.
@@ -15,7 +15,7 @@ export const CONFIG: Config = {
   title: 'Camera Rent',
 
   //  Language of the application.
-  locale: 'es', 
+  locale: 'es',
 
   // The service type used (Ontimize REST standart, Ontimize REST JEE
   // or custom implementation) in the whole application.

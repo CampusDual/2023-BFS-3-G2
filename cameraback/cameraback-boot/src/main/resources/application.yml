@@ -80,7 +80,7 @@ spring:
       hibernate:
          ddl-auto: create-drop
    datasource:
-      jdbc-url: jdbc:postgresql://45.84.210.174:65432/2023_BFS_3_G2
+      jdbc-url: jdbc:postgresql://db:5432/2023_BFS_3_G2
       username: "2023_BFS_3_G2"
       password: "b2f34VKzTvt2"
       driverClassName: org.postgresql.Driver
